@@ -79,7 +79,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("static/img");
   eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("_includes/assets/css/inline.css");
+  eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
@@ -111,7 +111,7 @@ module.exports = function(eleventyConfig) {
     dataTemplateEngine: "njk",
     dir: {
       input: ".",
-      includes: "_includes",
+      includes: "src",
       data: "_data",
       output: "_site"
     }
