@@ -2,7 +2,7 @@ const path = require('path');
 const mix = require('laravel-mix');
 
 const arJsPage = [
-    './_includes/assets/js/inline.js',
+    './_includes/assets/js/app.js',
 ];
 
 const arCssPage = [
@@ -18,11 +18,11 @@ mix.webpackConfig({
 });
 
 arJsPage.forEach(sJsPage => {
-    mix.js(sJsPage, 'dist/js');
+    mix.js(sJsPage, '_site/dist/js');
 });
 
 arCssPage.forEach(sCssPage => {
-    mix.postCss(sCssPage, 'dist/css/style.css')
+    mix.postCss(sCssPage, '_site/dist/css/style.css')
 });
 
 mix.disableNotifications();

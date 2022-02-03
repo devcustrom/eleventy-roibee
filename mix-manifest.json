@@ -1,4 +1,4 @@
 {
-    "/dist/js/inline.js": "/dist/js/inline.js",
-    "/dist/css/style.css": "/dist/css/style.css"
+    "/_site/dist/js/app.js": "/_site/dist/js/app.js",
+    "/_site/dist/css/main.css": "/_site/dist/css/main.css"
 }

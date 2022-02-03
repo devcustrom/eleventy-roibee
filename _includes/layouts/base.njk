@@ -5,7 +5,7 @@
 
 	<body>
 
-		<header>
+		<header class="bg-red-300 grid-cols-[1fr,auto] grid">
 			<em>
 				<a href="{{ '/' | url }}">{{ metadata.title }}</a>
 			</em>
@@ -17,7 +17,7 @@
 		</main>
 
 		{% include "components/footer.njk" %}
-
+		<script src="/dist/js/app.js"></script>
 	</body>
 
 </html>
