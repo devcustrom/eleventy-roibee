@@ -39,12 +39,15 @@
   },
   "dependencies": {
     "@11ty/eleventy-navigation": "^0.1.6",
+    "alpinejs": "^3.8.1",
+    "blazy": "^1.8.2",
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",
     "laravel-mix": "^6.0.41",
     "postcss-gap": "^1.0.0",
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.6",
+    "swiper": "^8.0.3",
     "uglify-js": "^3.14.2"
   }
 }
