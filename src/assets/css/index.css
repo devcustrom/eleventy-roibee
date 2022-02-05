@@ -313,13 +313,13 @@ label{
 	margin-bottom: 10v;
 }
 .twitter__icon{
-	background-image: url(/assets/img/svg/twitter.svg);
+	background-image: url(//src/_includes/assets/img/svg/twitter.svg);
 }
 .inst__icon{
-	background-image: url(/assets/img/svg/inst.svg);
+	background-image: url(//src/_includes/assets/img/svg/inst.svg);
 }
 .vk__icon{
-	background-image: url(/assets/img/svg/vk.svg);
+	background-image: url(//src/_includes/assets/img/svg/vk.svg);
 }
 .circle__btn{
 	background: linear-gradient(180deg, var(--fiol2) 0%, var(--purp2) 100%);
@@ -880,7 +880,7 @@ label{
 }
 .img__popup-uslug{
 	padding-top: 73%;
-	background-image: url(/assets/img/rocket.png);
+	background-image: url(//src/_includes/assets/img/rocket.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 
