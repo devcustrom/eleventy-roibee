@@ -1,30 +1,36 @@
-<div class="skills__elem">
-    <div class="skills__block">
-        <div class="skills__head">
-            <p class="text-base">ВЕБ ДИЗАЙН</p>
-        </div>
-        <div x-data="{ open: false }" class="text-base skills__view-text">
-            
-            <ul
-                class="grid gap-6 py-6 transition-all duration-300"
-                :class="open ? 'max-h-screen' : 'max-h-[200px]'"
-            >
-                <li>Лендинг страницы</li>
-                <li>Сайт любой тематики</li>
-                <li>Интернет-магазин</li>
-                <li>Лендинг страницы</li>
-                <li>Интернет-магазин</li>
-                <li>Лендинг страницы</li>
-                <li>Лендинг страницы</li>
-                <li>Интернет-магазин</li>
-                <li>Лендинг страницы</li>
-                <li>Лендинг страницы</li>
-                <li>Интернет-магазин</li>
-                <li>Лендинг страницы</li>
-            </ul>
-            <button @click="open = !open" class="flex items-center justify-center skills__btn circle__btn btn_fiol">
-                <span :class="open ? 'rotate-180' : ''"></span>
-            </button>
+<div class="yarlik yarlik_r">
+    <p>Мы делаем</p>
+</div>
+<div class="relative wrapper mh370">
+    <div class="skills__item">
+        <div class="skills__elem">
+            <div class="skills__block">
+                <div class="skills__head">
+                    <p class="adaptive__font25">ВЕБ ДИЗАЙН</p>
+                </div>
+                <div x-data="{ open: false }" class="relative pt-6 overflow-hidden font-medium tracking-normal bg-transparent bg-opacity-100 after:absolute after:bottom-3 after:w-full after:h-[5px] after:rounded-sm after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet">
+                    <ul
+                        class="grid gap-6 py-6 transition-all duration-300"
+                        :class="open ? 'max-h-screen' : 'max-h-[215px]'"
+                    >
+                        <li>Лендинг страницы</li>
+                        <li>Сайт любой тематики</li>
+                        <li>Интернет-магазин</li>
+                        <li>Лендинг страницы</li>
+                        <li>Интернет-магазин</li>
+                        <li>Лендинг страницы</li>
+                        <li>Лендинг страницы</li>
+                        <li>Интернет-магазин</li>
+                        <li>Лендинг страницы</li>
+                        <li>Лендинг страницы</li>
+                        <li>Интернет-магазин</li>
+                        <li>Лендинг страницы</li>
+                    </ul>
+                    <button @click="open = !open" class="absolute -bottom-3 flex items-center justify-center left-[44%] skills__btn circle__btn btn_fiol">
+                        <span :class="open ? 'rotate-180' : ''"></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
