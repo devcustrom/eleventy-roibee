@@ -1,7 +1,3 @@
-
-.pt-1vh{
-	padding-top: 1vh;
-}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -17,20 +13,22 @@ border: 1px solid #FFFFFF;
 transition: background-color 5000s ease-in-out 0s;
 background-color: var(--dark) !important;
 }
-.b-lazy {
-	transition: opacity 300ms ease-in-out;
-	max-width: 100%;
-	opacity: 0;
+
+.lozad {
+	@apply transition-all opacity-0;
 }
-.b-lazy.b-loaded,.swiper-lazy-loaded,.header {
-@apply opacity-100;
+
+.lozad[data-loaded=true] {
+	@apply opacity-100;
 }
-a,label,input,[role=button]{
+
+a,
+label,
+input,
+[role=button] {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-label{
-	cursor: pointer;
-}
+
 /*Header*/
 .header{
 	position: fixed;
@@ -313,13 +311,13 @@ label{
 	margin-bottom: 10v;
 }
 .twitter__icon{
-	background-image: url(//src/_includes/assets/img/svg/twitter.svg);
+	background-image: url(/images/icons/twitter.svg);
 }
 .inst__icon{
-	background-image: url(//src/_includes/assets/img/svg/inst.svg);
+	background-image: url(/images/icons/inst.svg);
 }
 .vk__icon{
-	background-image: url(//src/_includes/assets/img/svg/vk.svg);
+	background-image: url(/images/icons/vk.svg);
 }
 .circle__btn{
 	background: linear-gradient(180deg, var(--fiol2) 0%, var(--purp2) 100%);
@@ -880,7 +878,7 @@ label{
 }
 .img__popup-uslug{
 	padding-top: 73%;
-	background-image: url(//src/_includes/assets/img/rocket.png);
+	background-image: url(/images/image/rocket.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 

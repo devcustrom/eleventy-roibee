@@ -1,7 +1,3 @@
-import Blazy from "blazy";
-
-(function() {var bLazy = new Blazy();})();
-var bLazy = new Blazy({container: '.popup__all'});
 var inpcheck = document.querySelectorAll('.inputcheck');
 var getbody = document.getElementById("body");
 var getform = document.getElementById("form");

@@ -8,8 +8,8 @@
     "build:mix": "mix --production",
     "build": "npm-run-all clean --parallel build:* --print-label",
     "serve:eleventy": "npx eleventy --serve",
-    "serve:mix": "mix watch",
-    "serve": "npm-run-all clean --parallel serve:* --print-label",
+    "serve:laravel": "mix watch",
+    "dev": "npm-run-all clean --parallel serve:* --print-label",
     "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
@@ -43,10 +43,10 @@
     "@jamshop/eleventy-plugin-array-filters": "^1.0.1",
     "@tailwindcss/typography": "^0.5.1",
     "alpinejs": "^3.8.1",
-    "blazy": "^1.8.2",
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",
     "laravel-mix": "^6.0.41",
+    "lozad": "^1.16.0",
     "postcss-gap": "^1.0.0",
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.6",
