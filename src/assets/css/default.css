@@ -59,7 +59,6 @@ body {
 	font-size: calc(14px + 6 var(--adaptive));
 }
 .adaptive__font18,
-.yarlik,
 .advan__text-item,
 .process__modal > p,
 .process__punkts > li{
