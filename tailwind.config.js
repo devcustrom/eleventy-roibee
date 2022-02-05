@@ -15,7 +15,11 @@ module.exports = {
         normal:'0.145em',
       },
       borderRadius: {
-        '2.5xl' : '10px', 
+        '1.5xl' : '10px',
+        '4xl' : '32px', 
+      },
+      backgroundSize: {
+        '1/2': '50%',
       },
       maxWidth: {
         '1/2': '50%',
@@ -30,8 +34,6 @@ module.exports = {
         'blue-ribbon' : '#4838FF',
         'electric-violet' : '#B510EF',
         // https://chir.ag/projects/name-that-color/#072329
-      },
-      borderRadius: {
       },
       gridTemplateRows: {
         'aa1': 'repeat(2, auto) 1fr',

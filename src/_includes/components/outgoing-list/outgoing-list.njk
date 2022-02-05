@@ -1,33 +1,24 @@
-<div class="text-base h-16 bg-gradient-to-r from-medium-purple-2/[.36] to-seance-2/[.87] mt-16 max-w-1/2 relative flex items-center rounded-l-[70px]  yarlik_r">
-    <p>Мы делаем</p>
+<div class="h-16 bg-gradient-to-r from-seance-2/[1.87] to-medium-purple-2/[1.10] mt-16 max-w-1/2 relative flex items-center rounded-l-[70px] ml-auto justify-start before:absolute before:h-16 before:ring-1 before:ring-white before:z-[-1] before:top-2 before:rounded-l-[70px] before:left-2 before:right-0 before:rounded-r-[0]">
+    <p class="py-5 px-9">Мы делаем</p>
 </div>
-<div class="relative wrapper mh370">
-    <div class="skills__item">
-        <div class="skills__elem">
-            <div class="skills__block">
-                <div class="skills__head">
-                    <p class="adaptive__font25">ВЕБ ДИЗАЙН</p>
+<div class="relative container mx-auto p-4 min-h-[370px] mt-14">
+    <div class="absolute flex flex-row flex-wrap justify-between not-italic left-4 right-4">
+        <div class="relative min-w-[320px] grow w-[33%] max-w-[390px]">
+            <div class="p-5 bg-cod-gray rounded-[20px]">
+                <div class="relative after:h-[5px] after:w-full after:rounded-[2.5px] after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet after:absolute">
+                    <p class="text-lg">ВЕБ ДИЗАЙН</p>
                 </div>
                 <div x-data="{ open: false }" class="relative pt-6 overflow-hidden font-medium tracking-normal bg-transparent bg-opacity-100 after:absolute after:bottom-3 after:w-full after:h-[5px] after:rounded-sm after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet">
                     <ul
-                        class="grid gap-6 py-6 transition-all duration-300"
-                        :class="open ? 'max-h-screen' : 'max-h-[215px]'"
+                        class="grid gap-6 transition-all duration-300 pb-9"
+                        :class="open ? 'max-h-screen' : 'max-h-[190px]'"
                     >
-                        <li>Лендинг страницы</li>
-                        <li>Сайт любой тематики</li>
-                        <li>Интернет-магазин</li>
-                        <li>Лендинг страницы</li>
-                        <li>Интернет-магазин</li>
-                        <li>Лендинг страницы</li>
-                        <li>Лендинг страницы</li>
-                        <li>Интернет-магазин</li>
-                        <li>Лендинг страницы</li>
-                        <li>Лендинг страницы</li>
-                        <li>Интернет-магазин</li>
-                        <li>Лендинг страницы</li>
+                        {% for item in design.design %}
+                            <li>{{ item.name }}</li>
+                        {% endfor %}
                     </ul>
-                    <button @click="open = !open" class="absolute -bottom-3 flex items-center justify-center left-[44%] skills__btn circle__btn btn_fiol">
-                        <span :class="open ? 'rotate-180' : ''"></span>
+                    <button @click="open = !open" class="absolute -bottom-1 left-[40%] rounded-4xl h-12 w-12 z-[1] bg-gradient-to-b from-medium-purple-2 my-1 to-seance-2 transition-all duration-500 shadow-purp bg-white flex items-center justify-center">
+                        <span style="background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiPg0KPHBhdGggZD0iTTE2Ljk1NTUgNS4wODYxN0wxNS4wMTQzIDMuMTQ1MDJMOC43MjQzIDkuNDM1MDFMMi40MzQzMSAzLjE0NTAyTDAuNDkzMDkzIDUuMDg2MTdMOC43MjQzIDEzLjMxNzRMMTYuOTU1NSA1LjA4NjE3WiIgZmlsbD0id2hpdGUiLz4NCjwvZz4NCjxkZWZzPg0KPGNsaXBQYXRoIGlkPSJjbGlwMCI+DQo8cmVjdCB3aWR0aD0iMTYuNDYyNCIgaGVpZ2h0PSIxNi40NjI0IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYuOTU1NSkgcm90YXRlKDkwKSIvPg0KPC9jbGlwUGF0aD4NCjwvZGVmcz4NCjwvc3ZnPg0K);" class="absolute w-full h-full transition-all ease-linear bg-center bg-no-repeat bg-1/2" :class="open ? 'rotate-180' : ''"></span>
                     </button>
                 </div>
             </div>

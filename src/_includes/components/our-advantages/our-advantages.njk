@@ -1,59 +1,19 @@
-<section>
+<section class="mt-20">
     <div class="p-0">
-        <div class="text-base text__i">
+        <div class="text-2xl font-bold leading-snug tracking-normal text-center text-white">
             <p>В чём наши преимущества?</p>
         </div>
-        <div class="flex flex-wrap justify-around">
-            <div class="flex flex-col items-center text-center m-w-[145px] h-[124px]">
-                <div class="pt-[10px] w-max lozad" data-background-image="/images/icons/iconadvan.svg">
-
+        <div class="flex flex-wrap justify-around mt-10">
+            {% for item in benefits.benefits %}
+                <div class="flex flex-col items-center text-center min-w-[145px] h-[124px]">
+                    <img class="w-28 h-28" src="/images/icons/iconadvan.svg">
+                    <div class="text-base pt-[10px] w-max">
+                        <p>
+                            С нами<br> {{ item.text }}
+                        </p>
+                    </div>
                 </div>
-                <div class="text-base pt-[10px] w-max">
-                    <p>
-                        С нами<br> надежно
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col items-center text-center m-w-[145px] h-[124px]">
-                <div class="bg-center bg-no-repeat bg-cover text-base pt-[10px] w-max lozad" data-background-image="/images/icons/iconadvan.svg">
-
-                </div>
-                <div class="textext-base pt-[10px] w-max">
-                    <p>
-                        С нами<br> выгодно
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col items-center text-center m-w-[145px] h-[124px]">
-                <div class="bg-center bg-no-repeat bg-cover text-base pt-[10px] w-max lozad" data-background-image="/images/icons/iconadvan.svg">
-
-                </div>
-                <div class="text-base pt-[10px] w-max">
-                    <p>
-                        С нами<br> "Всё понятно"
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col items-center text-center m-w-[145px] h-[124px]">
-                <div class="bg-center bg-no-repeat bg-cover text-base pt-[10px] w-max lozad" data-background-image="/images/icons/iconadvan.svg">
-
-                </div>
-                <div class="text-base pt-[10px] w-max">
-                    <p>
-                        С нами<br> комфортно
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col items-center text-center m-w-[145px] h-[124px]">
-                <div class="bg-center bg-no-repeat bg-cover text-base pt-[10px] w-max lozad" data-background-image="/images/icons/iconadvan.svg">
-
-                </div>
-                <div class="text-base pt-[10px] w-max">
-                    <p>
-                        C нами<br> Правда
-                    </p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
