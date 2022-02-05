@@ -1,10 +1,26 @@
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
+const filters = require('./utils/filters.js');
+const passthroughs = require('./utils/passthroughs.js');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginArrayFilters = require("@jamshop/eleventy-plugin-array-filters");
 const UglifyJS = require("uglify-js");
 const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
+
+    eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(pluginArrayFilters);
+    // Copy our static assets to the output folder
+    passthroughs.forEach(passthroughPath => {
+        eleventyConfig.addPassthroughCopy(passthroughPath);
+    });
+
+    // Filters
+    Object.keys(filters).forEach((filterName) => {
+        eleventyConfig.addFilter(filterName, filters[filterName]);
+    })
 
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -79,7 +95,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("static/img");
   eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("_includes/assets/css/inline.css");
+  eleventyConfig.addPassthroughCopy("/_includes/assets/css/inline.css");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
