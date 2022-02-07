@@ -1,0 +1,12 @@
+{
+    "name": "Roibee",
+    "logoUrl": "favicon.ico",
+    "faviconUrl": "favicon.ico",
+    "department": "Donetsk",
+    "wmid": "00000",
+    "city": "Донецк",
+    "api": "",
+    "roibeeApi": true,
+    "source_id": "000",
+    "broker_id": "00"
+}

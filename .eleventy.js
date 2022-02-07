@@ -7,6 +7,8 @@ const pluginArrayFilters = require("@jamshop/eleventy-plugin-array-filters");
 const UglifyJS = require("uglify-js");
 const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const site = require('./src/_data/site.json');
+const localizedCollections = ['post'];
 
 module.exports = function(eleventyConfig) {
 
@@ -113,6 +115,21 @@ module.exports = function(eleventyConfig) {
     .use(markdownItAnchor, opts)
   );
 
+  if(site.langs) {
+		site.langs.map(langEntry => {
+
+			for (const localizedCollection of localizedCollections) {
+				// Produces collection with the pluralized name + '_' + locale,
+				// E.g.: 'posts_en'
+				eleventyConfig.addCollection(`${localizedCollection}s_${langEntry.id}`, function (collectionApi) {
+					return collectionApi.getFilteredByTag(localizedCollection).filter(function (item) {
+						return item.data.locale === langEntry.id
+					});
+				});
+			}
+		});
+	}
+
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
 
@@ -120,8 +137,7 @@ module.exports = function(eleventyConfig) {
     // Leading or trailing slashes are all normalized away, so don’t worry about it.
     // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
     // This is only used for URLs (it does not affect your file structure)
-    pathPrefix: "/",
-
+    pathPrefix: process.env.WEB_PATH_PREFIX || '',
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",

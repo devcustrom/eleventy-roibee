@@ -1,11 +1,27 @@
+{% if alias %}
+	{% set city = city %}
+	{% set phone = phone %}
+	{% set wa = wa %}
+	{% set address = address %}
+	{% set mapLink = mapLink %}
+{% else %}
+	{% set city = envs.site.city %}
+	{% set phone = envs.contacts.phone %}
+	{% set wa = envs.contacts.wa %}
+	{% set address = envs.contacts.address %}
+	{% set mapLink = envs.contacts.mapLink %}
+{% endif %}
 <!doctype html>
-<html lang="ru">
+<html lang="{{ locale|default('ru') }}">
 	<head>
 		<meta charset="utf-8">
 		<link rel="dns-prefetch" href="https://identity.netlify.com">
+		<link rel="canonical" href="{{ site.rootUrl }}{{ page.url }}">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ renderData.title or title or metadata.title }}</title>
-		<meta name="description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}">
+		<title>{{ envs.site.name }}</title>
+		<meta name="description" content="{{ description }}">
+		<meta name="keywords" content="{{ keywords }}">
+		<link rel="icon" type="image/png" href="{{ envs.site.faviconUrl | url }}">
 		<script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 		<link rel="stylesheet" href="/dist/css/style.css">
 		{# {% set css %}
@@ -26,6 +42,68 @@
 		</main>
 
 		{% include "components/footer/footer.njk" %}
+		<script>
+			function contactForm() {
+				return {
+					formData: {
+						'broker_name': '{{ envs.site.name }}',
+						'name': '{{ name }}',
+						'phone': '',
+						'url': '{{ site.rootUrl }}{{ page.url }}',
+						'city': '{{ city }}',
+						'utm_source': "{{ envs.site.name }} {{ city }}",
+						'source_id': "{{ envs.site.source_id }}",
+						'broker_id': "{{ envs.site.broker_id }}"
+					},
+					message: '',
+					showMessage: false,
+					loading: false,
+					buttonLabel: 'Отправить',
+	
+					submitData() {
+					this.buttonLabel = 'Отправка'
+					this.loading = true;
+					this.message = ''
+	
+					fetch('{{ envs.site.api }}', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(this.formData)
+					})
+						.then(() => {
+							this.message = 'Форма отправлена, ожидайте!<br> С вами свяжутся'
+							this.$refs.form.reset()
+						})
+						.catch(() => {
+							this.message = 'Увы, но произошла ошибка попробуйте еще раз!'
+						})
+						.finally(() => {
+							this.showMessage = true,
+							this.loading = false;
+							this.buttonLabel = 'Отправлено'
+							setTimeout(() => {
+								this.buttonLabel = 'Отправить',
+								this.showMessage = false
+							}, 15000)
+						})
+					}
+				}
+			}
+		</script>
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+		
+			ym(86852439, "init", {
+					clickmap:true,
+					trackLinks:true,
+					accurateTrackBounce:true,
+					webvisor:true
+			});
+			</script>
 		<script src="/dist/js/app.js"></script>
 	</body>
 

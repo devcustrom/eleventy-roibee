@@ -2,29 +2,87 @@
     <div class="h-16 bg-gradient-to-l from-seance-2/[1.87] to-medium-purple-2/[1.10] mt-16 max-w-1/2 relative flex items-center rounded-r-[70px] mr-auto justify-end before:absolute before:h-16 before:ring-1 before:ring-white before:z-[-1] before:top-2 before:rounded-r-[70px] before:left-0 before:right-0 before:rounded-l-[0]"> 
         <p class="py-5 px-9">Связаться с нами</p>
     </div>
-    <div class="relative p-0 pt-1 mt-10">
-        <script>var submitted=false;</script>
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="
-            if(submitted)
-            {document.getElementById('form').classList.add('opacity-0');
-            document.getElementById('send__form').classList.add('opacity-100');
-            setTimeout(() => {document.getElementById('form').reset();
-            document.getElementById('form').classList.remove('opacity-0');
-            document.getElementById('send__form').classList.remove('opacity-100');
-            }, 6000)}
-            "></iframe>
-        <form name="contact_form" id="form" class="form" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfoltKxdAT-qxBHd1ALYFypcfeg9fXnQ-fPZLQ3GQFv1NkBLg/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true">
-            <input placeholder="Ваша почта" class="w-full form__area" name="entry.183100258" type="email" required />
-            <input placeholder="Ваш номер телефона" class="w-full form__area"  name="entry.2081991681" type="tel" required/>
-            <textarea placeholder="Сообщение......." class="w-full form__area" name="entry.714657000" style="min-height: 270px;" required></textarea>
-            <input type="hidden" name="entry.698711001" value="http://127.0.0.1:5500/">
-            <input class="refclass" type="hidden" name="entry.27823824" value="">
-            <input class="spam" type="hidden" name="entry.1032011634" value="">
-            <div class="g-recaptcha" data-sitekey="6Le_2vEZAAAAAFguuFHWVFIQxjdD_a9P1oT2pk71" data-callback="enablebtn" data-size="invisible"></div>
-            <input class="btn form__btn btnclass btn_fiol" type="submit" value="Вы робот" disabled/>
-    </form>
-    <div id="send__form" class="absolute inset-0 flex items-center justify-center m-auto text-center text-white opacity-0 send__form">
-        <p>Спасибо за ваше доверие! В ближайшее время с вами свяжутся.</p>
-    </div>
+    <div x-data="contactForm()" class="mt-10 relative mx-auto overflow-hidden max-w-[500px] sm:gap-x-8 sm:p-5 rounded-3xl">
+        <form  x-ref="form" method="POST" @submit.prevent="submitData">
+            <div class="grid gap-2 2xs:gap-3.5 xl:gap-4.5">
+                <label class="relative grid group ">
+                    <input
+                    type="email"
+                    name="entry.183100258"
+                    placeholder="Ваша почта"
+                    x-model="formData.email"
+                    autocomplete="false"
+                    required
+                    class="w-full px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none h-14 focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+                    >
+                    <span class="absolute text-xs text-gray-600 transition-all pointer-events-none peer-focus-visible:text-themes-second peer-disabled:text-gray-500 peer-hover:text-red-600 peer-placeholder-shown:text-base peer-placeholder-shown:top-7 top-3 peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-placeholder-shown:-translate-y-1/2 inset-x-5 login-reg__placeholder">
+                    <span class="absolute top-0 left-0 text-red-600 transition-opacity error empty:opacity-0 peer"></span>
+                    <span class="transition-opacity opacity-0 peer-empty:opacity-100">
+                        Ваша почта
+                                            <span class="text-red-600">*</span>
+                                    </span>
+                    </span>
+                </label>
+                <label class="relative grid group ">
+                    <input
+                    type="tel"
+                    pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                    x-model="formData.phone"
+                    name="entry.2081991681"
+                    placeholder="Ваш номер телефона"
+                    autocomplete="false"
+                    class="w-full px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none h-14 focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500 phone-mask"
+                    required
+                    >
+                    <span class="absolute text-xs text-gray-600 transition-all pointer-events-none peer-focus-visible:text-themes-second peer-disabled:text-gray-500 peer-hover:text-red-600 peer-placeholder-shown:text-base peer-placeholder-shown:top-7 top-3 peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-placeholder-shown:-translate-y-1/2 inset-x-5 login-reg__placeholder">
+                    <span class="absolute top-0 left-0 text-red-600 transition-opacity error empty:opacity-0 peer"></span>
+                    <span class="transition-opacity opacity-0 peer-empty:opacity-100">
+                        Ваш номер телефона
+                                            <span class="text-red-600">*</span>
+                                    </span>
+                    </span>
+                </label>
+                <label for="message" class="relative grid group">
+                    <textarea 
+                    name="entry.714657000" 
+                    id="message" 
+                    cols="30" 
+                    rows="5"
+                    placeholder="Ваше сообщение"
+                    x-model="formData.message"
+                    autocomplete="false"
+                    class="w-full resize-none h-[100px] px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+                    required></textarea>
+                    <span class="absolute text-xs text-gray-600 transition-all pointer-events-none peer-focus-visible:text-themes-second peer-disabled:text-gray-500 peer-hover:text-red-600 peer-placeholder-shown:text-base peer-placeholder-shown:top-7 top-3 peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-placeholder-shown:-translate-y-1/2 inset-x-5 login-reg__placeholder">
+                        <span class="absolute top-0 left-0 text-red-600 transition-opacity error empty:opacity-0 peer"></span>
+                        <span class="transition-opacity opacity-0 peer-empty:opacity-100">
+                            Ваше сообщение
+                                <span class="text-red-600">*</span>
+                        </span>
+                    </span>
+                </label>
+                <button
+                    class="h-16 flex items-center justify-center w-full text-lg font-bold text-white transition-all rounded-full outline-none bg-gradient-to-t from-seance-2/[1.87] to-medium-purple-2/[1.10] button-submit h-13 focus:outline-none disabled:bg-gray-500"
+                    :disabled="loading"
+                >
+                    Отправить
+                </button>
+            </div>
+            <div x-show="showMessage" class="absolute inset-0 flex items-center bg-white exit-modal-whatsapp__success-messages">
+                <div class="p-5 text-red-600">
+                    <div class="mb-5 text-lg lg:text-2xl">
+                        <p x-html="message"></p>
+                    </div>
+                    <button
+                        type="button"
+                        @click="showMessage = false"
+                        class="flex items-center justify-center px-6 py-4 text-sm text-white transition rounded-full outline-none focus:outline-none h-13 bg-themes-default active:bg-themes-second " 
+                    >
+                        Закрыть
+                    </button>
+                </div>
+            </div>
+        </form>
+        </div>
     </div>
 </section>
