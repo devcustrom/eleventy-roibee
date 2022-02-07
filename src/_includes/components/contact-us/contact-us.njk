@@ -10,7 +10,6 @@
                     type="email"
                     name="entry.183100258"
                     placeholder="Ваша почта"
-                    x-model="formData.email"
                     autocomplete="false"
                     required
                     class="w-full px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none h-14 focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
@@ -24,10 +23,9 @@
                     </span>
                 </label>
                 <label class="relative grid group ">
+					{# pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" #}
                     <input
                     type="tel"
-                    pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
-                    x-model="formData.phone"
                     name="entry.2081991681"
                     placeholder="Ваш номер телефона"
                     autocomplete="false"
@@ -49,7 +47,6 @@
                     cols="30"
                     rows="5"
                     placeholder="Ваше сообщение"
-                    x-model="formData.message"
                     autocomplete="false"
                     class="w-full resize-none h-[100px] px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
                     required></textarea>
