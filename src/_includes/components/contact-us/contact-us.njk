@@ -1,9 +1,9 @@
 <section class="pb-1w">
-    <div class="h-16 bg-gradient-to-l from-seance-2/[1.87] to-medium-purple-2/[1.10] mt-16 max-w-1/2 relative flex items-center rounded-r-[70px] mr-auto justify-end before:absolute before:h-16 before:ring-1 before:ring-white before:z-[-1] before:top-2 before:rounded-r-[70px] before:left-0 before:right-0 before:rounded-l-[0]"> 
+    <div class="h-16 bg-gradient-to-l from-seance-2/[1.87] to-medium-purple-2/[1.10] mt-16 max-w-1/2 relative flex items-center rounded-r-[70px] mr-auto justify-end before:absolute before:h-16 before:ring-1 before:ring-white before:z-[-1] before:top-2 before:rounded-r-[70px] before:left-0 before:right-0 before:rounded-l-[0]">
         <p class="py-5 px-9">Связаться с нами</p>
     </div>
-    <div x-data="contactForm()" class="mt-10 relative mx-auto overflow-hidden max-w-[500px] sm:gap-x-8 sm:p-5 rounded-3xl">
-        <form  x-ref="form" method="POST" @submit.prevent="submitData">
+    <div class="mt-10 relative mx-auto overflow-hidden max-w-[500px] sm:gap-x-8 sm:p-5 rounded-3xl">
+        <form  x-data="contactForm()" x-ref="form" method="POST" @submit.prevent="submitData">
             <div class="grid gap-2 2xs:gap-3.5 xl:gap-4.5">
                 <label class="relative grid group ">
                     <input
@@ -43,10 +43,10 @@
                     </span>
                 </label>
                 <label for="message" class="relative grid group">
-                    <textarea 
-                    name="entry.714657000" 
-                    id="message" 
-                    cols="30" 
+                    <textarea
+                    name="entry.714657000"
+                    id="message"
+                    cols="30"
                     rows="5"
                     placeholder="Ваше сообщение"
                     x-model="formData.message"
@@ -61,6 +61,9 @@
                         </span>
                     </span>
                 </label>
+				<input type="hidden" name="entry.698711001" value="thisUrl"/>
+				<input type="hidden" name="entry.27823824" value="refferer"/>
+				<input type="hidden" name="entry.1032011634" value="spam"/>
                 <button
                     class="h-16 flex items-center justify-center w-full text-lg font-bold text-white transition-all rounded-full outline-none bg-gradient-to-t from-seance-2/[1.87] to-medium-purple-2/[1.10] button-submit h-13 focus:outline-none disabled:bg-gray-500"
                     :disabled="loading"
@@ -76,7 +79,7 @@
                     <button
                         type="button"
                         @click="showMessage = false"
-                        class="flex items-center justify-center px-6 py-4 text-sm text-white transition rounded-full outline-none focus:outline-none h-13 bg-themes-default active:bg-themes-second " 
+                        class="flex items-center justify-center px-6 py-4 text-sm text-white transition rounded-full outline-none focus:outline-none h-13 bg-themes-default active:bg-themes-second "
                     >
                         Закрыть
                     </button>

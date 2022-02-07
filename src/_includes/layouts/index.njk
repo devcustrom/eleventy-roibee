@@ -46,31 +46,27 @@
 			function contactForm() {
 				return {
 					formData: {
-						'broker_name': '{{ envs.site.name }}',
-						'name': '{{ name }}',
-						'phone': '',
-						'url': '{{ site.rootUrl }}{{ page.url }}',
-						'city': '{{ city }}',
-						'utm_source': "{{ envs.site.name }} {{ city }}",
-						'source_id': "{{ envs.site.source_id }}",
-						'broker_id': "{{ envs.site.broker_id }}"
+						'entry.183100258': 'email',
+						'entry.2081991681': 'phone',
+						'entry.714657000': 'message',
+						'entry.698711001': 'this.url',
+						'entry.27823824': 'refferer',
+						'entry.1032011634': 'spam'
 					},
 					message: '',
 					showMessage: false,
 					loading: false,
 					buttonLabel: 'Отправить',
-	
+
 					submitData() {
 					this.buttonLabel = 'Отправка'
 					this.loading = true;
 					this.message = ''
-	
-					fetch('{{ envs.site.api }}', {
+					const form = new FormData(this.$refs.form);
+					fetch('https://docs.google.com/forms/u/1/d/e/1FAIpQLSfoltKxdAT-qxBHd1ALYFypcfeg9fXnQ-fPZLQ3GQFv1NkBLg/formResponse', {
 						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json'
-						},
-						body: JSON.stringify(this.formData)
+						mode: 'no-cors',
+						body: form
 					})
 						.then(() => {
 							this.message = 'Форма отправлена, ожидайте!<br> С вами свяжутся'
@@ -96,7 +92,7 @@
 			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-		
+
 			ym(86852439, "init", {
 					clickmap:true,
 					trackLinks:true,
