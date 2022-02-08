@@ -9,130 +9,36 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
     <div class="flex flex-wrap w-full pt-12 swiper-wrapper">
-        <div class="w-full m-auto swiper-slide">
-            <div class="card__uslug">
-                <p class="text">
-                    Дизайн сайтов
-                </p>
-                <div class="card__uslug-flex">
-                    <div class="w-full block__img-price">
-                        <div class="img__uslug lozad" data-background-image="/images/image/webdev.png"></div>
-                        <div class="text-black uslug__price"><p>от 20.000 ₽</p></div>
-                    </div>
-                    <div class="w-full text__uslug">
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <label class="m-auto btn btn_white md:mb-0 md:ml-0" for="usluga__1">Подробнее</label>
-                        <input id="usluga__1" class="hidden inputcheck" type="checkbox" />
-                        <label class="close__btn btn_fiol" for="usluga__1"><span></span></label>
-                        <div class="popup__all popup__usluga1">
-                                <div class="relative bg-left-bottom bg-no-repeat lozad footer__popup-bg" data-background-image="/images/icons/footbg.svg">
-                                    <section class="p-0">
-                                        <div class="text-base name__uslug">
-                                            <p>Дизайн сайтов</p>
-                                        </div>
-                                        <div class="text-base text__popup-uslug">
-                                            <p>Наши услуги:</p>
-                                        </div>
-                                        <div class="block__uslug-popup">
-                                            <div class="w-full img__popup-countainer">
-                                                <div class="img__popup-uslug"></div>
-                                            </div>
-                                            <div class="punkts__button">
-                                            <ul class="text-base popup__punkts">
-                                                <li>✔️
-                                                    Лендинг сайта</li>
-                                                <li>✔️
-                                                    Редизайн</li>
-                                                <li>✔️
-                                                    Дизайн полностью сайта</li>
-                                                <li>✔️
-                                                    Дизайн интернет магазинов</li>
-                                                <li>✔️
-                                                    Создание логотипов, если потребуется</li>
-                                            </ul>
-                                            <label class="m-auto text-white btn btn_white mt-5w" for="usluga__1">Заказать дизайн</label>
-                                            </div>
-                                        </div>
-
-                                    </section>
-                                    <section>
-                                        <div class="text-base yarlik_r mb-70px pr-30w">
-                                            <p>Процесс</p>
-                                        </div>
-                                        <div class="p-0 pb-8w">
-                                            <ul class="text-base">
-                                                <li>ОБСУЖДЕНИЕ
-                                                    <p>Что ожидает клиент от сайта, какие у него представления о сайте, что он хочет
-                                                        донести до клиента, какая тематика.</p>
-                                                </li>
-                                                <li>СТИЛЬ
-                                                    <p>Какой стиль хочет, какие цвета и дизайн предпочитает клиент. Показываем прототипы сайтов.
-
-                                                        Если клиент полагается полностью на воображение и опыт работы дизайнера, то всё будет выполнено по предпочтениям исполнителя!</p>
-                                                </li>
-                                                <li>Согласование
-                                                    <p>Обговариваем цену и срок. На сколько расчитывает клиент. Исходя из требований клиента, дизайнер говорит свой срок и цену. Стороны соглашаются и начинается процесс создания!</p>
-
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </section>
-                                    <div class="footer">
-                                        <p>© RoiBee 2020<br><a href="#!">Политика конфиденциальности</a> | <a href="#!">Все права защищены</a></p>
-                                    </div>
-                                </div>
-
+        {% for item in service.services %}
+            <div class="grid grid-cols-a1 swiper-slide px-[4vw] gap-x-[50px] mx-auto max-w-[960px] min-h-[365px] m-7 h-auto bg-gradient-to-b from-medium-purple-2 to-seance-2 rounded-3xl">
+                <div class="w-full pt-10 mx-auto">
+                    <div class="grid w-[300px] h-[220px] ">
+                        <img src="/images/image/{{ item.img }}" alt="человекозаврик">
+                    </div>     
+                    <div class="relative mx-auto w-max">
+                        <div class=" relative  bg-bright-sun py-[10px] px-[16px] w-max rounded-[50px] not-italic font-semibold text-black z-[1] my-4 ">
+                            <p>
+                            от {{ item.price }} руб
+                            </p>
+                        </div>
+                        <div class="h-[3px] bg-white w-[150%] absolute -left-1/4 top-1/2 z-[1]rounded-[3px]">
                         </div>
                     </div>
+                </div> 
+                <div>
+                    <p class="text-[20px] font-bold  pt-[20px] ">
+                        {{ item.title }}
+                    </p>
+                    <ul class="grid pt-1 pl-1 text-lg font-semibold gap-y-6 "> 
+                        {% for item in subitem.text %}
+                            <li>
+                                {{ subitem.text }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <button class="flex mt-10 text-black items-center justify-center py-4 px-8 rounded-[50px] self-center w-max cursor-pointer transition-shadow duration-300 ease-linear relative font-semibold tracking-[0.145em] m-auto bg-gradient-to-b from-white to-silver shadow-white active:opacity-60 active:shadow-puk/[.60] hover:shadow-puk focus:shadow-puk  md:mb-0 md:ml-0" for="usluga__1">Подробнее</button>
                 </div>
             </div>
-        </div>
-        <div class="w-full m-auto swiper-slide">
-            <div class="card__uslug">
-                <p class="text">
-                    Дизайн сайтов
-                </p>
-                <div class="card__uslug-flex">
-                    <div class="w-full block__img-price">
-                        <div class="img__uslug lozad" data-background-image="/images/image/webdev.png"></div>
-                        <div class="text-black uslug__price"><p>от 20.000 ₽</p></div>
-                    </div>
-                    <div class="w-full text__uslug">
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <label class="m-auto btn btn_white md:mb-0 md:ml-0" for="usluga__1">Подробнее</label>
-                        <input id="usluga__1" class="hidden inputcheck" type="checkbox" />
-                        <label class="close__btn btn_fiol" for="usluga__1"><span></span></label>
-                        <div class="popup__all popup__usluga1">
-
-                                <div class="relative bg-left-bottom bg-no-repeat lozad footer__popup-bg" data-background-image="/images/icons/footbg.svg">
-                                    <section class="p-0">
-                                        <div class="text-base name__uslug">
-                                            <p>Дизайн сайтов</p>
-                                        </div>
-                                        <div class="text-base text__popup-uslug">
-                                            <p>Наши услуги:</p>
-                                        </div>
-                                        <div class="punkts__button">
-                                        <ul class="text-base popup__punkts">
-                                            <li>✔️
-                                                Лендинг сайта</li>
-                                            <li>✔️
-                                                Редизайн</li>
-                                            <li>✔️
-                                                Дизайн полностью сайта</li>
-                                            <li>✔️
-                                                Дизайн интернет магазинов</li>
-                                            <li>✔️
-                                                Создание логотипов, если потребуется</li>
-                                        </ul>
-                                        <label class="m-auto text-white btn btn_white mt-5w" for="usluga__1">Заказать дизайн</label>
-                                        </div>
-                                    </div>
-
+        {% endfor %}
+    </div>
 </section>

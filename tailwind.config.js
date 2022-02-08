@@ -33,7 +33,8 @@ module.exports = {
         'seance-2': '#7A1294',
         'blue-ribbon' : '#4838FF',
         'electric-violet' : '#B510EF',
-        // https://chir.ag/projects/name-that-color/#072329
+        'bright-sun' :'#FFCA42',
+        'silver' : '#CCCCCC'
       },
       gridTemplateRows: {
         'aa1': 'repeat(2, auto) 1fr',
@@ -48,6 +49,7 @@ module.exports = {
       boxShadow: {
         'purp': '0px 0px 3px rgb(120, 20, 147,)',
         'fiol': '0px 0px 6px rgb(107, 104, 224,)',
+        'puk': '0px 0px 13px rgb(0, 0, 0)',
       },
     },
   },

@@ -1,0 +1,48 @@
+{
+    "services":[
+        {
+            "price" : "20000",
+            "title" : "Веб дизайн",
+            "img" : "webdev.png",
+            "serviceText":[
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                }
+            ]
+        },
+        {
+            "price" : "50000",
+            "title" : "SEO",
+            "img" : "webdev.png",
+            "serviceText":[
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "text" : "Lorem ipsum dolor sit amet"
+                }
+            ]
+        }
+    ]
+}
