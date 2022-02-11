@@ -1,56 +1,41 @@
 {
-  "name": "eleventy-netlify-boilerplate",
-  "version": "1.0.3",
-  "description": "A boilerplate for building a fast static website with the Eleventy static site generator, for deployment to Netlify.",
-  "scripts": {
-    "clean": "rimraf _site",
-    "build:eleventy": "npx eleventy",
-    "build:mix": "mix --production",
-    "build": "npm-run-all clean --parallel build:* --print-label",
-    "serve:eleventy": "npx eleventy --serve",
-    "serve:laravel": "mix watch",
-    "dev": "npm-run-all clean --parallel serve:* --print-label",
-    "debug": "DEBUG=* npx eleventy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate"
-  },
-  "author": {
-    "name": "Dan Urbanowicz",
-    "email": "dan.urbanowicz@gmail.com",
-    "url": "https://www.danurbanowicz.com/"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate/issues"
-  },
-  "homepage": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@savvywombat/tailwindcss-grid-areas": "^2.0.0",
-    "autoprefixer": "^10.4.2",
-    "luxon": "^1.25.0",
-    "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.3.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.18"
-  },
-  "dependencies": {
-    "@11ty/eleventy-navigation": "^0.1.6",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@jamshop/eleventy-plugin-array-filters": "^1.0.1",
-    "@tailwindcss/typography": "^0.5.1",
-    "alpinejs": "^3.8.1",
-    "clean-css": "^4.2.1",
-    "html-minifier": "^4.0.0",
-    "laravel-mix": "^6.0.41",
-    "lozad": "^1.16.0",
-    "postcss-gap": "^1.0.0",
-    "postcss-import": "^14.0.2",
-    "postcss-nested": "^5.0.6",
-    "swiper": "^8.0.3",
-    "uglify-js": "^3.14.2"
-  }
+	"name": "RoiBee",
+	"scripts": {
+		"clean": "rimraf _site",
+		"build:eleventy": "npx eleventy",
+		"build:mix": "mix --production",
+		"build": "npm-run-all clean --parallel build:* --print-label",
+		"dev:eleventy": "npx eleventy --serve",
+		"dev:laravel": "mix watch",
+		"dev": "npm-run-all clean --parallel dev:* --print-label",
+		"debug": "DEBUG=* npx eleventy"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@11ty/eleventy": "^0.12.1",
+		"@11ty/eleventy-navigation": "^0.3.2",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+		"@jamshop/eleventy-plugin-array-filters": "^1.0.1",
+		"@savvywombat/tailwindcss-grid-areas": "^2.0.0",
+		"@tailwindcss/typography": "^0.5.1",
+		"alpinejs": "^3.9.0",
+		"autoprefixer": "^10.4.2",
+		"clean-css": "^5.2.4",
+		"html-minifier": "^4.0.0",
+		"laravel-mix": "^6.0.41",
+		"lozad": "^1.16.0",
+		"luxon": "^1.25.0",
+		"markdown-it": "^10.0.0",
+		"markdown-it-anchor": "^5.3.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.6",
+		"postcss-gap": "^1.0.0",
+		"postcss-import": "^14.0.2",
+		"postcss-nested": "^5.0.6",
+		"prettier": "^2.5.1",
+		"prettier-plugin-tailwindcss": "^0.1.7",
+		"swiper": "^8.0.5",
+		"tailwindcss": "^3.0.21",
+		"uglify-js": "^3.15.1"
+	}
 }
