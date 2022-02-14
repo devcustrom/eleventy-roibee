@@ -53,14 +53,14 @@ adipisci quisquam ducimus sapiente!" } ] %}
 			<div class="flex justify-between px-10">
 				{% if not loop.first %}
 				<button
-					@click="activeSlide = {{ loop.index }} - 1"
+					@click="activeSlide = {{ loop.index - 1 }}"
 					class="max-w-max items-center justify-center rounded-full px-8 py-4 font-semibold ring-2 ring-white transition-all duration-300 active:opacity-60"
 				>
 					<span>Назад</span>
 				</button>
 				{% endif %} {% if not loop.last %}
 				<button
-					@click="activeSlide = {{ loop.index }} + 1"
+					@click="activeSlide = {{ loop.index + 1 }}"
 					class="ml-auto flex max-w-max items-center justify-center rounded-full bg-gradient-to-b from-white to-silver px-8 py-4 font-semibold text-black transition-all duration-300 hover:shadow-puk focus:shadow-puk active:opacity-60"
 				>
 					<span>Вперед</span>
