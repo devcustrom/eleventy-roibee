@@ -725,57 +725,13 @@ input,
 	transition: width 0.3s ease 0.2s;
 }
 .process__punkts{
-	flex-grow: 1;
-	min-width: 450px;
-	margin-right: 18px !important;
-	justify-content: space-between;
 	counter-reset: num;
 
 }
 
-.process__punkts > li{
-	min-width:420px;
-	background: linear-gradient(95.96deg, #DC56FF 1.71%, #704BFF 100%);
-	border-radius: 50px;
-	margin-bottom: 10px;
-	margin-right: 30px;
-    display: flex;
-    justify-content: center;
-	align-items: center;
-	padding: 15px;
-	transition: margin ease 0.3s,opacity ease 0.3s;
-	opacity: .6;
-
-}
-.process__punkts > li:last-child{
-	margin-bottom: 0;
-}
 .process__punkts > li::before {
 	counter-increment: num;
     content: counter(num) '. ';
-}
-.process__card{
-	flex-grow: 1;
-	width: 80%;
-	min-height: 405px;
-	border-radius: 25px;
-	background: #2F2F2F;
-	padding:calc(15px + 25 var(--adaptive)) calc(15px + 58 var(--adaptive));
-	max-width: 986px;
-}
-
-.process__modal{
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-	visibility: hidden;
-	max-height: 0px;
-	opacity:0;
-	transition:opacity 0.3s linear, max-height var(--zero) linear 0.3s,visibility var(--zero) linear 0.3s;
-}
-.process__modal > p{
-	padding: 6% 0;
 }
 /**/
 .sotabg{

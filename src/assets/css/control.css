@@ -50,37 +50,3 @@
 #skill__colmn-3:checked ~ .skills__btn > span{
 	transform: rotate(180deg);
 }
-#p1:checked ~ .process__progress > div{
-	width: 20%;
-}
-#p2:checked ~ .process__progress > div{
-	width: 40%;
-}
-#p3:checked ~ .process__progress > div{
-	width: 60%;
-}
-#p4:checked ~ .process__progress > div{
-	width: 80%;
-}
-#p5:checked ~ .process__progress > div{
-	width: 100%;
-}
-#p1:checked ~ .process__punkts > li:nth-child(1),
-#p2:checked ~ .process__punkts > li:nth-child(2),
-#p3:checked ~ .process__punkts > li:nth-child(3),
-#p4:checked ~ .process__punkts > li:nth-child(4),
-#p5:checked ~ .process__punkts > li:nth-child(5){
-	margin-left: 30px;
-	margin-right: 0;
-	opacity: 1;
-}
-#p1:checked ~ .process__card > .process__modal:nth-child(1),
-#p2:checked ~ .process__card > .process__modal:nth-child(2),
-#p3:checked ~ .process__card > .process__modal:nth-child(3),
-#p4:checked ~ .process__card > .process__modal:nth-child(4),
-#p5:checked ~ .process__card > .process__modal:nth-child(5){
-	visibility: visible;
-	opacity: 1;
-	max-height: 100vh;
-	transition:opacity 0.3s linear 0.3s,max-height var(--zero) linear 0.3s,visibility var(--zero) linear 0.3s;
-}

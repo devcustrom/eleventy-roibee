@@ -1,73 +1,54 @@
-<section class="pb-1w">
+{% set process = [
+        {
+            "title": "Заполнение брифа"
+        },
+        {
+            "title": "Изучение заявки"
+        },
+        {
+            "title": "Обсуждение деталей"
+        },
+        {
+            "title": "Оформление договора"
+        },
+        {
+            "title": "Начало сотрудничества"
+        }
+    ]
+%}
+
+<section>
     <!-- стили бывшего yarlik -->
     <div class="bg-gradient-to-r from-seance-2/[1.87] to-medium-purple-2/[1.10] mt-16 max-w-1/2 relative flex items-center rounded-l-[70px] ml-auto justify-start before:absolute before:h-16 before:ring-1 before:ring-white before:z-[-1] before:top-2 before:rounded-l-[70px] before:left-2 before:right-0 before:rounded-r-[0]"> 
         <p class="py-5 px-9">Процесс</p>
     </div>
-    <div class="relative p-0 pt-[1vh] mt-10">
-        <div class="flex justify-center process__block">
-            <input id="p1" class="hidden" name="test" type="radio" checked>
-            <input id="p2" class="hidden" name="test" type="radio">
-            <input id="p3" class="hidden" name="test" type="radio">
-            <input id="p4" class="hidden" name="test" type="radio">
-            <input id="p5" class="hidden" name="test" type="radio">
-            <div class="hidden process__progress"><div></div></div>
-            <ul class="flex flex-col flex-wrap process__punkts">
-            <li>Заполнение брифа</li>
-            <li>Изучение заявки</li>
-            <li>Обсуждение деталей</li>
-            <li>Оформление договора</li>
-            <li>Начало сотрудничества</li>
-            </ul>
-            <div class="process__card">
-            <div class="process__modal">
-            <span class="m-auto">ЗАЯВКА</span>
-            <p>lorem upsun dolor sit amet. Всем привет, я тут написал кое что важное, чтобы
-        заполнить эту чёртову строку текста и заполнить сам блок текстом про нас.
-        Но так как я ничего кроме этого текста не мог придумать и лорем искать мне
-        лень, я решил накатать этот текст как альтернативу. И да, мне лень тыкнуть
-        два клика ЛОрема чем писать такой текст самому и придумывать его на ходу</p>
-            <label class="ml-auto text-black btn btn_white" for="p2">Вперед</label>
-        </div>
-
-                <div class="process__modal">
-                <span class="m-auto">ЗАЯВКА2</span>
-                <p>2lorem upsun dolor sit amet. Всем привет, я тут написал кое что важное, чтобы
-        заполнить эту чёртову строку текста и заполнить сам блок текстом про нас.
-        Но так как я ничего кроме этого текста не мог придумать и лорем искать мне
-        лень, я решил накатать этот текст как альтернативу. И да, мне лень тыкнуть
-        два клика ЛОрема чем писать такой текст самому и придумывать его на ходу</p>
-                <label class="btn btn_back" for="p1">Назад</label>
-                <label class="text-black btn btn_white" for="p3">Вперед</label>
+    <div
+        x-data="{ back: false }" 
+        class="relative grid px-5 mx-auto mt-10 max-w-max grid-cols-a1 gap-x-10">
+        <ul class="grid text-white gap-y-3">
+            {% for item in process %}
+                <li
+                :class="{ 'translate-x-5' : back, 'opacity-60' : !back }"
+                class="flex items-center p-4 transition-all duration-300 rounded-full bg-gradient-to-r from-heliotrope to-electric-violet-2">{{ loop.index }}. {{ item.title }}</li>
+            {% endfor %}
+        </ul>
+        <div class="grid max-w-[700px] h-full p-4 grid-rows-1a rounded-3xl bg-mine-shaft">
+            <div>
+                <h2 class="text-2xl mb-2.5 text-center uppercase">Заявка</h2>
+                <p class="px-10">lorem upsun dolor sit amet. Всем привет, я тут написал кое что важное, чтобы заполнить эту чёртову строку текста и заполнить сам блок текстом про нас. Но так как я ничего кроме этого текста не мог придумать и лорем искать мне лень, я решил накатать этот текст как альтернативу. И да, мне лень тыкнуть два клика ЛОрема чем писать такой текст самому и придумывать его на ходу</p>
             </div>
-            <div class="process__modal">
-                <span class="m-auto">ЗАЯВКА 3</span>
-                <p>3lorem upsun dolor sit amet. Всем привет, я тут написал кое что важное, чтобы
-        заполнить эту чёртову строку текста и заполнить сам блок текстом про нас.
-        Но так как я ничего кроме этого текста не мог придумать и лорем искать мне
-        лень, я решил накатать этот текст как альтернативу. И да, мне лень тыкнуть
-        два клика ЛОрема чем писать такой текст самому и придумывать его на ходу</p>
-                <label class="btn btn_back" for="p2">Назад</label>
-                <label class="text-black btn btn_white" for="p4">Вперед</label>
-            </div>
-            <div class="process__modal">
-                <span class="m-auto">ЗАЯВКА 4</span>
-                <p>4lorem upsun dolor sit amet. Всем привет, я тут написал кое что важное, чтобы
-        заполнить эту чёртову строку текста и заполнить сам блок текстом про нас.
-        Но так как я ничего кроме этого текста не мог придумать и лорем искать мне
-        лень, я решил накатать этот текст как альтернативу. И да, мне лень тыкнуть
-        два клика ЛОрема чем писать такой текст самому и придумывать его на ходу</p>
-                <label class="btn btn_back" for="p3">Назад</label>
-                <label class="text-black btn btn_white" for="p5">Вперед</label>
-            </div>
-            <div class="process__modal">
-                <span class="m-auto">ЗАЯВКА 5</span>
-                <p>5lorem upsun dolor sit amet. Всем привет, я тут написал кое что важное, чтобы
-    заполнить эту чёртову строку текста и заполнить сам блок текстом про нас.
-    Но так как я ничего кроме этого текста не мог придумать и лорем искать мне
-    лень, я решил накатать этот текст как альтернативу. И да, мне лень тыкнуть
-    два клика ЛОрема чем писать такой текст самому и придумывать его на ходу</p>
-                <label class="btn btn_back" for="p4">Назад</label>
-            </div>
+            <div class="flex justify-between px-10">
+                <button
+                x-show="back"
+                :class="{ 'flex' : back, 'hidden' : !back }"
+                class="items-center justify-center px-8 py-4 font-semibold transition-all duration-300 rounded-full max-w-max active:opacity-60 ring-2 ring-white">
+                    <span>Назад</span>
+                </button>
+                <button
+                @click="back = true"
+                class="flex items-center justify-center px-8 py-4 ml-auto font-semibold text-black transition-all duration-300 rounded-full bg-gradient-to-b from-white hover:shadow-puk focus:shadow-puk to-silver max-w-max active:opacity-60">
+                    <span>Вперед</span>
+                </button>
             </div>
         </div>
     </div>

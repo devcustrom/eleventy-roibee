@@ -33,17 +33,22 @@ module.exports = {
         'seance-2': '#7A1294',
         'blue-ribbon' : '#4838FF',
         'electric-violet' : '#B510EF',
+        'electric-violet-2' : '#704BFF',
         'bright-sun' :'#FFCA42',
-        'silver' : '#CCCCCC'
+        'silver' : '#CCCCCC',
+        'heliotrope' : '#DC56FF',
+        'mine-shaft' : '#2F2F2F'
       },
       gridTemplateRows: {
         'aa1': 'repeat(2, auto) 1fr',
         'a1': 'auto 1fr',
+        '1a': '1fr auto',
         '1aa': '1fr repeat(2, auto)',
       },
       gridTemplateColumns: {
         'aa1': 'repeat(2, auto) 1fr',
         'a1': 'auto 1fr',
+        '1a': '1fr auto',
         '1aa': '1fr repeat(2, auto)',
       },
       boxShadow: {
