@@ -1,5 +1,5 @@
 {% import "components/buttons.njk" as elButton %}
-{% import "components/form.njk" as elForm %}
+{% import "components/form-item.njk" as elInput %}
 {% set links = [
         {
             "linkText": "#",
@@ -32,20 +32,68 @@
         }
     ] 
 %}
-{% set form = [
+{% set formInput = [
         {
-            "classForm": "grid grid-cols-2 mx-auto max-w-max gap-x-5",
-            "inputs": [
-                {
-                    "type": "text",
-                    "name": "183100258",
-                    "placeholder": "Название компании",
-                    "inputClass": "w-[460px]",
-                    "necessarily": true
-                }
-            ]
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
+        },
+        {
+            "type" : "text",
+            "name" : "182812218",
+            "placeholder" : "Назание компании",
+            "necessarily" : true
         }
-    ]
+    ] 
 %}
 <section>
     <div class="container w-full px-5 mx-auto">
@@ -76,9 +124,11 @@
                             {% endif %}
                         {% endfor %}
                         <h1 class="mb-5 text-3xl text-center">Заполните форму</h1>
-                        {% for item in form %}
-                            {{ elForm.form(item.type, item.inputs, subitem.type, subitem.name, subitem.placeholder, subitem.inputClass, subitem.necessarily) }}
-                        {% endfor %}
+                        <form class="grid grid-cols-3 gap-5 mx-auto max-w-max">
+                            {% for item in formInput %}
+                                {{ elInput.inputDefault(item.type, item.name, item.placeholder, item.necessarily) }}
+                            {% endfor %}
+                        </form>
                     </div>
                 </div>
                 <div class="relative grid grid-cols-1a">
