@@ -51,14 +51,19 @@ module.exports = {
         '1a': '1fr auto',
         '1aa': '1fr repeat(2, auto)',
       },
+      textShadow: {
+        'base' : '0px 0px 4px rgba(255, 255, 255, 0.25)'
+      },
       boxShadow: {
-        'purp': '0px 0px 3px rgb(120, 20, 147,)',
-        'fiol': '0px 0px 6px rgb(107, 104, 224,)',
+        'purp': '0px 0px 3px rgb(120, 20, 147)',
+        'fiol': '0px 0px 6px rgb(107, 104, 224)',
         'puk': '0px 0px 13px rgb(0, 0, 0)',
       },
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('@savvywombat/tailwindcss-grid-areas'),
+    require('tailwindcss-textshadow')
   ],
 }

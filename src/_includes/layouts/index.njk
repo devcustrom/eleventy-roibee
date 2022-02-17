@@ -35,13 +35,13 @@
 	</head>
 	<body>
 
-		{% include "components/header/header.njk" %}
+		{% include "partials/header/header.njk" %}
 
 		<main>
 			{{ content | safe }}
 		</main>
 
-		{% include "components/footer/footer.njk" %}
+		{% include "partials/footer/footer.njk" %}
 		<script>
 			function contactForm() {
 				return {

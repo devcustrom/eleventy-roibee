@@ -126,9 +126,6 @@
 		position: initial;
 		justify-content: center;
 	}
-	.monitor__block,.process__punkts{
-		display: none;
-	}
 	.process__block{
 		flex-wrap: wrap;
 	}

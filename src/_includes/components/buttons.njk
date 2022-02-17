@@ -1,0 +1,15 @@
+{% macro buttonDefoult(alpine, alpineObjectName, class, icon, svgClass, svg, buttonText) %}
+    <button
+        {% if alpine == true %}
+            @click="{{ alpineObjectName }}"
+        {% endif %}
+        class="{{ class }} flex items-center justify-center p-5 max-w-max text-lg font-bold text-white transition-all rounded-full outline-none bg-gradient-to-t from-seance-2/[1.87] to-medium-purple-2/[1.10] focus:outline-none disabled:bg-gray-500 shadow-medium-purple shadow-purp hover:shadow-fiol hover:shadow-medium-purple">
+        {% if icon == true %} 
+            <svg class="{{ svgClass }}">
+                <use xlink:href="/images/icons/all-icon.svg#{{ svg }}"></use>
+            </svg> 
+        {% else %}
+            {{ buttonText }}
+        {% endif %}
+    </button>
+{% endmacro %}

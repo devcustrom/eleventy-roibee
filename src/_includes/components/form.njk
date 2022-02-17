@@ -1,0 +1,30 @@
+{% macro form(type, item.inputs, subitem.type, subitem.name, subitem.placeholder, subitem.inputClass, subitem.necessarily) %}
+    <form 
+        x-data="contactForm()" 
+        class="{{ classForm }}"
+        x-ref="form" 
+        method="post" 
+        @submit.prevent="submitData">
+        {% for subitem in item.inputs %}
+            <label class="relative group">
+                <input
+                type="{{ subitem.type }}"
+                name="entry.{{ subitem.name }}"
+                placeholder="{{ subitem.placeholder }}"
+                autocomplete="false"
+                required
+                class="{{ subitem.inputClass }} px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none h-14 focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+                >
+                <span class="absolute text-xs text-gray-600 transition-all pointer-events-none peer-focus-visible:text-themes-second peer-disabled:text-gray-500 peer-hover:text-red-600 peer-placeholder-shown:text-base peer-placeholder-shown:top-7 top-3 peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-placeholder-shown:-translate-y-1/2 inset-x-5 login-reg__placeholder">
+                    <span class="absolute top-0 left-0 text-red-600 transition-opacity empty:opacity-0 peer"></span>
+                    <span class="transition-opacity opacity-0 peer-empty:opacity-100">
+                        {{ subitem.placeholder }}
+                        {% if subitem.necessarily == true %}
+                            <span class="text-red-600">*</span>
+                        {% endif %}
+                    </span>
+                </span>
+            </label>
+        {% endfor %}
+    </form>
+{% endmacro %}
