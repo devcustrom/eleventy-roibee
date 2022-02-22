@@ -1,5 +1,5 @@
 {% import "components/buttons.njk" as elButton %}
-{% import "components/form-item.njk" as elInput %}
+{% import "components/forms.njk" as elForm %}
 {% set links = [
         {
             "linkText": "#",
@@ -15,120 +15,43 @@
         }
     ] 
 %}
-{% set button = [
-        {
-            "alpine": true,
-            "alpineObjectName": "brief = true",
-            "class": "",
-            "buttonText": "Заполните бриф"
-        },
-        {
-            "alpine": true,
-            "alpineObjectName": "brief = false",
-            "class": "absolute right-0 top-0 translate-x-[185%] -translate-y-[20%]",
-            "icon": true,
-            "svgClass": "w-10 h-10 text-white",
-            "svg": "close"
-        }
-    ] 
-%}
-{% set formInput = [
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        },
-        {
-            "type" : "text",
-            "name" : "182812218",
-            "placeholder" : "Назание компании",
-            "necessarily" : true
-        }
-    ] 
-%}
 <section>
     <div class="container w-full px-5 mx-auto">
         <div class="flex-wrap h-screen">
-            <div 
-            x-data="{brief : false}" 
-            class="grid grid-cols-2 w-full min-h-[80%]">
+            <div class="grid grid-cols-2 w-full min-h-[80%]">
                 <div class="flex flex-col max-h-[80vh] h-[80vh] ml-0 py-10 justify-evenly">
                     <div>
                         <p class="text-3xl font-bold uppercase text-shadow-base">Студия веб-дизайна</p>
                         <p class="font-medium text-2xl leading-[140%] tracking-[0.035em]">Минимализм и удобство!</p>
                     </div>
-                    {% for item in button %}
-                        {% if loop.first %}
-                            {{ elButton.buttonDefoult(item.alpine, item.alpineObjectName, item.class, item.icon, item.svgClass, item.svg, item.buttonText) }}
-                        {% endif %}
-                    {% endfor %}
+                    {{ elButton.buttonDefoult
+                        (
+                            alpine = true,
+                            alpineObjectName = "brief = true",
+                            class = "p-3",
+                            buttonText = "Заполните бриф"
+                        ) 
+                    }}
                 </div>
                 <div 
                     x-show="brief"
                     x-transition
-                    class="fixed inset-0 z-50 w-full h-full bg-cod-gray lozad"
+                    class="fixed inset-0 z-50 w-full h-full overflow-y-auto bg-cod-gray"
+                    style="display: none;"
                 >
                     <div class="container relative p-5 mx-auto">
-                        {% for item in button %}
-                            {% if loop.index == 2 %}
-                                {{ elButton.buttonDefoult(item.alpine, item.alpineObjectName, item.class, item.icon, item.svgClass, item.svg, item.buttonText) }}
-                            {% endif %}
-                        {% endfor %}
+                        {{ elButton.buttonDefoult
+                            (
+                                alpine = true,
+                                alpineObjectName = "brief = false",
+                                class = "absolute top-0 right-0 p-3 translate-x-[30%] -translate-y-[30%]",
+                                icon = true,
+                                svgClass = "w-10 h-10 text-white",
+                                svg = "close"
+                            ) 
+                        }}
                         <h1 class="mb-5 text-3xl text-center">Заполните форму</h1>
-                        <form class="grid grid-cols-3 gap-5 mx-auto max-w-max">
-                            {% for item in formInput %}
-                                {{ elInput.inputDefault(item.type, item.name, item.placeholder, item.necessarily) }}
-                            {% endfor %}
-                        </form>
+                        {{ elForm.briefForm() }}
                     </div>
                 </div>
                 <div class="relative grid grid-cols-1a">

@@ -1,0 +1,31 @@
+{% macro inputDefault(type, name, title) %}
+    <label class="grid grid-rows-1a">
+        <span class="text-xl font-medium text-silver">{{ title }}</span>
+        <input
+            type="{{ type }}"
+            name="{{ name }}"
+            autocomplete="false"
+            required
+            class="w-full px-5 text-white transition-all bg-transparent outline-none appearance-none ring-1 rounded-2xl focus:outline-none h-14 hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+        >
+    </label>
+{% endmacro %}
+
+{% macro inputArea(type, name, title, class) %}
+    <label class="relative grid group">
+        <span class="text-xl font-medium text-silver">{{ title }}</span>
+        <textarea
+            name="{{ name }}"
+            autocomplete="false"
+            class="w-full {{ class }} px-5 text-white transition-all bg-transparent outline-none appearance-none ring-1 rounded-2xl focus:outline-none hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+            required
+            ></textarea>
+    </label>
+{% endmacro %}
+
+{% macro inputRadio(class, type) %}
+    <label class="{{ class }} relative flex group">
+        <input class="sr-only peer" type="{{ type }}">
+        <span class="w-5 h-5 block relative peer-disabled:shadow-none peer-disabled:cursor-default cursor-pointer appearance-none ring-2 duration-300 group-hover:shadow-md  transition-all peer-disabled:ring-seance peer-disabled:peer-checked:bg-electric-violet peer-checked:ring-electric-violet ring-inset peer-checked:ring-[10px] ring-white before:w-2 before:h-2 before:transition-all before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:absolute before:duration-300 before:rounded-full rounded-full"></span>
+    </label>
+{% endmacro %}

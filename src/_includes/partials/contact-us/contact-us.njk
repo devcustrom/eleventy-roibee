@@ -1,88 +1,9 @@
+{% import "components/forms.njk" as elForm %}
 <section class="pb-1w">
     <div class="h-16 bg-gradient-to-l from-seance-2/[1.87] to-medium-purple-2/[1.10] mt-16 max-w-1/2 relative flex items-center rounded-r-[70px] mr-auto justify-end before:absolute before:h-16 before:ring-1 before:ring-white before:z-[-1] before:top-2 before:rounded-r-[70px] before:left-0 before:right-0 before:rounded-l-[0]">
         <p class="py-5 px-9">Связаться с нами</p>
     </div>
     <div class="mt-10 container relative mx-auto overflow-hidden max-w-[500px] sm:gap-x-8 sm:p-5 rounded-3xl">
-        <form  x-data="contactForm()" x-ref="form" method="POST" @submit.prevent="submitData">
-            <div class="grid gap-2 2xs:gap-3.5 xl:gap-4.5">
-                <label class="relative grid group ">
-                    <input
-                    type="email"
-                    name="entry.183100258"
-                    placeholder="Ваша почта"
-                    autocomplete="false"
-                    required
-                    class="w-full px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none h-14 focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
-                    >
-                    <span class="absolute text-xs text-gray-600 transition-all pointer-events-none peer-focus-visible:text-themes-second peer-disabled:text-gray-500 peer-hover:text-red-600 peer-placeholder-shown:text-base peer-placeholder-shown:top-7 top-3 peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-placeholder-shown:-translate-y-1/2 inset-x-5 login-reg__placeholder">
-                    <span class="absolute top-0 left-0 text-red-600 transition-opacity error empty:opacity-0 peer"></span>
-                    <span class="transition-opacity opacity-0 peer-empty:opacity-100">
-                        Ваша почта
-                                            <span class="text-red-600">*</span>
-                                    </span>
-                    </span>
-                </label>
-                <label class="relative grid group ">
-					{# pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" #}
-                    <input
-                    type="tel"
-                    name="entry.2081991681"
-                    placeholder="Ваш номер телефона"
-                    autocomplete="false"
-                    class="w-full px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none h-14 focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500 phone-mask"
-                    required
-                    >
-                    <span class="absolute text-xs text-gray-600 transition-all pointer-events-none peer-focus-visible:text-themes-second peer-disabled:text-gray-500 peer-hover:text-red-600 peer-placeholder-shown:text-base peer-placeholder-shown:top-7 top-3 peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-placeholder-shown:-translate-y-1/2 inset-x-5 login-reg__placeholder">
-                    <span class="absolute top-0 left-0 text-red-600 transition-opacity error empty:opacity-0 peer"></span>
-                    <span class="transition-opacity opacity-0 peer-empty:opacity-100">
-                        Ваш номер телефона
-                                            <span class="text-red-600">*</span>
-                                    </span>
-                    </span>
-                </label>
-                <label for="message" class="relative grid group">
-                    <textarea
-                    name="entry.714657000"
-                    id="message"
-                    cols="30"
-                    rows="5"
-                    placeholder="Ваше сообщение"
-                    autocomplete="false"
-                    class="w-full resize-none h-[100px] px-5 pt-8 pb-2 text-red-600 placeholder-transparent transition-all bg-transparent outline-none appearance-none inputnew peer ring-inset ring-1 rounded-2xl focus:outline-none focus-visible:ring-themes-second hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
-                    required></textarea>
-                    <span class="absolute text-xs text-gray-600 transition-all pointer-events-none peer-focus-visible:text-themes-second peer-disabled:text-gray-500 peer-hover:text-red-600 peer-placeholder-shown:text-base peer-placeholder-shown:top-7 top-3 peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-placeholder-shown:-translate-y-1/2 inset-x-5 login-reg__placeholder">
-                        <span class="absolute top-0 left-0 text-red-600 transition-opacity error empty:opacity-0 peer"></span>
-                        <span class="transition-opacity opacity-0 peer-empty:opacity-100">
-                            Ваше сообщение
-                                <span class="text-red-600">*</span>
-                        </span>
-                    </span>
-                </label>
-				<input type="hidden" name="entry.698711001" value="thisUrl"/>
-				<input type="hidden" name="entry.27823824" value="refferer"/>
-				<input type="hidden" name="entry.1032011634" value="spam"/>
-                <button
-                    class="h-16 flex items-center justify-center p-5 max-w-max text-lg font-bold text-white transition-all rounded-full outline-none bg-gradient-to-t from-seance-2/[1.87] to-medium-purple-2/[1.10] h-13 focus:outline-none disabled:bg-gray-500 shadow-medium-purple shadow-purp hover:shadow-fiol hover:shadow-medium-purple"
-                    :disabled="loading"
-                >
-                    Отправить
-                </button>
-            </div>
-            <div x-show="showMessage" class="absolute inset-0 flex items-center bg-white exit-modal-whatsapp__success-messages">
-                <div class="p-5 text-red-600">
-                    <div class="mb-5 text-lg lg:text-2xl">
-                        <p x-html="message"></p>
-                    </div>
-                    <button
-                        type="button"
-                        @click="showMessage = false"
-                        class="flex items-center justify-center px-6 py-4 text-sm text-white transition rounded-full outline-none focus:outline-none h-13 bg-themes-default active:bg-themes-second "
-                    >
-                        Закрыть
-                    </button>
-                </div>
-            </div>
-        </form>
-        </div>
+        {{ elForm.contactForm() }}
     </div>
 </section>

@@ -2,8 +2,8 @@
     <p class="py-5 px-9">Мы делаем</p>
 </div>
 <div class="relative container mx-auto px-5 min-h-[370px] mt-14">
-    <div class="absolute flex flex-row flex-wrap justify-between not-italic left-4 right-4">
-        <div class="relative min-w-[320px] grow w-[33%] max-w-[390px]">
+    <div class="absolute grid grid-flow-col gap-x-5">
+        <div class="relative min-w-[320px] w-[33%] max-w-[390px]">
             <div class="p-5 bg-cod-gray rounded-[20px]">
                 <div class="relative after:h-[5px] after:w-full after:rounded-[2.5px] after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet after:absolute">
                     <p class="text-lg">ВЕБ ДИЗАЙН</p>
@@ -17,7 +17,9 @@
                             <li>{{ item.name }}</li>
                         {% endfor %}
                     </ul>
-                    <button @click="open = !open" class="absolute -bottom-1 left-[40%] rounded-4xl h-12 w-12 z-[1] bg-gradient-to-b from-medium-purple-2 my-1 to-seance-2 transition-all duration-500 shadow-purp bg-white flex items-center justify-center">
+                    <button 
+                            @click="open = !open"
+                            class="hover:opacity-75 absolute -bottom-1 left-[40%] rounded-4xl h-12 w-12 z-[1] bg-gradient-to-b from-medium-purple-2 my-1 to-seance-2 transition-all duration-500 shadow-purp bg-white flex items-center justify-center">
                         <span style="background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiPg0KPHBhdGggZD0iTTE2Ljk1NTUgNS4wODYxN0wxNS4wMTQzIDMuMTQ1MDJMOC43MjQzIDkuNDM1MDFMMi40MzQzMSAzLjE0NTAyTDAuNDkzMDkzIDUuMDg2MTdMOC43MjQzIDEzLjMxNzRMMTYuOTU1NSA1LjA4NjE3WiIgZmlsbD0id2hpdGUiLz4NCjwvZz4NCjxkZWZzPg0KPGNsaXBQYXRoIGlkPSJjbGlwMCI+DQo8cmVjdCB3aWR0aD0iMTYuNDYyNCIgaGVpZ2h0PSIxNi40NjI0IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYuOTU1NSkgcm90YXRlKDkwKSIvPg0KPC9jbGlwUGF0aD4NCjwvZGVmcz4NCjwvc3ZnPg0K);" class="absolute w-full h-full transition-all ease-linear bg-center bg-no-repeat bg-1/2" :class="open ? 'rotate-180' : ''"></span>
                     </button>
                 </div>
