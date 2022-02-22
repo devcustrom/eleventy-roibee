@@ -23,9 +23,15 @@
     </label>
 {% endmacro %}
 
-{% macro inputRadio(class, type) %}
+{% macro inputRadio(class, type, textLeft) %}
     <label class="{{ class }} relative flex group">
-        <input class="sr-only peer" type="{{ type }}">
+        <input name="" class="sr-only peer" type="{{ type }}">
+        {% if textLeft=='true' %}
+            {{ caller() }}
+        {% endif %}
         <span class="w-5 h-5 block relative peer-disabled:shadow-none peer-disabled:cursor-default cursor-pointer appearance-none ring-2 duration-300 group-hover:shadow-md  transition-all peer-disabled:ring-seance peer-disabled:peer-checked:bg-electric-violet peer-checked:ring-electric-violet ring-inset peer-checked:ring-[10px] ring-white before:w-2 before:h-2 before:transition-all before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:absolute before:duration-300 before:rounded-full rounded-full"></span>
+        {% if textLeft!='true' %}
+            {{ caller() }}
+        {% endif %}
     </label>
 {% endmacro %}
