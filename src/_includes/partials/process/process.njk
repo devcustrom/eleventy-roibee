@@ -45,11 +45,9 @@
 		{% for item in process %}
 		<div
 			x-show="activeSlide === {{ loop.index }}"	
-			x-transition
-			x-transition.delay.200ms
-			x-transition:leave.duration.200ms
-			x-transition:enter-end.duration.200ms
-			class="grid h-full p-4 overflow-hidden grid-rows-1a rounded-3xl bg-mine-shaft"
+			x-transition:enter="hidden"
+			x-transition:leave="opacity-0 invisible"
+			class="grid h-full transition-all duration-300 p-4 overflow-hidden grid-rows-1a rounded-3xl bg-mine-shaft"
 		>
 			<div>
 				<h2 class="mb-2.5 text-center text-2xl uppercase">
