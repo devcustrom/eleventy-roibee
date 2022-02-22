@@ -70,36 +70,6 @@
 	    padding-bottom: 4.2vw;
 		@apply max-w-max;
     }
-    .swiper-container{
-	    @apply relative w-screen h-auto p-0 mx-auto overflow-hidden list-none;
-    }
-    .swiper-wrapper {
-		@apply relative flex justify-start h-auto flex-nowrap ;
-	    transition-property: transform;
-	    box-sizing: content-box;
-    }
-    .swiper-slide{
-	    flex-shrink: 0;
-	    @apply relative h-auto;
-	    transition-property: transform;
-    }
-    .swiper-button-next,.swiper-button-prev{
-	    position: absolute;
-	    top: 0;
-	    bottom: 0;
-	    width: 20%;
-	    cursor: pointer;
-	    z-index: 1;
-    }
-    .swiper-button-next::-moz-focus-inner,.swiper-button-prev::-moz-focus-inner {
-	    border: 0;
-    }
-    .swiper-button-next{
-	    right: 0;
-    }
-    .swiper-button-prev{
-	    left: 0;
-    }
     .swiper-scrollbar {
 	    position: absolute;
 	    top:22%;

@@ -1,23 +1,23 @@
 {% macro inputDefault(type, name, title) %}
-    <label class="grid grid-rows-1a">
+    <label class="grid gap-y-2 grid-rows-1a">
         <span class="text-xl font-medium text-silver">{{ title }}</span>
         <input
             type="{{ type }}"
             name="{{ name }}"
             autocomplete="false"
             required
-            class="w-full px-5 text-white transition-all bg-transparent outline-none appearance-none ring-1 rounded-2xl focus:outline-none h-14 hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+            class="w-full px-5 text-white transition-all bg-transparent outline-none appearance-none valid:focus:ring-green-500 invalid:focus:ring-red-600 ring-1 rounded-2xl focus:outline-none h-14 focus:ring-electric-violet hover:ring-electric-violet disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
         >
     </label>
 {% endmacro %}
 
 {% macro inputArea(type, name, title, class) %}
-    <label class="relative grid group">
+    <label class="relative grid gap-y-2 group">
         <span class="text-xl font-medium text-silver">{{ title }}</span>
         <textarea
             name="{{ name }}"
             autocomplete="false"
-            class="w-full {{ class }} px-5 text-white transition-all bg-transparent outline-none appearance-none ring-1 rounded-2xl focus:outline-none hover:ring-red-600 disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+            class="w-full {{ class }} px-5 text-white transition-all bg-transparent outline-none appearance-none ring-1 rounded-2xl focus:outline-none focus:ring-electric-violet hover:ring-electric-violet disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
             required
             ></textarea>
     </label>

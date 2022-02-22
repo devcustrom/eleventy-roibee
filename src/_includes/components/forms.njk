@@ -17,7 +17,7 @@
         "title" : "Телефон"
     },
     {
-        "type" : "mail",
+        "type" : "email",
         "name" : "entry.182812218",
         "title" : "E-mail"
     },
@@ -160,14 +160,14 @@
         <p class="mt-4 text-2xl font-medium text-center md:col-span-2">Какие виды услуг или товаров. Вы планируете продвигать в порядке приоритета?</p>
         <div class="grid gap-2 mx-auto md:col-span-2 md:grid-cols-2 max-w-max">
             {% for item in BriefradioSet %}
-                <div class="grid items-center grid-flow-col {% if loop.last %} md:col-span-2 md:mx-auto {% endif %} gap-x-2 max-w-max">
+                <div class="grid {% if loop.last %} md:col-span-2 md:mx-auto {% endif %}">
                         {% call elInput.inputRadio(
+                            class = "grid items-center grid-cols-1a {% if loop.last %} gap-x-5 {% endif %}",
                             type = "checkbox",
                             textLeft = "true"
                         ) %}
                             <span class="block text-lg transition-colors duration-300 peer-checked:text-electric-violet">{{ item.text }}</span>
                         {% endcall %}
-                        
                 </div>
             {% endfor %}
         </div>

@@ -1,13 +1,13 @@
 import Swiper from "swiper";
 
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.swiper-service', {
+	slidesPerView: 1,
 	scrollbar: {
 		el: '.swiper-scrollbar',
 		hide: true,
-	  },
-  navigation: {
-	nextEl: '.swiper-button-next',
-	prevEl: '.swiper-button-prev',
-  },preloadImages: false,
-  lazy: true
+	}
+});
+
+var swiper = new Swiper('.swiper-service2', {
+	slidesPerView: 1
 });
