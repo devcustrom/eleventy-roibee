@@ -2,39 +2,30 @@ import Swiper from "swiper";
 
 export default new class swiperService {
 	constructor() {
-		this.size = '(min-width:640px)'
+		this.size = '(min-width:768px)'
 		this.swiper = 'swiper-service'
 		this.scrollBar = 'swiper-scrollbar'
 		this.handler()
 	}
 
 	handler() {
-		const swiper = document.querySelector(`.${this.swiper}`)
+		const s = document.querySelector(`.${this.swiper}`)
 
-		if (!swiper) return;
-
+		if (!s) return;
 		const breakpoint = window.matchMedia(this.size);
+		let swiper
 
-		let swiperService;
-
-		const breakpointChecker = function() {
-		
-			if ( breakpoint.matches === true ) {
-		
-			if ( swiperService !== undefined ) swiperService.destroy( true, true );
-
-			return;
-
-			} else if ( breakpoint.matches === false ) {
-				
-			return enableSwiper();
-			
+		const breakpointChecker = () => {
+			if (breakpoint.matches) {
+				if (swiper !== undefined) swiper.destroy(true, true);
+				return;
+			} else {
+				return enableSwiper();
 			}
-		
 		};
-		
-		const enableSwiper = function() {
-			swiperService = new Swiper(`.${this.swiper}`, {
+
+		const enableSwiper = () => {
+			swiper = new Swiper(`.${this.swiper}`, {
 				slidesPerView: 1,
 				spaceBetween: 40,
 				autoplay: {
@@ -44,8 +35,25 @@ export default new class swiperService {
 				scrollbar: {
 					el: `.${this.scrollBar}`,
 					hide: true,
+				},
+				breakpoints: {
+					640: {
+						slidesPerView: 2,
+					}
 				}
 			})
 		}
+
+		try {
+			breakpoint.addEventListener("change", breakpointChecker);
+		} catch (e1) {
+			try {
+				breakpoint.addListener(breakpointChecker);
+			} catch (e2) {
+				console.error(e2);
+			}
+		}
+
+  		breakpointChecker();
 	}
 }
