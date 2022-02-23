@@ -1,55 +1,50 @@
-<section id="slide_uslug" class="pt-20 swiper-container">
+<section class="pt-20">
     <div class="relative flex items-center justify-end h-16 mt-16 rounded-r-full max-w-1/2 bg-gradient-to-r from-medium-purple to-seance">
         <span class="absolute border-2 rounded-r-full -z-10 -bottom-2 -left-1 inset-2 "></span>
         <p class="pl-5 pr-9">Услуги</p>
     </div>
-    <!-- <div class="swiper-scrollbar">
+    <div class="swiper-scrollbar">
         <div class="w-full swiper-scrollbar-drag"></div>
-    </div> -->
+    </div>
     <div class="swiper swiper-service">
         <div class="swiper-wrapper">
             {% for item in service.services %}
-                <div class="swiper-slide grid lg:max-w-[960px] md:max-w-full max-w-[310px] sm:gap-y-1 md:gap-y-5 md:grid-cols-a1 gap-x-12 mx-auto md:p-5 m-7 bg-gradient-to-b from-medium-purple-2 to-seance-2 rounded-3xl">
-                    <p class="md:hidden text-lg text-center font-bold pt-[29px] pb-[10px]">
-                        {{ item.title }}
-                    </p>
-                    <div class="w-full mx-auto">
-                        <div class="grid w-[300px] h-[220px] ">
-                            <img src="/images/image/{{ item.img }}" alt="человекозаврик">
+                <div class="swiper-slide">
+                    <div class="grid md:max-w-[800px] max-w-[310px] sm:gap-y-1 md:gap-y-5 md:grid-cols-a1 gap-x-12 mx-auto md:p-5 m-7 bg-gradient-to-b from-medium-purple-2 to-seance-2 rounded-3xl">
+                        <p class="md:hidden text-lg text-center font-bold pt-[29px] pb-[10px]">
+                            {{ item.title }}
+                        </p>
+                        <div class="w-full mx-auto">
+                            <div class="grid w-[300px] h-[220px] ">
+                                <img src="/images/image/{{ item.img }}" alt="человекозаврик">
+                            </div>
+                            <div class="relative mx-auto w-max">
+                                <div class=" relative  bg-bright-sun py-[10px] px-[16px] w-max rounded-[50px] not-italic font-semibold text-black z-[1] my-4 ">
+                                    <p>
+                                    от {{ item.price }} руб
+                                    </p>
+                                </div>
+                                <div class="h-[3px] bg-white w-[150%] absolute -left-1/4 top-1/2 z-[1]rounded-[3px]"></div>
+                            </div>
                         </div>
-                        <div class="relative mx-auto w-max">
-                            <div class=" relative  bg-bright-sun py-[10px] px-[16px] w-max rounded-[50px] not-italic font-semibold text-black z-[1] my-4 ">
-                                <p>
-                                от {{ item.price }} руб
+                        <div>
+                            <div class="hidden md:block">
+                                <p class="text-[20px] font-bold pt-[20px]">
+                                    {{ item.title }}
                                 </p>
                             </div>
-                            <div class="h-[3px] bg-white w-[150%] absolute -left-1/4 top-1/2 z-[1]rounded-[3px]"></div>
+                            <ul class="grid pt-1 pl-1 text-lg font-semibold gap-y-6">
+                                {% for subitem in item.serviceText %}
+                                    <li class="{% if loop.index === 1 %} pr-[20%] md:pr-0 md:pl-0 max-w-max lg:p-0 pl-[20%] md:text-left lg:text-left text-center {% else %} hidden md:block {% endif %}">
+                                        {{ subitem.text }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <button class="mb-4 md:mx-auto sm:mx-auto sm:w-max flex mt-10 text-black items-center justify-center py-4 px-8 rounded-[50px] self-center w-max cursor-pointer transition-shadow duration-300 ease-linear relative font-semibold tracking-[0.145em] m-auto bg-gradient-to-b from-white to-silver shadow-white active:opacity-60 active:shadow-puk/[.60] hover:shadow-puk focus:shadow-puk md:mb-0 md:ml-0" for="usluga__1">Подробнее</button>
                         </div>
-                    </div>
-                    <div>
-                        <div class="hidden md:block">
-                            <p class="text-[20px] font-bold pt-[20px]">
-                                {{ item.title }}
-                            </p>
-                        </div>
-                        <ul class="grid pt-1 pl-1 text-lg font-semibold gap-y-6">
-                            {% for subitem in item.serviceText %}
-                                <li class="{% if loop.index === 1 %} pr-[20%] md:pr-0 md:pl-0 max-w-max lg:p-0 pl-[20%] md:text-left lg:text-left text-center {% else %} hidden md:block {% endif %}">
-                                    {{ subitem.text }}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                        <button class="mb-4 md:mx-auto sm:mx-auto sm:w-max flex mt-10 text-black items-center justify-center py-4 px-8 rounded-[50px] self-center w-max cursor-pointer transition-shadow duration-300 ease-linear relative font-semibold tracking-[0.145em] m-auto bg-gradient-to-b from-white to-silver shadow-white active:opacity-60 active:shadow-puk/[.60] hover:shadow-puk focus:shadow-puk md:mb-0 md:ml-0" for="usluga__1">Подробнее</button>
                     </div>
                 </div>
             {% endfor %}
-        </div>
-    </div>
-    <div class="swiper swiper-service2">
-        <div class="swiper-wrapper">
-            <div class="mx-auto swiper-slide max-w-max">slide</div>
-            <div class="mx-auto swiper-slide max-w-max">slide</div>
-            <div class="mx-auto swiper-slide max-w-max">slide</div>
         </div>
     </div>
 </section>

@@ -615,14 +615,6 @@ input,
     @apply bg-no-repeat bg-contain;
 }
 /*PopUp All end*/
-/*Swiper*/
-.lock-swiper > .swiper-wrapper {
-	transform: none !important;
-}
-.swiper-button-next:active,.swiper-button-prev:active,.swiper-button-next:focus,.swiper-button-prev:focus {
-	@apply outline-none;
-}
-/*Swiper end*/
 /*Форма*/
 .mb-70px{
 	margin-bottom: 70px;
