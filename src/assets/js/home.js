@@ -39,25 +39,25 @@ else if (window.ActiveXObject) {
 }
 else {
 }
-if (http_request) {
-  http_request.onreadystatechange = function() {
-    if (http_request.readyState==4) {
-      if (http_request.status==200) {
-        offline=false;
-        go_online();
-      }
-      else {
-        offline=true;
-        go_offline();
-      }
-    }
-  };
-  setInterval(function() {
-    http_request.open('GET', '/offline.html', true);
-    http_request.timeout=500;
-    http_request.send('');
-  }, 10000);
-}
+// if (http_request) {
+//   http_request.onreadystatechange = function() {
+//     if (http_request.readyState==4) {
+//       if (http_request.status==200) {
+//         offline=false;
+//         go_online();
+//       }
+//       else {
+//         offline=true;
+//         go_offline();
+//       }
+//     }
+//   };
+//   setInterval(function() {
+//     http_request.open('GET', '/offline.html', true);
+//     http_request.timeout=500;
+//     http_request.send('');
+//   }, 10000);
+// }
 function go_online() {
   //grecaptcha.execute();
 }
@@ -113,7 +113,7 @@ function menu_unchk(){
       };menu_chk();}
     else {menu_unchk();}
   });
-grecaptcha.execute();
+// grecaptcha.execute();
 const anchors = document.querySelectorAll('a[href*="#"]')
 for (let anchor of anchors) {
   anchor.addEventListener('click', function (e) {
