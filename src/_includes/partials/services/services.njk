@@ -1,3 +1,5 @@
+{% import "components/buttons.njk" as elButton %}
+{% import "components/modal.njk" as elModal %}
 <section class="pt-20">
     <div class="relative flex items-center justify-end h-16 mt-16 rounded-r-full max-w-1/2 bg-gradient-to-r from-medium-purple to-seance">
         <span class="absolute border-2 rounded-r-full -z-10 -bottom-2 -left-1 inset-2 "></span>
@@ -6,8 +8,8 @@
     <div class="swiper-scrollbar">
         <div class="w-full swiper-scrollbar-drag"></div>
     </div>
-    <div class="swiper swiper-service">
-        <div class="swiper-wrapper">
+    <div class="px-5 swiper swiper-service md:p-0">
+        <div class="swiper-wrapper md:grid">
             {% for item in service.services %}
                 <div class="swiper-slide">
                     <div class="grid md:max-w-[800px] max-w-[310px] sm:gap-y-1 md:gap-y-5 md:grid-cols-a1 gap-x-12 mx-auto md:p-5 m-7 bg-gradient-to-b from-medium-purple-2 to-seance-2 rounded-3xl">
@@ -40,11 +42,24 @@
                                     </li>
                                 {% endfor %}
                             </ul>
-                            <button class="mb-4 md:mx-auto sm:mx-auto sm:w-max flex mt-10 text-black items-center justify-center py-4 px-8 rounded-[50px] self-center w-max cursor-pointer transition-shadow duration-300 ease-linear relative font-semibold tracking-[0.145em] m-auto bg-gradient-to-b from-white to-silver shadow-white active:opacity-60 active:shadow-puk/[.60] hover:shadow-puk focus:shadow-puk md:mb-0 md:ml-0" for="usluga__1">Подробнее</button>
+                            {{ elButton.buttonDefoult
+                                (
+                                    alpine = true,
+                                    alpineObjectName = "service = true",
+                                    white = true,
+                                    class = "p-3",
+                                    buttonText = "Подробнее"
+                                ) 
+                            }}
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
+    {{ elModal.modalService
+        (
+            modalName = "service"
+        ) 
+    }}
 </section>

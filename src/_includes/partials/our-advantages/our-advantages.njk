@@ -1,11 +1,33 @@
+{% set benefits = [
+        {
+            "text" : "надежно"
+        },
+
+        {
+            "text" : "выгодно"
+        },
+
+        {
+            "text" : "\"Всё понятно\""
+        },
+
+        {
+            "text" : "комфортно"
+        },
+
+        {
+            "text" : "Правда"
+        }
+    ]
+%}
 <section class="mt-20">
     <div class="container px-5 mx-auto">
         <div class="text-2xl font-bold leading-snug tracking-normal text-center text-white">
             <p>В чём наши преимущества?</p>
         </div>
-        <div class="flex flex-wrap justify-around mt-10">
-            {% for item in benefits.benefits %}
-                <div class="flex flex-col items-center text-center min-w-[145px] h-[124px]">
+        <div class="flex flex-wrap justify-between mx-auto">
+            {% for item in benefits %}
+                <div class="{% if loop.last %} col-span-2 sm:col-span-1 sm:mx-0 mx-auto {% endif %} flex flex-col items-center text-center min-w-[145px]">
                     <img class="w-28 h-28" src="/images/icons/iconadvan.svg">
                     <div class="text-base pt-[10px] w-max">
                         <p>

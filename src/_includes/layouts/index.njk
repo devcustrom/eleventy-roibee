@@ -25,17 +25,18 @@
 		<script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 		<link rel="stylesheet" href="/dist/css/style.css">
 		{# {% set css %}
-		  {% include "/src/_includes/assets/css/inline.css" %}
+			{% include "/src/_includes/assets/css/inline.css" %}
 		{% endset %}
 		<style>{{ css | cssmin | safe }}</style>
 		{% set js %}
-		  {% include "/src/_includes/assets/js/inline.js" %}
+			{% include "/src/_includes/assets/js/inline.js" %}
 		{% endset %}
 		<script>{{ js | jsmin | safe }}</script> #}
 	</head>
 	<body 
-		x-data="{brief : false}"
+		x-data="{brief : false, service : false}"
 		:class="{'overflow-hidden':brief, '':!brief}"
+		:class="{'overflow-hidden':service, '':!service}"
 	>
 		{% include "partials/header/header.njk" %}
 		<main>

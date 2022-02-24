@@ -1,5 +1,5 @@
 {% import "components/buttons.njk" as elButton %}
-{% import "components/forms.njk" as elForm %}
+{% import "components/modal.njk" as elModal %}
 {% set links = [
         {
             "linkText": "#",
@@ -33,27 +33,11 @@
                         ) 
                     }}
                 </div>
-                <div 
-                    x-show="brief"
-                    x-transition
-                    class="fixed inset-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-cod-gray"
-                    style="display: none;"
-                >
-                    <div class="container relative p-5 mx-auto">
-                        {{ elButton.buttonDefoult
-                            (
-                                alpine = true,
-                                alpineObjectName = "brief = false",
-                                class = "fixed z-10 p-3 transition-all duration-300 translate-x-1/2 -translate-y-1/2 opacity-25 top-5 group right-5 hover:opacity-100",
-                                icon = true,
-                                svgClass = "rotate-45 opacity-0 group-hover:opacity-100 group-hover:rotate-0 transition-all duration-300 w-10 h-10 text-white",
-                                svg = "close"
-                            ) 
-                        }}
-                        <h1 class="mb-5 text-3xl text-center">Заполните форму</h1>
-                        {{ elForm.briefForm() }}
-                    </div>
-                </div>
+                {{ elModal.modalform
+                    (
+                        modalName = "brief"
+                    )
+                }}
                 <div class="relative grid grid-cols-1a">
                     <div class="max-h-[525px] w-full bg-center my-auto bg-no-repeat h-full bg-contain lozad" data-background-image="/images/image/imac.png">
                     </div>

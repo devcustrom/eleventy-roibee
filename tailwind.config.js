@@ -37,7 +37,9 @@ module.exports = {
         'bright-sun' :'#FFCA42',
         'silver' : '#CCCCCC',
         'heliotrope' : '#DC56FF',
-        'mine-shaft' : '#2F2F2F'
+        'mine-shaft' : '#2F2F2F',
+        'malibu' : '#53CFFF',
+        'dodger-blue' : '#3777FF'
       },
       gridTemplateRows: {
         'aa1': 'repeat(2, auto) 1fr',
