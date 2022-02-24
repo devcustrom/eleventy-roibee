@@ -1,27 +1,27 @@
 {% import "components/buttons.njk" as elButton %}
-{% import "components/forms.njk" as elForm %}
-{% macro modalform(modalName) %}
-    <div 
-        x-show="{{ modalName }}"
-        x-transition
-        class="fixed inset-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-cod-gray"
-        style="display: none;"
-    >
+
+{% macro modal(modalName) %}
+<div
+    x-show="{{ modalName }}"
+    x-transition
+    class="fixed inset-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-cod-gray"
+    style="display: none;"
+>
     {{ elButton.buttonDefoult
         (
             alpine = true,
-            alpineObjectName = "brief = false",
+            alpineObjectName =  modalName ~ " = false, bodyLock = false",
             class = "fixed z-10 p-3 transition-all duration-300 translate-x-1/2 -translate-y-1/2 md:opacity-25 top-5 group right-5 md:hover:opacity-100",
             icon = true,
             svgClass = "md:rotate-45 md:opacity-0 md:group-hover:opacity-100 md:group-hover:rotate-0 transition-all duration-300 md:w-10 w-8 h-8 md:h-10 text-white",
-            svg = "close"
+            svg = "close",
+            white = true
         ) 
     }}
-        <div class="container relative p-5 mx-auto">
-            {{ elForm.briefForm() }}
-        </div>
-    </div>
+    {{ caller() }}
+</div>    
 {% endmacro %}
+
 
 {% set service = [
         {
@@ -59,12 +59,7 @@
 %}
 
 {% macro modalService(modalName) %}
-    <div 
-        x-show="{{ modalName }}"
-        x-transition
-        class="fixed inset-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-cod-gray"
-        style="display: none;"
-    >
+    {% call modal(modalName) %}
     {{ elButton.buttonDefoult
         (
             alpine = true,
@@ -115,5 +110,5 @@
                 {% endfor %}
             </ul>
         </div>
-    </div>
+    {% endcall %}
 {% endmacro %}

@@ -1,6 +1,7 @@
 {% import "components/buttons.njk" as elButton %}
 {% import "components/modal.njk" as elModal %}
-<section class="pt-20">
+{% import "components/forms.njk" as elForm %}
+<section x-data="{ services : false }" class="pt-20">
     <div class="relative flex items-center justify-end h-16 mt-16 rounded-r-full max-w-1/2 bg-gradient-to-r from-medium-purple to-seance">
         <span class="absolute border-2 rounded-r-full -z-10 -bottom-2 -left-1 inset-2 "></span>
         <p class="pl-5 pr-9">Услуги</p>
@@ -42,10 +43,11 @@
                                     </li>
                                 {% endfor %}
                             </ul>
+                            {# TODO: Defoult bleat, default pravilno #}
                             {{ elButton.buttonDefoult
                                 (
                                     alpine = true,
-                                    alpineObjectName = "service = true",
+                                    alpineObjectName = "bodyLock = true, services = true",
                                     white = true,
                                     class = "p-3",
                                     buttonText = "Подробнее"
@@ -57,9 +59,9 @@
             {% endfor %}
         </div>
     </div>
-    {{ elModal.modalService
-        (
-            modalName = "service"
-        ) 
-    }}
+    {% call elModal.modal("services") %}
+        <div class="container relative p-5 mx-auto">
+            {{ elForm.briefForm() }}
+        </div>
+    {% endcall %}
 </section>

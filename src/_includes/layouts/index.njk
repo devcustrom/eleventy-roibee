@@ -34,10 +34,10 @@
 		<script>{{ js | jsmin | safe }}</script> #}
 	</head>
 	<body 
-		x-data="{brief : false, service : false}"
-		:class="{'overflow-hidden':brief, '':!brief}"
-		:class="{'overflow-hidden':service, '':!service}"
+		x-data="{ bodyLock : false }"
+		:class=" bodyLock ? 'overflow-hidden' : ''"
 	>
+		<p x-text="bodyLock"></p>
 		{% include "partials/header/header.njk" %}
 		<main>
 			{{ content | safe }}
