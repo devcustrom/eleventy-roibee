@@ -11,7 +11,7 @@ const site = require('./src/_data/site.json');
 const localizedCollections = ['post'];
 
 module.exports = function(eleventyConfig) {
-
+    eleventyConfig.addWatchTarget("./src/assets/");
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(pluginArrayFilters);
     // Copy our static assets to the output folder

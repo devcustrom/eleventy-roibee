@@ -5,8 +5,8 @@
 		"build:eleventy": "npx eleventy",
 		"build:mix": "mix --production",
 		"build": "npm-run-all clean --parallel build:* --print-label",
-		"dev:eleventy": "npx eleventy --serve",
 		"dev:laravel": "mix watch",
+		"dev:eleventy": "npx eleventy --serve",
 		"dev": "npm-run-all clean --parallel dev:* --print-label",
 		"debug": "DEBUG=* npx eleventy"
 	},
