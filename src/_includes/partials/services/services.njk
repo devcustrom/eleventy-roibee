@@ -3,20 +3,20 @@
 %}
 <section x-data="{ services : false }" class="pt-20">
 	<div
-		class="relative mt-16 flex h-16 max-w-1/2 items-center justify-end rounded-r-full bg-gradient-to-r from-medium-purple to-seance"
+		class="relative flex items-center justify-end h-16 mt-16 rounded-r-full max-w-1/2 bg-gradient-to-r from-medium-purple to-seance"
 	>
 		<span
-			class="absolute inset-2 -bottom-2 -left-1 -z-10 rounded-r-full border-2"
+			class="absolute border-2 rounded-r-full inset-2 -bottom-2 -left-1 -z-10"
 		></span>
 		<p class="pl-5 pr-9">Услуги</p>
 	</div>
 
-	<div class="swiper swiper-service px-5 py-6">
+	<div class="px-5 py-6 swiper swiper-service">
 		<div
 			class="swiper-service-scrollbar relative h-2.5 w-full rounded-full md:hidden"
 		>
 			<div
-				class="swiper-scrollbar-drag h-full rounded-full bg-gradient-to-r from-seance-2 to-medium-purple-2"
+				class="h-full rounded-full swiper-scrollbar-drag bg-gradient-to-r from-seance-2 to-medium-purple-2"
 			></div>
 		</div>
 		<div class="swiper-wrapper md:grid">
@@ -30,7 +30,7 @@
 					>
 						{{ item.title }}
 					</p>
-					<div class="mx-auto w-full">
+					<div class="w-full mx-auto">
 						<div class="grid h-[220px] w-[300px]">
 							<img
 								src="/images/image/{{ item.img }}"
@@ -55,7 +55,7 @@
 							</p>
 						</div>
 						<ul
-							class="grid gap-y-6 pt-1 pl-1 text-lg font-semibold"
+							class="grid pt-1 pl-1 text-lg font-semibold gap-y-6"
 						>
 							{% for subitem in item.serviceText %}
 							<li
@@ -82,7 +82,7 @@
 					>
 						{{ item.title }}
 					</p>
-					<div class="mx-auto w-full">
+					<div class="w-full mx-auto">
 						<div class="grid h-[220px] w-[300px]">
 							<img
 								src="/images/image/{{ item.img }}"
@@ -107,7 +107,7 @@
 							</p>
 						</div>
 						<ul
-							class="grid gap-y-6 pt-1 pl-1 text-lg font-semibold"
+							class="grid pt-1 pl-1 text-lg font-semibold gap-y-6"
 						>
 							{% for subitem in item.serviceText %}
 							<li
@@ -128,6 +128,6 @@
 		</div>
 	</div>
 	{% call elModal.modal("services") %}
-	<div class="container relative mx-auto p-5">{{ elForm.briefForm() }}</div>
+	<div class="container relative p-5 mx-auto">{{ elForm.briefForm() }}</div>
 	{% endcall %}
 </section>

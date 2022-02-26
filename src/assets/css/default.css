@@ -72,16 +72,14 @@ body {
 	font-weight: normal;
 }
 .font-bold,
-.process__modal > span,
+.process__modal > span
 {
 	font-weight: bold;
 }
 .pb-8w{
 	padding-bottom: 8vw;
 }
-.pb-1w{
-	padding-bottom: 1vw;
-}
+
 .mt-5w{
 	margin-top: 5vw;
 }

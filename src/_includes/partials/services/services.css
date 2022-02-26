@@ -1,6 +1,6 @@
 .swiper-service-scrollbar {
 	&::before {
 		content: "";
-		@apply absolute inset-0 h-full w-full translate-x-1 translate-y-1 rounded-full ring-1 ring-inset ring-white;
+		@apply absolute inset-0 w-full h-full translate-x-1 translate-y-1 rounded-full ring-1 ring-inset ring-white;
 	}
 }
