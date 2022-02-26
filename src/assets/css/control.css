@@ -1,25 +1,9 @@
-#usluga__1:checked ~ .popup__usluga1,
-#usluga__2:checked ~ .popup__usluga2,
-#usluga__3:checked ~ .popup__usluga3,
-#popup__brif:checked ~ .popup__brif,
-#popup__brif:checked ~ .popup__brif > div,
-#usluga__1:checked ~ .popup__usluga1 > div,
-#usluga__2:checked ~ .popup__usluga2 > div,
-#usluga__3:checked ~ .popup__usluga3 > div{
-	@apply visible opacity-100;
-}
-#usluga__1:checked ~ .close__btn,
-#usluga__2:checked ~ .close__btn,
-#usluga__3:checked ~ .close__btn,
-#popup__brif:checked ~ .close__btn {
-	@apply top-0 right-0 opacity-100;
-}
 #menu__toggle:checked ~ .menu__btn > span {
 	transform: rotate(45deg);
 }
 #menu__toggle:checked ~ .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0);
+	top: 0;
+	transform: rotate(0);
 }
 #menu__toggle:checked ~ .menu__btn > span::after {
 	top: 0;
@@ -31,22 +15,4 @@
 }
 #menu__toggle:checked ~ .menu__area {
 	display: block;
-}
-#skill__colmn-1:checked ~ .skills__hide-text,
-#skill__colmn-2:checked ~ .skills__hide-text,
-#skill__colmn-3:checked ~ .skills__hide-text{
-	max-height: 550px;
-}
-#skill__colmn-1:checked ~ .skills__hide-text > li:first-child,
-#skill__colmn-1:checked ~ .skills__hide-text > li,
-#skill__colmn-2:checked ~ .skills__hide-text > li:first-child,
-#skill__colmn-2:checked ~ .skills__hide-text > li,
-#skill__colmn-3:checked ~ .skills__hide-text > li:first-child,
-#skill__colmn-3:checked ~ .skills__hide-text > li{
-	opacity: 1;
-}
-#skill__colmn-1:checked ~ .skills__btn > span,
-#skill__colmn-2:checked ~ .skills__btn > span,
-#skill__colmn-3:checked ~ .skills__btn > span{
-	transform: rotate(180deg);
 }
