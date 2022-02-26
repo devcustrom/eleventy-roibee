@@ -1,67 +1,133 @@
-{% import "components/buttons.njk" as elButton %}
-{% import "components/modal.njk" as elModal %}
-{% import "components/forms.njk" as elForm %}
+{% import "components/buttons.njk" as elButton %} {% import
+"components/modal.njk" as elModal %} {% import "components/forms.njk" as elForm
+%}
 <section x-data="{ services : false }" class="pt-20">
-    <div class="relative flex items-center justify-end h-16 mt-16 rounded-r-full max-w-1/2 bg-gradient-to-r from-medium-purple to-seance">
-        <span class="absolute border-2 rounded-r-full -z-10 -bottom-2 -left-1 inset-2 "></span>
-        <p class="pl-5 pr-9">Услуги</p>
-    </div>
-    <div class="swiper-scrollbar">
-        <div class="w-full swiper-scrollbar-drag"></div>
-    </div>
-    <div class="px-5 swiper swiper-service md:p-0">
-        <div class="swiper-wrapper md:grid">
-            {% for item in service.services %}
-                <div class="swiper-slide">
-                    <div class="grid md:max-w-[800px] max-w-[310px] sm:gap-y-1 md:gap-y-5 md:grid-cols-a1 gap-x-12 mx-auto md:p-5 m-7 bg-gradient-to-b from-medium-purple-2 to-seance-2 rounded-3xl">
-                        <p class="md:hidden text-lg text-center font-bold pt-[29px] pb-[10px]">
-                            {{ item.title }}
-                        </p>
-                        <div class="w-full mx-auto">
-                            <div class="grid w-[300px] h-[220px] ">
-                                <img src="/images/image/{{ item.img }}" alt="человекозаврик">
-                            </div>
-                            <div class="relative mx-auto w-max">
-                                <div class=" relative  bg-bright-sun py-[10px] px-[16px] w-max rounded-[50px] not-italic font-semibold text-black z-[1] my-4 ">
-                                    <p>
-                                    от {{ item.price }} руб
-                                    </p>
-                                </div>
-                                <div class="h-[3px] bg-white w-[150%] absolute -left-1/4 top-1/2 z-[1]rounded-[3px]"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="hidden md:block">
-                                <p class="text-[20px] font-bold pt-[20px]">
-                                    {{ item.title }}
-                                </p>
-                            </div>
-                            <ul class="grid pt-1 pl-1 text-lg font-semibold gap-y-6">
-                                {% for subitem in item.serviceText %}
-                                    <li class="{% if loop.index === 1 %} pr-[20%] md:pr-0 md:pl-0 max-w-max lg:p-0 pl-[20%] md:text-left lg:text-left text-center {% else %} hidden md:block {% endif %}">
-                                        {{ subitem.text }}
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                            {# TODO: Defoult bleat, default pravilno #}
-                            {{ elButton.buttonDefoult
-                                (
-                                    alpine = true,
-                                    alpineObjectName = "bodyLock = true, services = true",
-                                    white = true,
-                                    class = "p-3",
-                                    buttonText = "Подробнее"
-                                ) 
-                            }}
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-    {% call elModal.modal("services") %}
-        <div class="container relative p-5 mx-auto">
-            {{ elForm.briefForm() }}
-        </div>
-    {% endcall %}
+	<div
+		class="relative mt-16 flex h-16 max-w-1/2 items-center justify-end rounded-r-full bg-gradient-to-r from-medium-purple to-seance"
+	>
+		<span
+			class="absolute inset-2 -bottom-2 -left-1 -z-10 rounded-r-full border-2"
+		></span>
+		<p class="pl-5 pr-9">Услуги</p>
+	</div>
+
+	<div class="swiper swiper-service px-5 py-6">
+		<div
+			class="swiper-service-scrollbar relative h-2.5 w-full rounded-full md:hidden"
+		>
+			<div
+				class="swiper-scrollbar-drag h-full rounded-full bg-gradient-to-r from-seance-2 to-medium-purple-2"
+			></div>
+		</div>
+		<div class="swiper-wrapper md:grid">
+			{% for item in service.services %}
+			<div class="swiper-slide">
+				<div
+					class="m-7 mx-auto grid max-w-[310px] gap-x-12 rounded-3xl bg-gradient-to-b from-medium-purple-2 to-seance-2 sm:gap-y-1 md:max-w-[800px] md:grid-cols-a1 md:gap-y-5 md:p-5"
+				>
+					<p
+						class="pt-[29px] pb-[10px] text-center text-lg font-bold md:hidden"
+					>
+						{{ item.title }}
+					</p>
+					<div class="mx-auto w-full">
+						<div class="grid h-[220px] w-[300px]">
+							<img
+								src="/images/image/{{ item.img }}"
+								alt="человекозаврик"
+							/>
+						</div>
+						<div class="relative mx-auto w-max">
+							<div
+								class="relative z-[1] my-4 w-max rounded-[50px] bg-bright-sun py-[10px] px-[16px] font-semibold not-italic text-black"
+							>
+								<p>от {{ item.price }} руб</p>
+							</div>
+							<div
+								class="z-[1]rounded-[3px] absolute -left-1/4 top-1/2 h-[3px] w-[150%] bg-white"
+							></div>
+						</div>
+					</div>
+					<div>
+						<div class="hidden md:block">
+							<p class="pt-[20px] text-[20px] font-bold">
+								{{ item.title }}
+							</p>
+						</div>
+						<ul
+							class="grid gap-y-6 pt-1 pl-1 text-lg font-semibold"
+						>
+							{% for subitem in item.serviceText %}
+							<li
+								class="{% if loop.index === 1 %} {% else %} {% endif %} hidden max-w-max pr-[20%] pl-[20%] text-center md:block md:pr-0 md:pl-0 md:text-left lg:p-0 lg:text-left"
+							>
+								{{ subitem.text }}
+							</li>
+							{% endfor %}
+						</ul>
+						{# TODO: Defoult bleat, default pravilno #} {{
+						elButton.buttonDefoult ( alpine = true, alpineObjectName
+						= "bodyLock = true, services = true", white = true,
+						class = "p-3", buttonText = "Подробнее" ) }}
+					</div>
+				</div>
+			</div>
+			{% endfor %} {% for item in service.services %}
+			<div class="swiper-slide">
+				<div
+					class="m-7 mx-auto grid max-w-[310px] gap-x-12 rounded-3xl bg-gradient-to-b from-medium-purple-2 to-seance-2 sm:gap-y-1 md:max-w-[800px] md:grid-cols-a1 md:gap-y-5 md:p-5"
+				>
+					<p
+						class="pt-[29px] pb-[10px] text-center text-lg font-bold md:hidden"
+					>
+						{{ item.title }}
+					</p>
+					<div class="mx-auto w-full">
+						<div class="grid h-[220px] w-[300px]">
+							<img
+								src="/images/image/{{ item.img }}"
+								alt="человекозаврик"
+							/>
+						</div>
+						<div class="relative mx-auto w-max">
+							<div
+								class="relative z-[1] my-4 w-max rounded-[50px] bg-bright-sun py-[10px] px-[16px] font-semibold not-italic text-black"
+							>
+								<p>от {{ item.price }} руб</p>
+							</div>
+							<div
+								class="z-[1]rounded-[3px] absolute -left-1/4 top-1/2 h-[3px] w-[150%] bg-white"
+							></div>
+						</div>
+					</div>
+					<div>
+						<div class="hidden md:block">
+							<p class="pt-[20px] text-[20px] font-bold">
+								{{ item.title }}
+							</p>
+						</div>
+						<ul
+							class="grid gap-y-6 pt-1 pl-1 text-lg font-semibold"
+						>
+							{% for subitem in item.serviceText %}
+							<li
+								class="{% if loop.index === 1 %} {% else %} {% endif %} hidden max-w-max pr-[20%] pl-[20%] text-center md:block md:pr-0 md:pl-0 md:text-left lg:p-0 lg:text-left"
+							>
+								{{ subitem.text }}
+							</li>
+							{% endfor %}
+						</ul>
+						{# TODO: Defoult bleat, default pravilno #} {{
+						elButton.buttonDefoult ( alpine = true, alpineObjectName
+						= "bodyLock = true, services = true", white = true,
+						class = "p-3", buttonText = "Подробнее" ) }}
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% call elModal.modal("services") %}
+	<div class="container relative mx-auto p-5">{{ elForm.briefForm() }}</div>
+	{% endcall %}
 </section>

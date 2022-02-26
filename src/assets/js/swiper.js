@@ -1,19 +1,19 @@
-import Swiper from "swiper";
+import Swiper, { Scrollbar } from "swiper";
 
-export default new class swiperService {
+export default new (class swiperService {
 	constructor() {
-		this.size = '(min-width:768px)'
-		this.swiper = 'swiper-service'
-		this.scrollBar = 'swiper-scrollbar'
-		this.handler()
+		this.size = "(min-width:768px)";
+		this.swiper = "swiper-service";
+		this.scrollBar = "swiper-service-scrollbar";
+		this.handler();
 	}
 
 	handler() {
-		const s = document.querySelector(`.${this.swiper}`)
+		const s = document.querySelector(`.${this.swiper}`);
 
 		if (!s) return;
 		const breakpoint = window.matchMedia(this.size);
-		let swiper
+		let swiper;
 
 		const breakpointChecker = () => {
 			if (breakpoint.matches) {
@@ -26,6 +26,7 @@ export default new class swiperService {
 
 		const enableSwiper = () => {
 			swiper = new Swiper(`.${this.swiper}`, {
+				modules: [Scrollbar],
 				slidesPerView: 1,
 				spaceBetween: 40,
 				autoplay: {
@@ -34,15 +35,14 @@ export default new class swiperService {
 				},
 				scrollbar: {
 					el: `.${this.scrollBar}`,
-					hide: true,
 				},
 				breakpoints: {
 					640: {
 						slidesPerView: 2,
-					}
-				}
-			})
-		}
+					},
+				},
+			});
+		};
 
 		try {
 			breakpoint.addEventListener("change", breakpointChecker);
@@ -54,6 +54,6 @@ export default new class swiperService {
 			}
 		}
 
-  		breakpointChecker();
+		breakpointChecker();
 	}
-}
+})();
