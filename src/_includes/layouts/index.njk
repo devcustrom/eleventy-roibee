@@ -37,7 +37,6 @@
 		x-data="{ bodyLock : false }"
 		:class=" bodyLock ? 'overflow-hidden' : ''"
 	>
-		<p x-text="bodyLock"></p>
 		{% include "partials/header/header.njk" %}
 		<main>
 			{{ content | safe }}
