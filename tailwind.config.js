@@ -59,7 +59,7 @@ module.exports = {
       boxShadow: {
         'purp': '0px 0px 3px rgb(120, 20, 147)',
         'fiol': '0px 0px 6px rgb(107, 104, 224)',
-        'puk': '0px 0px 13px rgb(0, 0, 0)',
+        'black': '0px 0px 13px rgb(0, 0, 0)',
       },
     },
   },
