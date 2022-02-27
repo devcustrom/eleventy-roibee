@@ -817,7 +817,7 @@ p > a {
 }
 .img__popup-uslug {
 	padding-top: 73%;
-	background-image: url(/images/image/rocket.png);
+	background-image: url(/assets/images/rocket.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }

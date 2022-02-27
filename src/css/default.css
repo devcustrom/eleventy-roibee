@@ -23,7 +23,7 @@ body {
 	letter-spacing: 0.145em;
 	background-position-x: 45vw;
 	background-size: 55vw;
-	background-image: url(/images/icons/sota.svg);
+	background-image: url(/assets/icons/sota.svg);
 	@apply w-full max-w-full overflow-x-hidden text-white;
 }
 
