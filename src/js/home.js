@@ -9,12 +9,6 @@ var addscript = document.createElement('script');
 addscript.setAttribute('src','/js/swiper.js');
 addscript.setAttribute('src','https://www.google.com/recaptcha/api.js');
 document.body.appendChild(addscript);
-window.onscroll = function() {scrollFunction()};
-var h = 50;//window.innerHeight/4;
-function scrollFunction() {
-if (document.body.scrollTop > h || document.documentElement.scrollTop > h) {gethdr.classList.add("activeheader");}
-else {gethdr.classList.remove("activeheader");}
-};
 window.onload = function(){
 window.replainSettings = { id: '81269575-79a9-4b89-b277-eb8fd4a93fa5' };
 setTimeout(() => {(function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
@@ -102,17 +96,6 @@ function menu_unchk(){
   getbody.style.paddingRight = '0px';
 
 }
-  document.querySelector('#menu__toggle').addEventListener('change', function () {
-    if ( this.checked ) {history.pushState(null, null);
-      window.onpopstate = function(event) {
-          if (document.querySelector('#menu__toggle').checked = true) {
-            menu_unchk();
-            document.querySelector('#menu__toggle').checked = false;
-          }
-          window.onpopstate = null;
-      };menu_chk();}
-    else {menu_unchk();}
-  });
 // grecaptcha.execute();
 const anchors = document.querySelectorAll('a[href*="#"]')
 for (let anchor of anchors) {

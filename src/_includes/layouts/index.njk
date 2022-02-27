@@ -35,8 +35,14 @@
 	</head>
 	<body
 		class="font-body"
-		x-data="{ bodyLock : false }"
+		x-data="{
+			bodyLock : false,
+			scrollWidth: 0
+		}"
 		:class=" bodyLock ? 'overflow-hidden' : ''"
+		:style="bodyLock ? 'padding-right:' + scrollWidth : ''"
+		x-ref="body"
+		x-init="scrollWidth = window.innerWidth - $refs.body.offsetWidth + 'px'"
 	>
 		{% include "partials/header/header.njk" %}
 		<main>

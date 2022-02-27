@@ -1,32 +1,74 @@
-<header class="header inactiveheader" id="header">
-    <div class="container px-5 mx-auto">
-        <div class="flex items-center h-full flex-nowrap" id="wrapper__header">
+{% set menuList = [
+    {
+        link: '#',
+        title: 'Главная'
+    },
+    {
+        link: '#',
+        title: 'Услуги'
+    },
+    {
+        link: '#',
+        title: 'О нас'
+    },
+    {
+        link: '#form',
+        title: 'Контакты'
+    }
+] %}
+
+<header
+    x-data="{
+        noTop: false,
+        h: 80,
+        openMenu: false
+    }"
+    x-init="
+        window.addEventListener('scroll', function() {
+            noTop = (document.body.scrollTop > h || document.documentElement.scrollTop > h);
+        })
+    "
+    class="header sticky top-0 z-[100] transition-all h-20"
+    :class="noTop ? 'bg-cod-gray' : 'bg-transparent'"
+    id="header"
+>
+    <div class="container px-5 mx-auto h-full">
+        <div class="flex items-center justify-between h-full">
             <div class="relative header__logo">
-                <img style="height: 30px;" class="logo__img lozad" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/assets/icons/9.svg" alt="Logo">
-                <a href="/" class="header__logo-link before:absolute before:inset-0"></a>
+                <a href="/">
+                    <img class="max-h-[70px] lozad" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/assets/icons/9.svg" alt="Logo">
+                </a>
             </div>
-            <nav class="flex justify-end header__nav hamburger-menu">
-                <input id="menu__toggle" class="hidden" type="checkbox" />
-                <label class="menu__btn hide__btn" for="menu__toggle">
-                <span></span>
-                </label>
-                <label class="menu__area" for="menu__toggle"></label>
-                <ul class="flex flex-nowrap menu__box">
-                    <li class="header__item">
-                        <a href="#!" class="list__link menu__item">Главная</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="#!" class="list__link menu__item">Пакеты</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="#!" class="list__link menu__item">О нас</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="#form" class="list__link menu__item">Связь</a>
-                    </li>
+            <nav class="flex justify-end">
+                <button
+                    class="header__burger py-0.5 flex flex-col justify-between md:hidden relative h-6 w-6 z-10"
+                    :class="openMenu ? 'before:rotate-45 before:translate-y-px after:-rotate-45 after:-translate-y-px' : ''"
+                    @click="openMenu = !openMenu, bodyLock = !bodyLock"
+                >
+                    <span
+                        :class="openMenu ? 'opacity-0 rotate-45' : ''"
+                    ></span>
+                    <span
+                        class="sr-only"
+                        x-text="!openMenu ? 'Открыть меню' : 'Закрыть меню'"
+                    >Открыть меню</span>
+                </button>
+                <div
+                    class="menu__area"
+                    @click=""
+                >
+                </div>
+                <ul
+                    class="fixed bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 inset-y-0 overflow-y-auto right-0 h-full px-4 py-20 transition-all opacity-0 invisible md:opacity-100 md:visible w-3/4 max-w-xs"
+                    :class="{ 'opacity-0 invisible' : !openMenu }"
+                >
+                    {% for item in menuList %}
+                        <li class="py-2">
+                            <a href="{{ item.link }}" class="text-lg text-white hover:opacity-75 focus-visible:opacity-75 active:opacity-50">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </nav>
         </div>
     </div>
-
 </header>
