@@ -1,0 +1,14 @@
+.header__burger span,
+.header__burger::before,
+.header__burger::after {
+	@apply block w-full h-0.5 bg-white transition-all;
+}
+
+.header__burger::before {
+	content: "";
+	@apply origin-top-left
+}
+.header__burger::after {
+	content: "";
+	@apply origin-bottom-left;
+}
