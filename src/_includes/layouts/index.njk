@@ -12,7 +12,7 @@
 	{% set mapLink = envs.contacts.mapLink %}
 {% endif %}
 <!doctype html>
-<html lang="{{ locale|default('ru') }}">
+<html class="scroll-smooth" lang="{{ locale|default('ru') }}">
 	<head>
 		<meta charset="utf-8">
 		<link rel="dns-prefetch" href="https://identity.netlify.com">
@@ -21,7 +21,7 @@
 		<title>{{ envs.site.name }}</title>
 		<meta name="description" content="{{ description }}">
 		<meta name="keywords" content="{{ keywords }}">
-		<link rel="icon" type="image/png" href="{{ envs.site.faviconUrl | url }}">
+		<link rel="icon" type="image/svg+xml" href="{{ envs.site.faviconUrl | url }}">
 		<script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 		<link rel="stylesheet" href="/dist/css/style.css">
 		{# {% set css %}
