@@ -47,12 +47,14 @@ module.exports = {
         'aa1': 'repeat(2, auto) 1fr',
         'a1': 'auto 1fr',
         '1a': '1fr auto',
+        '1a1': '1fr auto 1fr',
         '1aa': '1fr repeat(2, auto)',
       },
       gridTemplateColumns: {
         'aa1': 'repeat(2, auto) 1fr',
         'a1': 'auto 1fr',
         '1a': '1fr auto',
+        '1a1': '1fr auto 1fr',
         '1aa': '1fr repeat(2, auto)',
       },
       textShadow: {
