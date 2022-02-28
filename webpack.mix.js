@@ -2,11 +2,11 @@ const path = require('path');
 const mix = require('laravel-mix');
 
 const arJsPage = [
-    './src/assets/js/app.js',
+    './src/js/app.js',
 ];
 
 const arCssPage = [
-    './src/assets/css/style.css',
+    './src/css/style.css',
 ];
 
 mix.webpackConfig({

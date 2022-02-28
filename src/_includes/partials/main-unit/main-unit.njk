@@ -39,7 +39,7 @@
                     )
                 }} #}
                 <div class="relative grid grid-cols-1a">
-                    <div class="max-h-[525px] w-full bg-center my-auto bg-no-repeat h-full bg-contain lozad" data-background-image="/images/image/imac.png">
+                    <div class="max-h-[525px] w-full bg-center my-auto bg-no-repeat h-full bg-contain lozad" data-background-image="/assets/images/imac.png">
                     </div>
                     <div class="my-auto">
                         <span class="absolute w-1.5 bg-white top-3 rounded-b-md h-[200px] right-4"></span>
@@ -48,7 +48,7 @@
                             {% for item in links %}
                                 <button class="relative transition-all duration-300 hover:opacity-75">
                                     <svg class="w-10 h-10 text-white">
-                                        <use xlink:href="/images/icons/all-icon.svg#{{ item.linkIcon }}"></use>
+                                        <use xlink:href="/assets/icons/all-icon.svg#{{ item.linkIcon }}"></use>
                                     </svg>
                                     <a href="{{ item.linkText }}" rel="nofollow" class="absolute inset-0"></a>
                                 </button>

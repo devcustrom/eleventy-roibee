@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ['./src/**/*.{htm,md,njk}'],
   theme: {
@@ -9,7 +11,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        body: ['body'],
+        body: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       letterSpacing: {
         normal:'0.145em',
