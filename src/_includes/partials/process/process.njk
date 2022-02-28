@@ -1,3 +1,4 @@
+{% import "components/buttons.njk" as elButton %}
 {% set process = [ 
 		{ 
 			"title": "Заполнение брифа", 
@@ -21,60 +22,76 @@
 		}
 	] 
 %}
-<section>
+<section 
+	x-data="{ activeSlide: 1 }"
+>
 	<!-- стили бывшего yarlik -->
 	<div
 		class="relative mt-16 ml-auto flex max-w-1/2 items-center justify-start rounded-l-[70px] bg-gradient-to-r from-seance-2 to-medium-purple-2 before:absolute before:top-2 before:left-2 before:right-0 before:z-[-1] before:h-16 before:rounded-l-[70px] before:rounded-r-[0] before:ring-1 before:ring-white"
 	>
 		<p class="py-5 px-9">Процесс</p>
 	</div>
-	<div
-		x-data="{ activeSlide: 1 }"
-		class="container relative grid px-5 mx-auto mt-10 grid-cols-[380px_minmax(auto,_1fr)] gap-x-16"
-	>
-		<ul class="grid text-white gap-y-8">
-			{% for item in process %}
-			<li
-				:class="activeSlide === {{ loop.index }} ? 'translate-x-5' : 'opacity-60'"
-				class="flex items-center p-4 transition-all duration-300 rounded-full bg-gradient-to-r from-heliotrope to-electric-violet-2"
+	<div class="container px-5 mx-auto">
+		<div class=" relative w-full h-2.5 mx-auto ring-1 ring-white ring-inset mt-10 rounded-full lg:hidden">
+			<div
+				class="h-full transition-all duration-300 -translate-x-1 -translate-y-1 rounded-full bg-gradient-to-r from-seance-2 to-medium-purple-2"
+				:style="true ? 'width: calc((' + activeSlide / {{ process.length }} + ') * 100%);' : ''"
 			>
-				{{ loop.index }}. {{ item.title }}
-			</li>
-			{% endfor %}
-		</ul>
-		{% for item in process %}
-		<div
-			x-show="activeSlide === {{ loop.index }}"	
-			x-transition:enter="hidden"
-			x-transition:leave="opacity-0 invisible"
-			class="grid h-full transition-all duration-300 p-4 overflow-hidden grid-rows-1a rounded-3xl bg-mine-shaft"
-		>
-			<div>
-				<h2 class="mb-2.5 text-center text-2xl uppercase">
-					{{ item.title }}
-				</h2>
-				<p class="px-10">{{ item.text }}</p>
-			</div>
-			<div class="flex justify-between px-10">
-				{% if not loop.first %}
-				<button
-					@click="activeSlide = {{ loop.index - 1 }}"
-					class="items-center justify-center px-8 py-4 font-semibold transition-all duration-300 rounded-full max-w-max ring-2 ring-white hover:shadow-puk focus:shadow-puk active:opacity-60"
-				>
-					<span>Назад</span>
-				</button>
-				{% endif %}
-				
-				{% if not loop.last %}
-				<button
-					@click="activeSlide = {{ loop.index + 1 }}"
-					class="flex items-center justify-center px-8 py-4 ml-auto font-semibold text-black transition-all duration-300 rounded-full max-w-max bg-gradient-to-b from-white to-silver hover:shadow-puk focus:shadow-puk active:opacity-60"
-				>
-					<span>Вперед</span>
-				</button>
-				{% endif %}
 			</div>
 		</div>
-		{% endfor %}
+		<div
+			class="relative lg:grid mx-auto mt-5 lg:mt-10 lg:grid-cols-[380px_minmax(auto,_1fr)] gap-x-16"
+		>
+			<ul class="hidden text-white lg:grid gap-y-8">
+				{% for item in process %}
+				<li
+					:class="activeSlide === {{ loop.index }} ? 'translate-x-5' : 'opacity-60'"
+					class="flex items-center p-4 transition-all duration-300 rounded-full bg-gradient-to-r from-heliotrope to-electric-violet-2"
+				>
+					{{ loop.index }}. {{ item.title }}
+				</li>
+				{% endfor %}
+			</ul>
+			{% for item in process %}
+			<div
+				x-show="activeSlide === {{ loop.index }}"	
+				x-transition:enter="hidden"
+				x-transition:leave="opacity-0 invisible"
+				class="grid min-h-[300px] lg:h-full p-4 overflow-hidden transition-all duration-300 grid-rows-1a rounded-3xl bg-mine-shaft"
+			>
+				<div>
+					<h2 class="mb-2.5 text-center text-xl sm:text-2xl uppercase">
+						{{ item.title }}
+					</h2>
+					<p class="sm:px-10">{{ item.text }}</p>
+				</div>
+				<div class="flex justify-between mt-5 sm:mt-0 sm:px-10">
+					{% if not loop.first %}
+						{{ elButton.button 
+							( 
+								alpine = true, 
+								action = "activeSlide = " ~ loop.index ~ "- 1",
+								class = "px-4 py-2 mr-auto sm:px-8 sm:py-4",
+								black = true,
+								buttonText = "Назад" 
+							)
+						}}
+					{% endif %}
+					
+					{% if not loop.last %}
+						{{ elButton.button 
+							( 
+								alpine = true, 
+								action = "activeSlide = " ~ loop.index ~ "+ 1",
+								class = "px-4 py-2 ml-auto sm:px-8 sm:py-4",
+								white = true,
+								buttonText = "Вперед" 
+							)
+						}}
+					{% endif %}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
 	</div>
 </section>

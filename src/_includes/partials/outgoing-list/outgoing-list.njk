@@ -3,23 +3,23 @@
 >
 	<p class="py-5 px-9">Мы делаем</p>
 </div>
-<div class="container mx-auto mt-14 lg:min-h-[280px]">
+<div class="container relative mx-auto mt-14 lg:min-h-[280px]">
 	<div
-		class="z-10 mx-auto grid max-w-max gap-x-5 sm:grid-cols-2 lg:absolute lg:grid-cols-3"
+		class="z-10 grid w-full mx-auto gap-x-5 justify-items-center sm:grid-cols-2 lg:top-0 lg:left-1/2 lg:-translate-x-1/2 max-w-max lg:absolute lg:grid-cols-3"
 	>
 		{% for item in design.design %}
 		<div
-			class="{% if loop.index === 3 %} {% endif %} relative w-[33%] min-w-[320px] max-w-[390px] sm:col-span-2 sm:mx-auto lg:col-auto lg:mx-0"
+			class="sm:odd:last:col-span-2 lg:odd:last:col-auto relative w-1/3 min-w-[320px] max-w-[390px] "
 		>
 			<div class="rounded-[20px] bg-cod-gray p-5">
 				<div
-					class="relative after:absolute after:h-1 after:w-full after:rounded-[2.5px] after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet"
+					class="relative after:absolute after:h-1 after:w-full after:rounded-full after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet"
 				>
 					<p class="text-lg">{{ item.name }}</p>
 				</div>
 				<div
 					x-data="{ open: false }"
-					class="relative bg-transparent bg-opacity-100 pt-6 font-medium tracking-normal after:absolute after:bottom-6 after:h-1 after:w-full after:translate-y-full after:rounded-sm after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet"
+					class="relative pt-6 font-medium tracking-normal bg-transparent bg-opacity-100 after:absolute after:bottom-6 after:h-1 after:w-full after:translate-y-full after:rounded-sm after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet"
 				>
 					<ul
 						class="relative grid gap-6 overflow-hidden transition-all duration-300 before:absolute before:bottom-0 before:h-10 before:w-full before:bg-gradient-to-t"
@@ -37,7 +37,7 @@
 							style="
 								background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiPg0KPHBhdGggZD0iTTE2Ljk1NTUgNS4wODYxN0wxNS4wMTQzIDMuMTQ1MDJMOC43MjQzIDkuNDM1MDFMMi40MzQzMSAzLjE0NTAyTDAuNDkzMDkzIDUuMDg2MTdMOC43MjQzIDEzLjMxNzRMMTYuOTU1NSA1LjA4NjE3WiIgZmlsbD0id2hpdGUiLz4NCjwvZz4NCjxkZWZzPg0KPGNsaXBQYXRoIGlkPSJjbGlwMCI+DQo8cmVjdCB3aWR0aD0iMTYuNDYyNCIgaGVpZ2h0PSIxNi40NjI0IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYuOTU1NSkgcm90YXRlKDkwKSIvPg0KPC9jbGlwUGF0aD4NCjwvZGVmcz4NCjwvc3ZnPg0K);
 							"
-							class="absolute h-full w-full bg-1/2 bg-center bg-no-repeat transition-all ease-linear"
+							class="absolute w-full h-full transition-all ease-linear bg-center bg-no-repeat bg-1/2"
 							:class="open ? 'rotate-180' : ''"
 						></span>
 					</button>
