@@ -1,5 +1,5 @@
-{% macro inputDefault(type, name, title) %}
-    <label class="grid gap-y-2 grid-rows-1a">
+{% macro inputDefault(type, name, title, class) %}
+    <label class="grid {{ class }} gap-y-2 grid-rows-1a">
         <span class="text-xl font-medium text-silver">{{ title }}</span>
         <input
             type="{{ type }}"
@@ -23,9 +23,9 @@
     </label>
 {% endmacro %}
 
-{% macro inputRadio(class, type, textLeft) %}
+{% macro inputRadio(type, name, textLeft, class) %}
     <label class="{{ class }} relative flex group">
-        <input name="" class="sr-only peer" type="{{ type }}">
+        <input name="{{ name }}" class="sr-only peer" type="{{ type }}">
         {% if textLeft=='true' %}
             {{ caller() }}
         {% endif %}

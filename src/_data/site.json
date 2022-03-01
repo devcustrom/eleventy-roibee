@@ -1,7 +1,6 @@
 {
     "name": "Roibee",
-    "logoUrl": "favicon.ico",
-    "faviconUrl": "favicon.ico",
+    "faviconUrl": "/assets/icons/favicon.svg",
     "department": "Donetsk",
     "wmid": "00000",
     "city": "Донецк",

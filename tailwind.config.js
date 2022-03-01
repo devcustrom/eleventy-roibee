@@ -47,12 +47,14 @@ module.exports = {
         'aa1': 'repeat(2, auto) 1fr',
         'a1': 'auto 1fr',
         '1a': '1fr auto',
+        '1a1': '1fr auto 1fr',
         '1aa': '1fr repeat(2, auto)',
       },
       gridTemplateColumns: {
         'aa1': 'repeat(2, auto) 1fr',
         'a1': 'auto 1fr',
         '1a': '1fr auto',
+        '1a1': '1fr auto 1fr',
         '1aa': '1fr repeat(2, auto)',
       },
       textShadow: {
@@ -61,7 +63,7 @@ module.exports = {
       boxShadow: {
         'purp': '0px 0px 3px rgb(120, 20, 147)',
         'fiol': '0px 0px 6px rgb(107, 104, 224)',
-        'puk': '0px 0px 13px rgb(0, 0, 0)',
+        'black': '0px 0px 13px rgb(0, 0, 0)',
       },
     },
   },

@@ -32,7 +32,7 @@
     :class="noTop ? 'bg-cod-gray' : 'bg-transparent'"
     id="header"
 >
-    <div class="container px-5 mx-auto h-full">
+    <div class="container h-full px-5 mx-auto">
         <div class="flex items-center justify-between h-full">
             <div class="relative header__logo">
                 <a href="/">
@@ -59,7 +59,7 @@
                 >
                 </div>
                 <ul
-                    class="fixed bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 inset-y-0 overflow-y-auto right-0 h-full px-4 py-20 transition-all opacity-0 invisible md:opacity-100 md:visible w-3/4 max-w-xs"
+                    class="fixed inset-y-0 right-0 invisible w-3/4 h-full max-w-xs px-4 py-20 overflow-y-auto transition-all opacity-0 md:py-0 md:pr-8 bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 md:opacity-100 md:visible"
                     :class="{ 'opacity-0 invisible' : !openMenu }"
                 >
                     {% for item in menuList %}

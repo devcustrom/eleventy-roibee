@@ -1,0 +1,40 @@
+<div class="container p-5 mx-auto">
+    <p class="text-3xl font-extrabold text-center text-transparent uppercase bg-clip-text bg-gradient-to-r from-malibu to-dodger-blue">Дизайн сайтов</p>
+    <div class="bg-gradient-to-r from-malibu to-dodger-blue h-0.5 rounded-sm mt-4"></div>
+    <div class="w-full mt-10">
+        <p class="text-2xl font-bold text-center text-white">Наши услуги</p>
+        <div class="grid mt-10 gap-y-10 lg:grid-cols-2">
+            <img src="/assets/images/rocket.png">
+            <div class="mx-auto lg:mx-0">
+                <ul class="flex flex-col justify-between h-full">
+                    {% for item in serviceList %}
+                        <li class="text-lg font-medium text-white">✔️{{ item.text }}</li>
+                    {% endfor %}
+                </ul>
+                {{ elButton.button
+                    (
+                        alpine = false,
+                        white = true,
+                        class = "p-3 hover:shadow-md hover:shadow-white",
+                        buttonText = "Заказать дизайн"
+                    ) 
+                }}
+            </div>
+        </div>
+    </div>
+</div>
+<div
+    class="relative mt-32 ml-auto flex max-w-1/2 items-center justify-start rounded-l-[70px] bg-gradient-to-r from-seance-2 to-medium-purple-2 before:absolute before:top-2 before:left-2 before:right-0 before:z-[-1] before:h-16 before:rounded-l-[70px] before:rounded-r-[0] before:ring-1 before:ring-white"
+>
+    <p class="py-5 px-9">Процесс</p>
+</div>
+<div class="container p-5 mx-auto mt-10">
+    <ul class="grid gap-5 mx-auto max-w-max lg:grid-cols-2 xl:grid-cols-3">
+        {% for item in process %}
+            <li class="sm:p-6 max-w-[400px] {% if loop.last %} md:col-span-2 xl:col-span-1 xl:mx-0 md:mx-auto {% endif %} text-white">
+                <p class="text-xl font-bold uppercase sm:text-3xl">{{ loop.index }}. {{ item.title }}</p>
+                <span class="block text-lg sm:pt-6 sm:pl-6">{{ item.text }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

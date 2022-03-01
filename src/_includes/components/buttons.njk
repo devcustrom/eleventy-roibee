@@ -1,20 +1,30 @@
-{% macro buttonDefoult(alpine, alpineObjectName, white, class, icon, svgClass, svg, buttonText) %}
+{% macro button(alpine, action, white, black, class, icon, iconLeft, iconSize, iconClass, buttonText) %}
+    
     <button
         {% if alpine == true %}
-            @click="{{ alpineObjectName }}"
+            @click="{{ action }}"
         {% endif %}
-        {% if white == true %}
-            class="{{ class }} mb-4 md:mx-auto sm:mx-auto sm:w-max flex mt-10 text-black items-center justify-center py-4 px-8 rounded-[50px] self-center w-max cursor-pointer transition-shadow duration-300 ease-linear relative font-semibold tracking-[0.145em] m-auto bg-gradient-to-b from-white to-silver shadow-white active:opacity-60 active:shadow-puk/[.60] hover:shadow-puk focus:shadow-puk md:mb-0 md:ml-0"
-        {% endif %}
-        class="{{ class }} flex items-center justify-center max-w-max text-lg font-bold text-white transition-all rounded-full outline-none bg-gradient-to-t from-seance-2 to-medium-purple-2 focus:outline-none disabled:bg-gray-500 shadow-medium-purple shadow-purp hover:shadow-fiol hover:shadow-medium-purple"
+            class="{{ class }} flex text-lg font-semibold rounded-full outline-none items-center justify-center p-4 max-w-max transition-all duration-300 ease-linear active:opacity-60 
+            {% if white == true %} 
+                bg-gradient-to-b active:shadow-black hover:shadow-black focus-visible:shadow-black from-white to-silver shadow-white text-black
+            {% elif black == true %}
+                ring-2 ring-white hover:shadow-puk focus-visible:shadow-puk
+            {% else %} 
+                text-white bg-gradient-to-t from-seance-2 to-medium-purple-2 shadow-medium-purple shadow-purp hover:shadow-fiol 
+            {% endif %}"
         >
-        
-        {% if icon == true %}
-            <svg class="{{ svgClass }}">
-                <use xlink:href="/assets/icons/all-icon.svg#{{ svg }}"></use>
-            </svg> 
-        {% else %}
+        {% if iconLeft==true and icon %}
+            <svg class="{{ iconSize|default('w-6 h-6') }} fill-current {{ iconClass }}">
+                <use xlink:href="/assets/icons/all-icon.svg#{{ icon }}"></use>
+            </svg>
+        {% endif %}
+        <span class="px-2 empty:hidden">
             {{ buttonText }}
+        </span>
+        {% if iconLeft!=true and icon %}
+            <svg class="{{ iconSize|default('w-6 h-6') }} fill-current {{ iconClass }}">
+                <use xlink:href="/assets/icons/all-icon.svg#{{ icon }}"></use>
+            </svg>
         {% endif %}
     </button>
 {% endmacro %}
