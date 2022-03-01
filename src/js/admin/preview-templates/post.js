@@ -1,5 +1,5 @@
-import htm from "https://unpkg.com/htm?module";
-import format from "https://unpkg.com/date-fns@2.7.0/esm/format/index.js?module";
+import htm from "htm";
+import { format } from "date-fns";
 
 const html = htm.bind(h);
 
