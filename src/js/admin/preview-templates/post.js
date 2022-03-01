@@ -9,8 +9,8 @@ const Post = createClass({
     const entry = this.props.entry;
 
     return html`
-      <main>
-        <article>
+      <main class="px-5">
+        <article class="prose">
           <h1>${entry.getIn(["data", "title"], null)}</h1>
           <p>
             <small>
@@ -45,4 +45,50 @@ const Post = createClass({
   }
 });
 
-export default Post;
+const blog = {
+  "name": "blog",
+  "label": "Блог",
+  "folder": "src/posts",
+  "create": true,
+  "slug": "{{slug}}",
+  "fields": [
+    {
+      "label": "Название",
+      "name": "title",
+      "widget": "string"
+    },
+    {
+      "label": "Дата публикации",
+      "name": "date",
+      "widget": "datetime"
+    },
+    {
+      "label": "Автор",
+      "name": "author",
+      "widget": "string",
+      "default": "Anonymous"
+    },
+    {
+      "label": "Краткое описание",
+      "name": "summary",
+      "widget": "text"
+    },
+    {
+      "label": "Теги",
+      "name": "tags",
+      "widget": "list",
+      "default": [
+        "post"
+      ]
+    },
+    {
+      "label": "Статья",
+      "name": "body",
+      "widget": "markdown"
+    }
+  ]
+}
+
+
+export default Post
+export { blog }
