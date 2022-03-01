@@ -3,6 +3,7 @@ const mix = require('laravel-mix');
 
 const arJsPage = [
     './src/js/app.js',
+    './src/js/admin/index.js'
 ];
 
 const arCssPage = [
