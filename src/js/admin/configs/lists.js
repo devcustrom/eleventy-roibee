@@ -3,8 +3,8 @@ const lists = {
 	"name": 'lists',
 	"files": [
 		{
-			"name": "wedo",
-			"label": "Мы делаем",
+			"name": "index",
+			"label": "Index",
 			"file": "src/_data/index.json",
 			"widget" : "list",
 			"fields": [
@@ -36,15 +36,7 @@ const lists = {
 							]
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "process",
-			"label": "Как делаем",
-			"file": "src/_data/index.json",
-			"widget" : "list",
-			"fields": [
+				},
 				{
 					"name": "process",
 					"label": "Как делаем",
