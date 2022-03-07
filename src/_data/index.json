@@ -157,5 +157,28 @@
                 }
             ]
         }
-    ]
+    ],
+
+    "process": [ 
+		{ 
+			"title": "Заполнение брифа", 
+			"text": "Lorem ipsum, dolor <br> sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+		}, 
+		{ 
+			"title": "Изучение заявки", 
+			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+		},
+		{ 
+			"title": "Обсуждение деталей", 
+			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+		}, 
+		{ 
+			"title": "Оформление договора", 
+			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+		},
+		{ 
+			"title": "Начало сотрудничества", 
+			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+		}
+	] 
 }

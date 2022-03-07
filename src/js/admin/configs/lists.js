@@ -38,6 +38,31 @@ const lists = {
 					]
 				}
 			]
+		},
+		{
+			"name": "process",
+			"label": "Как делаем",
+			"file": "src/_data/index.json",
+			"widget" : "list",
+			"fields": [
+				{
+					"name": "process",
+					"label": "Как делаем",
+					"widget" : "list",
+					"fields": [
+						{
+							"label": "Название",
+							"name": "title",
+							"widget": "string"
+						},
+						{
+							"name": "text",
+							"label": "Текст",
+							"widget": "markdown",
+						}
+					]
+				}
+			]
 		}
 	]
 }

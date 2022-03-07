@@ -1,27 +1,4 @@
-{% import "components/buttons.njk" as elButton %}
-{% set process = [ 
-		{ 
-			"title": "Заполнение брифа", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		}, 
-		{ 
-			"title": "Изучение заявки", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		},
-		{ 
-			"title": "Обсуждение деталей", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		}, 
-		{ 
-			"title": "Оформление договора", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		},
-		{ 
-			"title": "Начало сотрудничества", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		}
-	] 
-%}
+{% from "components/buttons.njk" import button %}
 <section 
 	x-data="{
 		activeSlide: 1,
@@ -56,7 +33,7 @@
 			class="relative lg:grid mx-auto mt-5 lg:mt-10 lg:grid-cols-[380px_minmax(auto,_1fr)] gap-x-16"
 		>
 			<ul class="hidden text-white lg:grid gap-y-8">
-				{% for item in process %}
+				{% for item in index.process %}
 				<li
 					:class="activeSlide === {{ loop.index }} ? 'translate-x-5' : 'opacity-60'"
 					class="relative flex items-center p-4 transition-all duration-300 rounded-full bg-gradient-to-r from-heliotrope to-electric-violet-2"
@@ -70,7 +47,7 @@
 				</li>
 				{% endfor %}
 			</ul>
-			{% for item in process %}
+			{% for item in index.process %}
 			<div
 				x-cloak
 				x-show="activeSlide === {{ loop.index }}"	
@@ -82,11 +59,11 @@
 					<h2 class="mb-2.5 text-center text-xl sm:text-2xl uppercase">
 						{{ item.title }}
 					</h2>
-					<p class="sm:px-10">{{ item.text }}</p>
+					<p class="sm:px-10">{{ item.text|safe }}</p>
 				</div>
 				<div class="flex justify-between mt-5 sm:mt-0 sm:px-10">
 					{% if not loop.first %}
-						{{ elButton.button 
+						{{ button 
 							( 
 								alpine = true, 
 								action = "activeSlide = " ~ loop.index ~ "- 1",
@@ -98,7 +75,7 @@
 					{% endif %}
 					
 					{% if not loop.last %}
-						{{ elButton.button 
+						{{ button 
 							( 
 								alpine = true, 
 								action = "activeSlide = " ~ loop.index ~ "+ 1",
