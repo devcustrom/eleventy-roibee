@@ -1,6 +1,6 @@
-{% import "components/buttons.njk" as elButton %}
-{% import "components/modal.njk" as elModal %}
-{% import "partials/modals/form-brief/form-brief.njk" as form %}
+{% from "components/buttons.njk" import button with context %}
+{% from "components/modal.njk" import modal with context %}
+{% from "partials/modals/form-brief/form-brief.njk" import form with context %}
 
 {% set links = [
         {
@@ -25,14 +25,12 @@
                     <p class="text-3xl font-bold uppercase text-shadow-base">Студия веб-дизайна</p>
                     <p class="text-2xl font-medium">Минимализм и удобство!</p>
                 </div>
-                {{ elButton.button
-                    (
-                        alpine = true,
-                        action = "bodyLock = true, brief = true",
-                        class = "p-3 mx-auto mt-5 md:mt-0 md:mx-0",
-                        buttonText = "Заполните бриф"
-                    ) 
-                }}
+                {% call button(
+                    click = "bodyLock = true, brief = true",
+                    class = "p-3 mx-auto mt-5 md:mt-0 md:mx-0"
+                ) %}
+                    Заполнить бриф
+                {% endcall %}
             </div>
             <div class="relative grid md:grid-cols-1a">
                 <div class="max-h-[525px] h-[300px] w-full bg-center my-auto bg-no-repeat md:h-full bg-contain lozad" data-background-image="/assets/images/imac.png">
@@ -62,8 +60,8 @@
             </div>
         </div>
     </div>
-    {% call elModal.modal("brief") %}
-        {{ form.formBrief() }}
+    {% call modal("brief") %}
+        {{ form() }}
     {% endcall %}
     <div id="podr"></div>
 </section>

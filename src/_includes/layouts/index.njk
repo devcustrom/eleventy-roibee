@@ -1,16 +1,3 @@
-{% if alias %}
-	{% set city = city %}
-	{% set phone = phone %}
-	{% set wa = wa %}
-	{% set address = address %}
-	{% set mapLink = mapLink %}
-{% else %}
-	{% set city = envs.site.city %}
-	{% set phone = envs.contacts.phone %}
-	{% set wa = envs.contacts.wa %}
-	{% set address = envs.contacts.address %}
-	{% set mapLink = envs.contacts.mapLink %}
-{% endif %}
 <!doctype html>
 <html class="scroll-smooth" lang="{{ locale|default('ru') }}">
 	<head>
@@ -24,14 +11,6 @@
 		<link rel="icon" type="image/svg+xml" href="{{ envs.site.faviconUrl | url }}">
 		<script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 		<link rel="stylesheet" href="/dist/css/style.css">
-		{# {% set css %}
-			{% include "/src/_includes/assets/css/inline.css" %}
-		{% endset %}
-		<style>{{ css | cssmin | safe }}</style>
-		{% set js %}
-			{% include "/src/_includes/assets/js/inline.js" %}
-		{% endset %}
-		<script>{{ js | jsmin | safe }}</script> #}
 	</head>
 	<body
 		class="font-body"
@@ -49,43 +28,6 @@
 			{{ content | safe }}
 		</main>
 		{% include "partials/footer/footer.njk" %}
-		<script>
-			function contactForm() {
-				return {
-					message: '',
-					showMessage: false,
-					loading: false,
-					buttonLabel: 'Отправить',
-					submitData() {
-					this.buttonLabel = 'Отправка'
-					this.loading = true;
-					this.message = ''
-					const form = new FormData(this.$refs.form);
-					fetch('https://docs.google.com/forms/u/1/d/e/1FAIpQLSfoltKxdAT-qxBHd1ALYFypcfeg9fXnQ-fPZLQ3GQFv1NkBLg/formResponse', {
-						method: 'POST',
-						mode: 'no-cors',
-						body: form
-					})
-						.then(() => {
-							this.message = 'Форма отправлена, ожидайте!<br> С вами свяжутся'
-							this.$refs.form.reset()
-						})
-						.catch(() => {
-							this.message = 'Увы, но произошла ошибка попробуйте еще раз!'
-						})
-						.finally(() => {
-							this.showMessage = true,
-							this.loading = false;
-							this.buttonLabel = 'Отправлено'
-							setTimeout(() => {
-								this.buttonLabel = 'Отправить',
-								this.showMessage = false
-							}, 15000)
-						})
-					}
-				}
-			}
-		</script>
 		<script type="text/javascript" >
 			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})

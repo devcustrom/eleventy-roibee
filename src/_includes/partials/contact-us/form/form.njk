@@ -1,0 +1,70 @@
+{% from "components/inputs.njk" import input, textArea %}
+{% from "components/buttons.njk" import button with context %}
+
+{% macro contactForm() %}
+	<form
+		class="max-w-[500px] mx-auto"
+		x-data="contactForm"
+		x-ref="form"
+		method="POST"
+		@submit.prevent="submit"
+	>
+		<div class="grid gap-2 2xs:gap-3.5 xl:gap-4.5">
+			{{ input(
+				"email",
+				"entry.183100258",
+				"Ваша почта"
+			) }}
+			{{ input(
+				"tel",
+				"entry.2081991681",
+				"Ваш номер телефона"
+			) }}
+			{{ textArea(
+				"message",
+				"entry.714657000",
+				"Ваше сообщение",
+				"p-1 h-28"
+			) }}
+			<input
+				type="hidden" 
+				name="entry.698711001" 
+				x-model="page"
+			/>
+			<input
+				type="hidden" 
+				name="entry.27823824"
+				x-model="refferer"
+			/>
+			<input
+				type="hidden" 
+				name="entry.1032011634" 
+				x-model="notRobot"
+			/>
+			{% call button(
+				type = "submit",
+				class = "p-3 mx-auto"
+			) %}
+				<span x-text="buttonLabel">Отправить</span>
+			{% endcall %}
+		</div>
+		<div
+			x-cloak
+			x-show="sent"
+			class="absolute inset-0 flex items-center bg-white"
+		>
+			<div class="p-5 text-red-600">
+				<div class="mb-5 text-lg lg:text-2xl">
+					<p x-html="message"></p>
+				</div>
+				<button
+					type="button"
+					@click="sent = false"
+					class="flex items-center justify-center px-6 py-4 text-sm text-white transition rounded-full outline-none focus:outline-none h-13 bg-themes-default active:bg-themes-second "
+				>
+					Закрыть
+				</button>
+			</div>
+		</div>
+	</form>
+{% endmacro %}

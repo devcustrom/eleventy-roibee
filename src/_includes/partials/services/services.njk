@@ -1,4 +1,4 @@
-{% import "components/buttons.njk" as elButton %} 
+{% from "components/buttons.njk" import button with context %}
 {% import "components/modal.njk" as elModal %}
 
 {% set serviceList = [
@@ -91,15 +91,13 @@
 							</li>
 							{% endfor %}
 						</ul>
-						{{ elButton.button 
-							( 
-								alpine = true, 
-								action = "bodyLock = true, services = true",
-								class = "m-auto mt-10 mb-4 md:mx-auto sm:mx-auto md:mb-0 md:ml-0",
-								white = true,
-								buttonText = "Подробнее" 
-							)
-						}}
+						{% call button(
+							click = "bodyLock = true, services = true",
+							class = "m-auto mt-10 mb-4 md:mx-auto sm:mx-auto md:mb-0 md:ml-0",
+							theme = 'white'
+						) %}
+							Подробнее
+						{% endcall %}
 					</div>
 				</div>
 			</div>
@@ -149,15 +147,13 @@
 							</li>
 							{% endfor %}
 						</ul> 
-						{{ elButton.button 
-							( 
-								alpine = true, 
-								action = "bodyLock = true, services = true",
-								class = "m-auto mt-10 mb-4 md:mx-auto sm:mx-auto md:mb-0 md:ml-0",
-								white = true,
-								buttonText = "Подробнее" 
-							)
-						}}
+						{% call button( 
+							click = "bodyLock = true, services = true",
+							class = "m-auto mt-10 mb-4 md:mx-auto sm:mx-auto md:mb-0 md:ml-0",
+							theme = 'white'
+						) %}
+							Подробнее
+						{% endcall %}
 					</div>
 				</div>
 			</div>
@@ -178,14 +174,12 @@
 								<li class="text-lg font-medium text-white">✔️{{ item.text }}</li>
 							{% endfor %}
 						</ul>
-						{{ elButton.button
-							(
-								alpine = false,
-								white = true,
-								class = "p-3 mt-3 hover:shadow-md hover:shadow-white",
-								buttonText = "Заказать дизайн"
-							) 
-						}}
+						{% call button(
+							theme = 'white',
+							class = "p-3 mt-3 hover:shadow-md hover:shadow-white"
+						) %}
+							Заказать дизайн
+						{% endcall %}
 					</div>
 				</div>
 			</div>

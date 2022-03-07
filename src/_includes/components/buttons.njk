@@ -1,30 +1,31 @@
-{% macro button(alpine, action, white, black, class, icon, iconLeft, iconSize, iconClass, buttonText) %}
-    
-    <button
-        {% if alpine == true %}
-            @click="{{ action }}"
-        {% endif %}
-            class="{{ class }} flex text-lg font-semibold rounded-full outline-none items-center justify-center p-4 max-w-max transition-all duration-300 ease-linear active:opacity-60 
-            {% if white == true %} 
-                bg-gradient-to-b active:shadow-black hover:shadow-black focus-visible:shadow-black from-white to-silver shadow-white text-black
-            {% elif black == true %}
-                ring-2 ring-white hover:shadow-puk focus-visible:shadow-puk
-            {% else %} 
-                text-white bg-gradient-to-t from-seance-2 to-medium-purple-2 shadow-medium-purple shadow-purp hover:shadow-fiol 
-            {% endif %}"
-        >
-        {% if iconLeft==true and icon %}
-            <svg class="{{ iconSize|default('w-6 h-6') }} fill-current {{ iconClass }}">
-                <use xlink:href="/assets/icons/all-icon.svg#{{ icon }}"></use>
-            </svg>
-        {% endif %}
-        <span class="px-2 empty:hidden">
-            {{ buttonText }}
-        </span>
-        {% if iconLeft!=true and icon %}
-            <svg class="{{ iconSize|default('w-6 h-6') }} fill-current {{ iconClass }}">
-                <use xlink:href="/assets/icons/all-icon.svg#{{ icon }}"></use>
-            </svg>
-        {% endif %}
-    </button>
+{% from "components/icon/icon.njk" import icon %}
+
+{% macro button(click, theme, class, iconName, iconLeft) %}
+	<button
+		type="{{ type|default('button') }}"
+		{% if click %}
+			@click="{{ click }}"
+		{% endif %}
+		class="
+			{{ class }}
+			flex text-lg font-semibold rounded-full outline-none items-center justify-center p-4 max-w-max transition-all duration-300 ease-linear active:opacity-60 
+			{% if theme=='white' %} 
+				bg-gradient-to-b active:shadow-black hover:shadow-black focus-visible:shadow-black from-white to-silver shadow-white text-black
+			{% elif theme=='black' %}
+				ring-2 ring-white hover:shadow-puk focus-visible:shadow-puk
+			{% else %} 
+				text-white bg-gradient-to-t from-seance-2 to-medium-purple-2 shadow-medium-purple shadow-purp hover:shadow-fiol 
+			{% endif %}
+		"
+	>
+		{% if iconLeft==true and iconName %}
+			{{ icon(name = iconName) }}
+		{% endif %}
+		<span class="px-2 empty:hidden">
+			{{ caller() }}
+		</span>
+		{% if iconLeft!=true and iconName %}
+			{{ icon(name = iconName) }}
+		{% endif %}
+	</button>
 {% endmacro %}

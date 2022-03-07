@@ -1,4 +1,4 @@
-{% from "components/buttons.njk" import button %}
+{% from "components/buttons.njk" import button with context %}
 <section 
 	x-data="{
 		activeSlide: 1,
@@ -7,7 +7,6 @@
 	x-init="
 		$watch(
 			'activeSlide', value => {
-				console.log(value)
 				Cookies.setCookie(cname, value)
 			}
 		);
@@ -63,27 +62,23 @@
 				</div>
 				<div class="flex justify-between mt-5 sm:mt-0 sm:px-10">
 					{% if not loop.first %}
-						{{ button 
-							( 
-								alpine = true, 
-								action = "activeSlide = " ~ loop.index ~ "- 1",
-								class = "px-4 py-2 mr-auto sm:px-8 sm:py-4",
-								black = true,
-								buttonText = "Назад" 
-							)
-						}}
+						{% call button(
+							click = "activeSlide = " ~ loop.index ~ "- 1",
+							class = "px-4 py-2 mr-auto sm:px-8 sm:py-4",
+							theme = 'black'
+						) %}
+							Назад
+						{% endcall %}
 					{% endif %}
 					
 					{% if not loop.last %}
-						{{ button 
-							( 
-								alpine = true, 
-								action = "activeSlide = " ~ loop.index ~ "+ 1",
-								class = "px-4 py-2 ml-auto sm:px-8 sm:py-4",
-								white = true,
-								buttonText = "Вперед" 
-							)
-						}}
+						{% call button(
+							click = "activeSlide = " ~ loop.index ~ "+ 1",
+							class = "px-4 py-2 ml-auto sm:px-8 sm:py-4",
+							theme = 'white'
+						) %}
+							Вперед
+						{% endcall %}
 					{% endif %}
 				</div>
 			</div>

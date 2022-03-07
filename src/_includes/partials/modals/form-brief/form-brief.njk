@@ -1,185 +1,182 @@
-{% import "components/inputs.njk" as elInput %}
-{% import "components/buttons.njk" as elButton %}
+{% from "components/inputs.njk" import input, radio %}
+{% from "components/buttons.njk" import button with context %}
 
-{% set BriefInputSet = [
-    {
-        "name" : "Контактная информация",
-        list: [
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Контактное лицо"
-            },
-            {
-                "type" : "tel",
-                "name" : "entry.182812218",
-                "title" : "Телефон"
-            },
-            {
-                "type" : "email",
-                "name" : "entry.182812218",
-                "title" : "E-mail"
-            }
-        ]
-    },
-    {
-        "name" : "Информация о компании",
-        list: [
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Назание компании"
-            },
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Ссылка на сайт или соцсеть для продвижения"
-            },
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Чем занимается компания"
-            },
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Целевая аудитория (Возраст, материальное положение, пол, род занятий и профессий)"
-            }
-        ]
-    },
-    {
-        "name" : "О работе компании",
-        list: [
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Укажите список ваших конкурентов"
-            },
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Принцы работы и ценности вашей компании"
-            },
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Ваши уникальные преимущества перед конкурентами"
-            },
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Какие проблемы решает ваш товар или услуга"
-            },
-            {
-                "type" : "text",
-                "name" : "entry.182812218",
-                "title" : "Основные цели компании"
-            }
-        ]
-    },
-    {
-        "type" : "radio",
-        "title" : "Какие виды услуг или товаров. Вы планируете продвигать в порядке приоритета?",
-        "name" : "radio",
-        "list" : [
-            {
-                "text": "Разработка сайта"
-            },
-            {
-                "text": "SEO-продвижение сайта"
-            },
-            {
-                "text": "Контекстная реклама"
-            },
-            {
-                "text": "Таргетированая реклама"
-            },
-            {
-                "text": "Реклама на YouTube"
-            },
-            {
-                "text": "Тизерная реклама"
-            },
-            {
-                "text": "Брендинг"
-            },
-            {
-                "text": "Разработка фирменного стиля (Брендбук)"
-            },
-            {
-                "text": "Все виды услуг"
-            }
-        ]
-    },
-    {
-        "name" : "Разработка",
-        list: [
-            {
-                type: "text",
-                name: "entry.182812218",
-                title: "Есть ли у Вас ответственные за техническую часть сайта?"
-            },
-            {
-                type: "text",
-                name: "entry.182812218",
-                title: "На какие изменения на сайте Вы готовы пойти?"
-            },
-            {
-                type: "text",
-                name: "entry.182812218",
-                title: "Сколько вы готовы выделять средств на услуги в месяц"
-            }
-        ]
-    }
+{% set data = [
+	{
+		"name" : "Контактная информация",
+		list: [
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Контактное лицо"
+			},
+			{
+				"type" : "tel",
+				"name" : "entry.182812218",
+				"title" : "Телефон"
+			},
+			{
+				"type" : "email",
+				"name" : "entry.182812218",
+				"title" : "E-mail"
+			}
+		]
+	},
+	{
+		"name" : "Информация о компании",
+		list: [
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Назание компании"
+			},
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Ссылка на сайт или соцсеть для продвижения"
+			},
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Чем занимается компания"
+			},
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Целевая аудитория (Возраст, материальное положение, пол, род занятий и профессий)"
+			}
+		]
+	},
+	{
+		"name" : "О работе компании",
+		list: [
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Укажите список ваших конкурентов"
+			},
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Принцы работы и ценности вашей компании"
+			},
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Ваши уникальные преимущества перед конкурентами"
+			},
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Какие проблемы решает ваш товар или услуга"
+			},
+			{
+				"type" : "text",
+				"name" : "entry.182812218",
+				"title" : "Основные цели компании"
+			}
+		]
+	},
+	{
+		"type" : "radio",
+		"title" : "Какие виды услуг или товаров. Вы планируете продвигать в порядке приоритета?",
+		"name" : "radio",
+		"list" : [
+			{
+				"text": "Разработка сайта"
+			},
+			{
+				"text": "SEO-продвижение сайта"
+			},
+			{
+				"text": "Контекстная реклама"
+			},
+			{
+				"text": "Таргетированая реклама"
+			},
+			{
+				"text": "Реклама на YouTube"
+			},
+			{
+				"text": "Тизерная реклама"
+			},
+			{
+				"text": "Брендинг"
+			},
+			{
+				"text": "Разработка фирменного стиля (Брендбук)"
+			},
+			{
+				"text": "Все виды услуг"
+			}
+		]
+	},
+	{
+		"name" : "Разработка",
+		list: [
+			{
+				type: "text",
+				name: "entry.182812218",
+				title: "Есть ли у Вас ответственные за техническую часть сайта?"
+			},
+			{
+				type: "text",
+				name: "entry.182812218",
+				title: "На какие изменения на сайте Вы готовы пойти?"
+			},
+			{
+				type: "text",
+				name: "entry.182812218",
+				title: "Сколько вы готовы выделять средств на услуги в месяц"
+			}
+		]
+	}
 ] %}
 
-{% macro formBrief() %}
+{% macro form() %}
 <div class="container px-4 mx-auto">
-    <h1 class="my-5 text-3xl text-center">Заполните форму</h1>
-    <form>
-        <div class="grid w-full max-w-screen-sm gap-5 mx-auto">
-            {% for item in BriefInputSet %}
-                {% if item.type=='radio' or item.type=='checkbox' %}
-                    <fieldset>
-                        <legend class="mt-4 text-2xl font-medium text-center">{{ item.title }}</legend>
-                        <div class="grid mx-auto mt-5 gap-y-2 gap-x-10 max-w-max">
-                            {% for subitem in item.list %}
-                                <div class="grid">
-                                        {% call elInput.inputRadio(
-                                            class = "grid items-center grid-cols-1a {% if loop.last %} gap-x-5 {% endif %}",
-                                            type = item.type,
-                                            name = item.name,
-                                            textLeft = "true"
-                                        ) %}
-                                            <span class="block text-lg transition-colors duration-300 peer-checked:text-electric-violet">{{ subitem.text }}</span>
-                                        {% endcall %}
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </fieldset>
-                {% else %}
-                    <fieldset class="grid gap-5">
-                        <legend class="mb-5 text-2xl text-center">{{ item.name }}</legend>
-                        {% for subitem in item.list %}
-                            {{ elInput.inputDefault
-                                (
-                                    subitem.type, 
-                                    subitem.name, 
-                                    subitem.title
-                                )
-                            }}
-                        {% endfor %}
-                    </fieldset>
-                {% endif %}
-            {% endfor %}
-        </div>
-        {{ elButton.button
-            (
-                alpine = false,
-                class = "p-3 mx-auto mt-5",
-                buttonText = "Отправить"
-            ) 
-        }}
-    </form>
+	<h1 class="my-5 text-3xl text-center">Заполните форму</h1>
+	<form>
+		<div class="grid w-full max-w-screen-sm gap-5 mx-auto">
+			{% for item in data %}
+				{% if item.type=='radio' or item.type=='checkbox' %}
+					<fieldset>
+						<legend class="mt-4 text-2xl font-medium text-center">{{ item.title }}</legend>
+						<div class="grid mx-auto mt-5 gap-y-2 gap-x-10 max-w-max">
+							{% for subitem in item.list %}
+								<div class="grid">
+										{% call radio(
+											item.type,
+											item.name,
+											true,
+											"grid items-center grid-cols-1a gap-x-5"
+										) %}
+											<span class="block text-lg transition-colors duration-300 peer-checked:text-electric-violet">{{ subitem.text }}</span>
+										{% endcall %}
+								</div>
+							{% endfor %}
+						</div>
+					</fieldset>
+				{% else %}
+					<fieldset class="grid gap-5">
+						<legend class="mb-5 text-2xl text-center">{{ item.name }}</legend>
+						{% for subitem in item.list %}
+							{{ input(
+								subitem.type, 
+								subitem.name, 
+								subitem.title
+							) }}
+						{% endfor %}
+					</fieldset>
+				{% endif %}
+			{% endfor %}
+		</div>
+		{% call button(
+			type = "submit",
+			class = "p-3 mx-auto mt-5"
+		) %}
+			Отправить
+		{% endcall %}
+	</form>
 </div>
 {% endmacro %}

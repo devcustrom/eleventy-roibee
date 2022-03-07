@@ -1,21 +1,18 @@
-{% import "components/buttons.njk" as elButton %}
+{% from "components/buttons.njk" import button with context %}
 
 {% macro modal(modalName) %}
-<div
-    x-show="{{ modalName }}"
-    x-transition
-    class="fixed inset-0 z-[100] w-full h-full overflow-x-hidden overflow-y-auto bg-cod-gray"
-    style="display: none;"
->
-    {{ elButton.button
-        (
-            alpine = true,
-            action =  modalName ~ " = false, bodyLock = false",
-            class = "fixed z-10 p-3 transition-all duration-300 top-2 right-3",
-            icon = "close",
-            iconClass = "md:w-10 w-8 h-8 md:h-10 text-white"
-        ) 
-    }}
-    {{ caller() }}
-</div>    
+	<div
+		x-cloak
+		x-show="{{ modalName }}"
+		x-transition
+		class="fixed inset-0 z-[100] w-full h-full overflow-x-hidden overflow-y-auto bg-cod-gray"
+	>
+		{% call button(
+			click =  modalName ~ " = false, bodyLock = false",
+			class = "fixed z-10 p-3 transition-all duration-300 top-2 right-3",
+			iconName = "close",
+			iconClass = "md:w-10 w-8 h-8 md:h-10 text-white"
+		) %}{% endcall %}
+		{{ caller() }}
+	</div>
 {% endmacro %}
