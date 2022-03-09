@@ -1,10 +1,13 @@
 {% from "partials/contact-us/form/form.njk" import contactForm %}
+{% import "components/label.njk" as elLabel %}
+
 <section class="pb-[1vw]">
-	<div
-		class="relative mt-10 mr-auto flex h-16 max-w-1/2 items-center justify-end rounded-r-[70px] bg-gradient-to-l from-seance-2 to-medium-purple-2 before:absolute before:top-2 before:left-0 before:right-0 before:z-[-1] before:h-16 before:rounded-r-[70px] before:rounded-l-[0] before:ring-1 before:ring-white"
-	>
-		<p class="py-5 px-9">Связаться с нами</p>
-	</div>
+	{{ elLabel.label
+		(
+			theme = 'left',
+			text = 'Связаться с нами'
+		) 
+	}}
 	<div
 		class="container relative w-full p-5 mx-auto mt-10 overflow-hidden rounded-3xl"
 	>
