@@ -1,20 +1,37 @@
 {% from "components/icon/icon.njk" import icon %}
 
-{% macro button(click, theme, class, iconName, iconLeft) %}
-	<button
-		type="{{ type|default('button') }}"
+{% macro button(click, event, class, size, theme, iconName, iconLeft, link) %}
+{% if link %}
+	{% set tag = 'a' %}
+{% else %}
+	{% set tag = 'button' %}
+{% endif %}
+	<{{ tag }}
+		{% if link %}
+			href="{{ link }}"
+		{% else %}
+			type="{{ type|default('button') }}"
+		{% endif %}
 		{% if click %}
 			@click="{{ click }}"
 		{% endif %}
+		:class="{{ event }}"
 		class="
 			{{ class }}
-			flex text-lg font-semibold rounded-full outline-none items-center justify-center p-4 max-w-max transition-all duration-300 ease-linear active:opacity-60 
+			flex text-lg font-semibold rounded-full outline-none items-center justify-center max-w-max transition-all duration-300 ease-linear active:opacity-60
+			{% if size=='small' %}
+				p-1
+			{% elif size=='big' %}
+				p-4
+			{% else %}
+				p-3
+			{% endif %}
 			{% if theme=='white' %} 
-				bg-gradient-to-b active:shadow-black hover:shadow-black focus-visible:shadow-black from-white to-silver shadow-white text-black
+				bg-gradient-to-b active:shadow-black lg:hover:shadow-black lg:focus-visible:shadow-black from-white to-silver shadow-white text-black
 			{% elif theme=='black' %}
-				ring-2 ring-white hover:shadow-puk focus-visible:shadow-puk
+				ring-2 ring-white lg:hover:shadow-puk lg:focus-visible:shadow-puk
 			{% else %} 
-				text-white bg-gradient-to-t from-seance-2 to-medium-purple-2 shadow-medium-purple shadow-purp hover:shadow-fiol 
+				text-white bg-gradient-to-t lg:hover:opacity-70 lg:focus-visible:opacity-70 from-seance-2 to-medium-purple-2 shadow-medium-purple shadow-purp lg:hover:shadow-fiol 
 			{% endif %}
 		"
 	>
@@ -27,5 +44,5 @@
 		{% if iconLeft!=true and iconName %}
 			{{ icon(name = iconName) }}
 		{% endif %}
-	</button>
+	</{{ tag }}>
 {% endmacro %}
