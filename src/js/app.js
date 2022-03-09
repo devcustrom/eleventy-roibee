@@ -13,5 +13,3 @@ const observer = lozad();
 observer.observe();
 
 import './swiper';
-
-import './home';

@@ -1,5 +1,6 @@
 const path = require('path');
 const mix = require('laravel-mix');
+const Dotenv = require('dotenv-webpack');
 
 const arJsPage = [
     './src/js/app.js',
@@ -14,8 +15,11 @@ mix.webpackConfig({
     resolve: {
         modules: [
             path.resolve(__dirname, 'node_modules')
-        ]
-    }
+        ],
+    },
+    plugins: [
+        new Dotenv()
+    ]
 });
 
 arJsPage.forEach(sJsPage => {
