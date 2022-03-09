@@ -1,19 +1,20 @@
 {% from "components/buttons.njk" import button with context %}
 {% from "components/modal.njk" import modal with context %}
 {% from "partials/modals/form-brief/form-brief.njk" import form with context %}
+{% from "components/icon/icon.njk" import icon with context %}
 
 {% set links = [
         {
             "linkText": "#",
-            "linkIcon": "vk-icon"
+            "icon": "vk-icon"
         },
         {
             "linkText": "#",
-            "linkIcon": "twitter-icon"
+            "icon": "twitter-icon"
         },
         {
             "linkText": "#",
-            "linkIcon": "instagram-icon"
+            "icon": "instagram-icon"
         }
     ] 
 %}
@@ -40,9 +41,12 @@
                     <div class="grid grid-flow-col mx-auto md:grid-flow-row gap-x-5 gap-y-5 max-w-max">
                         {% for item in links %}
                             <button class="relative transition-all duration-300 hover:opacity-75">
-                                <svg class="w-10 h-10 text-white">
-                                    <use xlink:href="/assets/icons/all-icon.svg#{{ item.linkIcon }}"></use>
-                                </svg>
+                                {{ icon
+                                    (
+                                        size= "w-10 h-10",
+                                        name= item.icon
+                                    ) 
+                                }}
                                 <a href="{{ item.linkText }}" rel="nofollow" class="absolute inset-0"></a>
                             </button>
                         {% endfor %}
@@ -50,13 +54,17 @@
                     <span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-l-full md:rounded-full"></span>
                 </div>
             </div>
-            <div class="mx-auto mt-5 md:mt-0 md:col-span-2 podrobnee adaptive__font16">
-                <p>Подробнее</p>
-                <a href="#podr">
-                    <div class="podrobnee__btn circle__btn btn_fiol">
-                        <span></span>
-                    </div>
-                </a>
+            <div class="mx-auto mt-5 justify-items-center md:mt-0 md:col-span-2 max-w-max">
+                <span>Подробнее</span>
+                {% call button
+                    (   
+                        class = "mx-auto", 
+                        link = "#podr",
+                        size = "small",
+                        iconName = "arrow"
+                    ) 
+                %}
+                {% endcall %}
             </div>
         </div>
     </div>
