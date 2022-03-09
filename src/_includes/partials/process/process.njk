@@ -1,5 +1,5 @@
 {% from "components/buttons.njk" import button with context %}
-{% import "components/label.njk" as elLabel %}
+{% from "components/label.njk" import label with context %}
 
 <section 
 	x-data="{
@@ -17,7 +17,7 @@
 		}
 	"
 >
-	{{ elLabel.label
+	{{ label
 		(
 			theme = 'right',
 			text = "Процесс"

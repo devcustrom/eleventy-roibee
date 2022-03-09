@@ -1,8 +1,8 @@
 {% from "partials/contact-us/form/form.njk" import contactForm %}
-{% import "components/label.njk" as elLabel %}
+{% from "components/label.njk" import label with context %}
 
 <section class="pb-[1vw]">
-	{{ elLabel.label
+	{{ label
 		(
 			theme = 'left',
 			text = 'Связаться с нами'
