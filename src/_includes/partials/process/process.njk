@@ -1,4 +1,6 @@
 {% from "components/buttons.njk" import button with context %}
+{% import "components/label.njk" as elLabel %}
+
 <section 
 	x-data="{
 		activeSlide: 1,
@@ -15,11 +17,12 @@
 		}
 	"
 >
-	<div
-		class="relative mt-16 ml-auto flex max-w-1/2 items-center justify-start rounded-l-[70px] bg-gradient-to-r from-seance-2 to-medium-purple-2 before:absolute before:top-2 before:left-2 before:right-0 before:z-[-1] before:h-16 before:rounded-l-[70px] before:rounded-r-[0] before:ring-1 before:ring-white"
-	>
-		<p class="py-5 px-9">Процесс</p>
-	</div>
+	{{ elLabel.label
+		(
+			theme = 'right',
+			text = "Процесс"
+		) 
+	}}
 	<div class="container px-5 mx-auto">
 		<div class=" relative w-full h-2.5 mx-auto ring-1 ring-white ring-inset mt-10 rounded-full lg:hidden">
 			<div
