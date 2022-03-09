@@ -1,8 +1,10 @@
-<div
-	class="relative mt-16 ml-auto flex h-16 max-w-1/2 items-center justify-start rounded-l-[70px] bg-gradient-to-r from-seance-2 to-medium-purple-2 before:absolute before:top-2 before:left-2 before:right-0 before:z-[-1] before:h-16 before:rounded-l-[70px] before:rounded-r-[0] before:ring-1 before:ring-white"
->
-	<p class="py-5 px-9">Мы делаем</p>
-</div>
+{% from "components/label.njk" import label %}
+{% from "components/buttons.njk" import button with context %}
+
+{{ label(
+	theme = 'right',
+	text = "Мы делаем"
+) }}
 <div class="container relative mx-auto mt-14 lg:min-h-[280px]">
 	<div
 		class="z-10 grid w-full mx-auto gap-x-5 justify-items-center sm:grid-cols-2 lg:top-0 lg:left-1/2 lg:-translate-x-1/2 max-w-max lg:absolute lg:grid-cols-3"
@@ -43,16 +45,28 @@
 						</li>
 						{% endfor %}
 					</ul>
-					<button
+					<div class="relative z-[1] max-w-max mx-auto">
+						{% call button(
+							click = "open = !open",
+							event = "open ? 'rotate-180' : ''",
+							class = "duration-150",
+							iconName = "arrow-bottom"
+						) %}
+						{% endcall %}
+					</div>
+					<!-- 
+							iconSize = " md:w-10 w-8 h-8 md:h-10"
+							iconClass = "transition-all duration-300 text-white",
+							iconEvent = "open ? 'rotate-180' : ''"<button
 						@click="open = !open"
 						class="relative z-[1] mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white bg-gradient-to-b from-medium-purple-2 to-seance-2 shadow-purp transition-all hover:opacity-70 focus-visible:opacity-70"
-						:class="open ? 'rotate-180' : ''"
 					>
-						<svg class="w-5 h-5" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M16.96 5.09 15 3.15 8.72 9.44l-6.29-6.3L.5 5.1l8.23 8.23 8.24-8.23Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" transform="rotate(90 8.48 8.48)" d="M0 0h16.46v16.46H0z"/></clipPath></defs></svg>
-					</button>
+						<svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M16.96 5.09 15 3.15 8.72 9.44l-6.29-6.3L.5 5.1l8.23 8.23 8.24-8.23Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" transform="rotate(90 8.48 8.48)" d="M0 0h16.46v16.46H0z"/></clipPath></defs></svg>
+					</button> -->
 				</div>
 			</div>
 		</div>
 		{% endfor %}
 	</div>
 </div>
+<!-- :class="open ? 'rotate-180' : ''" class="w-5 h-5" -->
