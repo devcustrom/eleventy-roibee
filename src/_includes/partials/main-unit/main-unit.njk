@@ -1,19 +1,20 @@
 {% from "components/buttons.njk" import button with context %}
 {% from "components/modal.njk" import modal with context %}
 {% from "partials/modals/form-brief/form-brief.njk" import form with context %}
+{% from "components/icon/icon.njk" import icon with context %}
 
 {% set links = [
         {
             "linkText": "#",
-            "linkIcon": "vk-icon"
+            "icon": "vk-icon"
         },
         {
             "linkText": "#",
-            "linkIcon": "twitter-icon"
+            "icon": "twitter-icon"
         },
         {
             "linkText": "#",
-            "linkIcon": "instagram-icon"
+            "icon": "instagram-icon"
         }
     ] 
 %}
@@ -40,9 +41,12 @@
                     <div class="grid grid-flow-col mx-auto md:grid-flow-row gap-x-5 gap-y-5 max-w-max">
                         {% for item in links %}
                             <button class="relative transition-all duration-300 hover:opacity-75">
-                                <svg class="w-10 h-10 text-white">
-                                    <use xlink:href="/assets/icons/all-icon.svg#{{ item.linkIcon }}"></use>
-                                </svg>
+                                {{ icon
+                                    (
+                                        size= "w-10 h-10",
+                                        name= item.icon
+                                    ) 
+                                }}
                                 <a href="{{ item.linkText }}" rel="nofollow" class="absolute inset-0"></a>
                             </button>
                         {% endfor %}
@@ -50,18 +54,62 @@
                     <span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-l-full md:rounded-full"></span>
                 </div>
             </div>
-            <div class="mx-auto mt-5 md:mt-0 md:col-span-2 podrobnee adaptive__font16">
-                <p>Подробнее</p>
-                <a href="#podr">
-                    <div class="podrobnee__btn circle__btn btn_fiol">
-                        <span></span>
-                    </div>
-                </a>
+            <div class="mx-auto mt-5 justify-items-center md:mt-0 md:col-span-2 max-w-max">
+                <span>Подробнее</span>
+                {% call button
+                    (   
+                        class = "mx-auto", 
+                        link = "#podr",
+                        size = "small",
+                        iconName = "arrow"
+                    ) 
+                %}
+                {% endcall %}
             </div>
         </div>
     </div>
     {% call modal("brief") %}
-        {{ form() }}
+        {# {{ form() }} #}
+        <div class="p-5 sm:p-6 lg:p-11 xl:p-14">
+            <div class="mx-auto text-center text-white">
+                <h1 class="text-xs font-bold uppercase sm:text-2xl lg:text-3xl">Прайс-Лист</h1>
+                <p class="leading-[12px] text-[10px] sm:text-lg lg:text-2xl font-semibold">стоимость услуг, тарифы, цены</p>
+                <div class="mt-6 max-w-screen-xl mx-auto bg-white rounded-full h-0.5"></div>
+            </div>
+            <div class="container mx-auto">
+                {% for item in tables.priceList %}
+                <div class="mt-20">
+                    <h2 class="ml-3 text-xs underline sm:ml-5 lg:ml-7 xl:ml-10 sm:text-lg lg:text-2xl">{{ item.title }}</h2>
+                    <table class="w-full mx-auto text-white">
+                        <tbody>
+                            {% for subitem in item.list %}
+                                <tr class="grid items-center border-b-2 grid-cols-1a sm:grid-cols-[1fr,repeat(2,auto)] xl:grid-cols-[20%,1fr,minmax(312px,auto),auto] py-3 gap-2 sm:gap-x-3 lg:gap-x-4 lg:gap-y-1 xl:gap-x-8 border-electric-violet">
+                                    <td class="text-xs font-semibold sm:text-base lg:text-lg">{{ subitem.title }}</td>
+                                    <td class="row-start-2 text-xs font-medium leading-[10px] sm:leading-5 text-[8px] sm:text-xs lg:text-sm sm:col-span-2 lg:col-auto xl:row-start-auto">{{ subitem.subtitle }}</td>
+                                    <td class="row-start-3 text-xs font-semibold sm:text-base lg:text-lg sm:row-auto lg:row-span-2 xl:row-auto xl:whitespace-nowrap">
+                                        {{ subitem.price }}
+                                    </td>
+                                    <td class="row-span-3 sm:row-span-2 xl:row-auto">
+                                        {% if subitem.link %}
+                                            {% call button
+                                                (   
+                                                    class = "mx-auto -rotate-90", 
+                                                    link = subitem.link,
+                                                    size = "small",
+                                                    iconName = "arrow",
+                                                    hideText = subitem.title
+                                                ) 
+                                            %}{% endcall %}
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
     {% endcall %}
     <div id="podr"></div>
 </section>
