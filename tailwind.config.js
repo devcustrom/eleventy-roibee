@@ -48,6 +48,7 @@ module.exports = {
         'a1': 'auto 1fr',
         '1a': '1fr auto',
         '1a1': '1fr auto 1fr',
+        'a1a': 'auto 1fr auto',
         '1aa': '1fr repeat(2, auto)',
       },
       gridTemplateColumns: {
@@ -55,6 +56,7 @@ module.exports = {
         'a1': 'auto 1fr',
         '1a': '1fr auto',
         '1a1': '1fr auto 1fr',
+        'a1a': 'auto 1fr auto',
         '1aa': '1fr repeat(2, auto)',
       },
       textShadow: {

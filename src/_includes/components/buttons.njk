@@ -1,10 +1,15 @@
 {% from "components/icon/icon.njk" import icon %}
 
-{% macro button(click, event, class, size, theme, iconName, iconLeft, link) %}
+{% macro button(click, event, class, size, theme, iconName, iconLeft, link, hideText) %}
 {% if link %}
 	{% set tag = 'a' %}
 {% else %}
 	{% set tag = 'button' %}
+{% endif %}
+{% if size=='small' %}
+	{% set iconSize = 'h-3 w-3' %}
+{% elif size=='big' %}
+	{% set iconSize = 'h-7 w-7' %}
 {% endif %}
 	<{{ tag }}
 		{% if link %}
@@ -20,7 +25,7 @@
 			{{ class }}
 			flex text-lg font-semibold rounded-full outline-none items-center justify-center max-w-max transition-all duration-300 ease-linear active:opacity-60
 			{% if size=='small' %}
-				p-1
+				p-2
 			{% elif size=='big' %}
 				p-4
 			{% else %}
@@ -36,13 +41,25 @@
 		"
 	>
 		{% if iconLeft==true and iconName %}
-			{{ icon(name = iconName) }}
+			{{ icon(
+				name = iconName,
+				size = iconSize
+			) }}
 		{% endif %}
-		<span class="px-2 empty:hidden">
-			{{ caller() }}
-		</span>
+		{% if hideText %}
+			<span class="sr-only">
+				{{ hideText }}
+			</span>
+		{% else %}
+			<span class="px-2 empty:hidden">
+				{{ caller() }}
+			</span>
+		{% endif %}
 		{% if iconLeft!=true and iconName %}
-			{{ icon(name = iconName) }}
+			{{ icon(
+				name = iconName,
+				size = iconSize
+			) }}
 		{% endif %}
 	</{{ tag }}>
 {% endmacro %}
