@@ -12,4 +12,12 @@
     <symbol id="close" viewBox="0 0 12 12" fill="none">
         <path stroke="currentColor" stroke-linecap="round" d="m3 9 6-6m0 6L3 3" fill="currentColor"/>
     </symbol>
+    <symbol id="arrow" viewBox="0 0 17 17" fill="none">
+        <g clip-path="url(#a)"><path d="M16.96 5.09 15 3.15 8.72 9.44l-6.29-6.3L.5 5.1l8.23 8.23 8.24-8.23Z" fill="currentColor"/></g>
+        <defs>
+            <clipPath id="a">
+                <path fill="currentColor" transform="rotate(90 8.48 8.48)" d="M0 0h16.46v16.46H0z"/>
+            </clipPath>
+        </defs>
+    </symbol>
 </svg>

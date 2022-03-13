@@ -1,0 +1,11 @@
+{% macro label( theme, class, text ) %}
+    {% if theme=='left' %}
+        <div class="{{ class }} relative mt-10 mr-auto flex h-16 max-w-[70%] sm:max-w-1/2 items-center justify-end rounded-r-[70px] bg-gradient-to-l from-seance-2 to-medium-purple-2 before:absolute before:top-2 before:left-0 before:right-0 before:z-[-1] before:h-16 before:rounded-r-[70px] before:rounded-l-[0] before:ring-1 before:ring-white">
+            <p class="px-2 py-5 sm:px-9">{{ text }}</p>
+        </div>
+    {% elif theme=='right' %}
+        <div class="{{ class }} relative mt-10 ml-auto flex h-16 max-w-[70%] sm:max-w-1/2 items-center justify-start rounded-l-[70px] bg-gradient-to-r from-seance-2 to-medium-purple-2 before:absolute before:top-2 before:left-2 before:right-0 before:z-[-1] before:h-16 before:rounded-l-[70px] before:rounded-r-[0] before:ring-1 before:ring-white">
+            <p class="px-2 py-5 sm:px-9">{{ text }}</p>
+        </div>
+    {% endif %}
+{% endmacro %}

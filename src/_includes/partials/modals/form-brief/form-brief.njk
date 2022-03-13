@@ -135,7 +135,7 @@
 
 {% macro form() %}
 <div class="container px-4 mx-auto">
-	<h1 class="my-5 text-3xl text-center">Заполните форму</h1>
+	<h1 class="mb-5 text-xl text-center mt-14 sm:mt-5 sm:text-2xl md:text-3xl">Заполните форму</h1>
 	<form>
 		<div class="grid w-full max-w-screen-sm gap-5 mx-auto">
 			{% for item in data %}
@@ -144,16 +144,14 @@
 						<legend class="mt-4 text-2xl font-medium text-center">{{ item.title }}</legend>
 						<div class="grid mx-auto mt-5 gap-y-2 gap-x-10 max-w-max">
 							{% for subitem in item.list %}
-								<div class="grid">
-										{% call radio(
-											item.type,
-											item.name,
-											true,
-											"grid items-center grid-cols-1a gap-x-5"
-										) %}
-											<span class="block text-lg transition-colors duration-300 peer-checked:text-electric-violet">{{ subitem.text }}</span>
-										{% endcall %}
-								</div>
+								{% call radio(
+									item.type,
+									item.name,
+									textLeft= true,
+									class= "grid items-center grid-cols-a1 gap-x-5"
+								) %}
+									<span class="block text-lg transition-colors duration-300 peer-checked:text-electric-violet">{{ subitem.text }}</span>
+								{% endcall %}
 							{% endfor %}
 						</div>
 					</fieldset>
