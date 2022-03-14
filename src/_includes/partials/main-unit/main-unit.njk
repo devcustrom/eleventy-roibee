@@ -87,7 +87,7 @@
                                     <td class="text-xs font-semibold sm:text-base lg:text-lg">{{ subitem.title }}</td>
                                     <td class="row-start-2 text-xs font-medium leading-[10px] sm:leading-5 text-[8px] sm:text-xs lg:text-sm sm:col-span-2 lg:col-auto xl:row-start-auto">{{ subitem.subtitle }}</td>
                                     <td class="row-start-3 text-xs font-semibold sm:text-base lg:text-lg sm:row-auto lg:row-span-2 xl:row-auto xl:whitespace-nowrap">
-                                        от {{ subitem.priceFrom }}{% if subitem.priceTo %} до {{ subitem.priceTo }} руб.{% else %} руб.{% endif %}{% if subitem.month %}/мес.{% endif %}
+                                        от {{ subitem.priceFrom }}{% if subitem.priceTo %} до {{ subitem.priceTo }}{% endif %} руб.{% if subitem.month %}/мес.{% endif %}
                                     </td>
                                     <td class="row-span-3 sm:row-span-2 xl:row-auto">
                                         {% if subitem.link %}
