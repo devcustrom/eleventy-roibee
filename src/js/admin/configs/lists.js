@@ -74,7 +74,7 @@ const lists = {
 						},
 						{
 							"name": "list",
-							"label": "Данные",
+							"label": "Данные услуг",
 							"widget": "list",
 							"fields": [
 								{
@@ -88,9 +88,21 @@ const lists = {
 									"widget": "string"
 								},
 								{
-									"label": "Цена",
-									"name": "price",
+									"label": "Цена от",
+									"name": "priceFrom",
 									"widget": "string"
+								},
+								{
+									"label": "Цена до",
+									"name": "priceTo",
+									"widget": "string",
+									"required": false
+								},
+								{
+									"label": "в месяц",
+									"name": "month",
+									"widget": "boolean", 
+									"default": false
 								},
 								{
 									"label": "Ссылка",
