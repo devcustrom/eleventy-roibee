@@ -73,6 +73,12 @@ const lists = {
 							"widget": "string"
 						},
 						{
+							"label": "Услуга активна?",
+							"name": "enable",
+							"widget": "boolean", 
+							"default": true,
+						},
+						{
 							"name": "list",
 							"label": "Данные услуг",
 							"widget": "list",
@@ -81,6 +87,12 @@ const lists = {
 									"label": "Услуга",
 									"name": "title",
 									"widget": "string"
+								},
+								{
+									"label": "Услуга активна?",
+									"name": "enable",
+									"widget": "boolean", 
+									"default": true,
 								},
 								{
 									"label": "Описание",

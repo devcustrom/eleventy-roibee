@@ -69,47 +69,7 @@
         </div>
     </div>
     {% call modal("brief") %}
-        {# {{ form() }} #}
-        <div class="p-5 sm:p-6 lg:p-11 xl:p-14">
-            <div class="mx-auto text-center text-white">
-                <h1 class="text-xs font-bold uppercase sm:text-2xl lg:text-3xl">Прайс-Лист</h1>
-                <p class="leading-[12px] text-[10px] sm:text-lg lg:text-2xl font-semibold">стоимость услуг, тарифы, цены</p>
-                <div class="mt-6 max-w-screen-xl mx-auto bg-white rounded-full h-0.5"></div>
-            </div>
-            <div class="container mx-auto">
-                {% for item in tables.priceList %}
-                <div class="mt-20">
-                    <h2 class="ml-3 text-xs underline sm:ml-5 lg:ml-7 xl:ml-10 sm:text-lg lg:text-2xl">{{ item.title }}</h2>
-                    <table class="w-full mx-auto text-white">
-                        <tbody>
-                            {% for subitem in item.list %}
-                                <tr class="grid items-center border-b-2 grid-cols-1a sm:grid-cols-[1fr,repeat(2,auto)] xl:grid-cols-[20%,1fr,minmax(312px,auto),auto] py-3 gap-2 sm:gap-x-3 lg:gap-x-4 lg:gap-y-1 xl:gap-x-8 border-electric-violet">
-                                    <td class="text-xs font-semibold sm:text-base lg:text-lg">{{ subitem.title }}</td>
-                                    <td class="row-start-2 text-xs font-medium leading-[10px] sm:leading-5 text-[8px] sm:text-xs lg:text-sm sm:col-span-2 lg:col-auto xl:row-start-auto">{{ subitem.subtitle }}</td>
-                                    <td class="row-start-3 text-xs font-semibold sm:text-base lg:text-lg sm:row-auto lg:row-span-2 xl:row-auto xl:whitespace-nowrap">
-                                        от {{ subitem.priceFrom }}{% if subitem.priceTo %} до {{ subitem.priceTo }}{% endif %} руб.{% if subitem.month %}/мес.{% endif %}
-                                    </td>
-                                    <td class="row-span-3 sm:row-span-2 xl:row-auto">
-                                        {% if subitem.link %}
-                                            {% call button
-                                                (   
-                                                    class = "mx-auto -rotate-90", 
-                                                    link = subitem.link,
-                                                    size = "small",
-                                                    iconName = "arrow",
-                                                    hideText = subitem.title
-                                                ) 
-                                            %}{% endcall %}
-                                        {% endif %}
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            {% endfor %}
-            </div>
-        </div>
+        {{ form() }}
     {% endcall %}
     <div id="podr"></div>
 </section>
