@@ -30,7 +30,7 @@ const services = {
                 {
                     "label": "Картинка",
                     "name": "img",
-                    "widget": "string"
+                    "widget": "image"
                 },
                 {
                     "name": "serviceText",
