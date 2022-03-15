@@ -31,7 +31,8 @@ const tableRow = {
             "label": "в месяц",
             "name": "month",
             "widget": "boolean", 
-            "default": false
+            "default": false,
+            "required": false
         },
         {
             "label": "Ссылка",
