@@ -8,7 +8,7 @@ const services = {
     "widget" : "list",
     "fields": [
         {
-            "name": "service",
+            "name": "services",
             "label": "Услуга",
             "widget" : "list",
             "fields": [
