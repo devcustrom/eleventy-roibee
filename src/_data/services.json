@@ -87,7 +87,7 @@
       "title": "SEO",
       "name": "seo",
       "enable": true,
-      "img": "webdev.png",
+      "img": "/src/assets/images/webdev.png",
       "serviceText": [
         {
           "text": "Lorem ipsum dolor sit amet"
