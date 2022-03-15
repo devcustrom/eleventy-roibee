@@ -5,12 +5,12 @@ const tableRow = {
     "label": "Данные услуг",
     "widget": "list",
     "fields": [
-        enable,
         {
             "label": "Услуга",
             "name": "title",
             "widget": "string"
         },
+        enable,
         {
             "label": "Описание",
             "name": "subtitle",
