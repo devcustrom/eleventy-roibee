@@ -6,7 +6,7 @@
 <section
 	id="services"
 	x-data="{
-		{% for item in service.services %}
+		{% for item in services.services %}
 			{{ item.name }} : false,
 		{% endfor %}
 	}" 
@@ -22,7 +22,7 @@
 			<div class="h-full rounded-full swiper-scrollbar-drag bg-gradient-to-r from-seance-2 to-medium-purple-2"></div>
 		</div>
 		<div class="swiper-wrapper md:grid">
-			{% for item in service.services %}
+			{% for item in services.services %}
 			<div class="swiper-slide">
 				<div class="m-7 mx-auto grid max-w-[310px] gap-x-12 rounded-3xl bg-gradient-to-b from-medium-purple-2 to-seance-2 sm:gap-y-1 md:max-w-[800px] md:grid-cols-a1 md:gap-y-5 md:p-5">
 					<p class="pt-[29px] pb-[10px] text-center text-lg font-bold md:hidden">
@@ -31,7 +31,7 @@
 					<div class="w-full mx-auto">
 						<div class="grid h-[220px] w-[300px]">
 							<img
-								src="/assets/images/{{ item.img }}"
+								src="{{ item.img | replace("/src", "") }}"
 								alt="человекозаврик"
 							/>
 						</div>
@@ -76,7 +76,7 @@
 			{% endfor %}
 		</div>
 	</div>
-	{% for item in service.services %}
+	{% for item in services.services %}
 		{% call elModal.modal(item.name) %}
 			<div class="container p-5 mx-auto">
 				<p class="text-xl font-extrabold text-transparent uppercase sm:text-center sm:text-3xl bg-clip-text bg-gradient-to-r from-malibu to-dodger-blue">{{ item.title }}</p>
