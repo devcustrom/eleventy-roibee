@@ -1,0 +1,107 @@
+{
+  "priceList": [
+    {
+      "title": "Разработка сайта",
+      "enable": true,
+      "list" : [
+          {
+              "title": "Лендинг",
+              "enable": true,
+              "subtitle": "небольшой одностраничный сайт, полностью заточенный под то, чтобы попадающий на него клиент выполнил целевое действие",
+              "priceFrom": "10000",
+              "priceTo": "60000",
+              "link": "google.com"
+          },
+          {
+              "title": "Сайт-визитка",
+              "enable": true,
+              "subtitle": "небольшой сайт, как правило, состоящий из одной веб-страниц и содержащий основную информацию об организации, частном лице, компании, товарах или услугах, прейскуранты, контактные данные",
+              "priceFrom": "10000",
+              "priceTo": "30000",
+              "link": "google.com"
+          },
+          {
+              "title": "Корпоративный сайт",
+              "enable": true,
+              "subtitle": "веб-интерфейс для доступа сотрудника к корпоративным данным и приложениям",
+              "priceFrom": "15000",
+              "priceTo": "80000",
+              "link": "google.com"
+          },
+          {
+              "title": "Сайт-каталог",
+              "enable": true,
+              "subtitle": "сайт, который содержит полную информацию о компании плюс электронный каталог её услуг и продукции",
+              "priceFrom": "15000",
+              "priceTo": "80000",
+              "link": "google.com"
+          },
+          {
+              "title": "Интернет-магазин",
+              "enable": true,
+              "subtitle": "сайт, торгующий товарами посредством сети Интернет. Позволяет пользователям онлайн сформировать заказ на покупку, оплатить заказ",
+              "priceFrom": "15000",
+              "priceTo": "80000",
+              "link": "google.com"
+          },
+          {
+              "title": "Поддержка сайта",
+              "enable": true,
+              "subtitle": "поддержка функциональности и бесперебойной работы вашего сайта",
+              "priceFrom": "5000",
+              "month": true,
+              "link": "google.com"
+          }
+      ]
+    },
+    {
+      "title": "Интернет реклама",
+      "enable": true,
+      "list" : [
+          {
+              "title": "Яндекс.Директ",
+              "enable": true,
+              "subtitle": "реклама яндекс",
+              "priceFrom": "2500",
+              "priceTo": "10000",
+              "month": true,
+              "link": "google.com"
+          },
+          {
+              "title": "Google.Adwords",
+              "enable": true,
+              "subtitle": "реклама гугл",
+              "priceFrom": "2500",
+              "priceTo": "10000",
+              "month": true,
+              "link": "google.com"
+          },
+          {
+              "title": "Яндекс.Директ + Google.Adwords",
+              "enable": true,
+              "subtitle": "реклама яндекс и гугл",
+              "priceFrom": "16000",
+              "month": true,
+              "link": "google.com"
+          },
+          {
+              "title": "myTarget",
+              "enable": true,
+              "subtitle": "еще очень инетересная реклама",
+              "priceFrom": "7000",
+              "month": true,
+              "link": "google.com"
+          },
+          {
+              "title": "Социальные сети",
+              "enable": true,
+              "subtitle": "реклама в соц сетях",
+              "priceFrom": "5000",
+              "priceTo": "7000",
+              "month": true,
+              "link": "google.com"
+          }
+      ]
+    }
+  ]
+}
