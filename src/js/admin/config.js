@@ -4,8 +4,9 @@ import { lists } from '/src/js/admin/configs/lists.js'
 
 const config = {
 	"backend": {
-		"name": "git-gateway",
-		"branch": "master"
+		name: "github",
+		repo: "devcustrom/eleventy-roibee",
+		branch: "master"
 	},
 	load_config_file: false,
 	"media_folder": "src/assets/images",
