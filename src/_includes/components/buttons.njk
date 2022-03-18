@@ -20,7 +20,9 @@
 		{% if click %}
 			@click="{{ click }}"
 		{% endif %}
-		:class="{{ event }}"
+		{% if event %}
+			:class="{{ event }}"
+		{% endif %}
 		class="
 			{{ class }}
 			flex text-lg font-semibold rounded-full outline-none items-center justify-center max-w-max transition-all duration-300 ease-linear active:opacity-60
