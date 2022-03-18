@@ -1,7 +1,7 @@
 import Swiper, { Scrollbar } from "swiper"
 import Size from "../../../js/tools/size"
 
-export default new class swiperService {
+export default new class Services {
 	constructor() {
 		this.swiper = undefined
 		this.swiperClass = "swiper-service"
