@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
+    font-display: swap;
     font-weight: 300;
     src: local(''),
         url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-300.woff2') format('woff2'),
@@ -10,6 +11,7 @@
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
+    font-display: swap;
     font-weight: 400;
     src: local(''),
         url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-regular.woff2') format('woff2'),
@@ -19,6 +21,7 @@
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
+    font-display: swap;
     font-weight: 500;
     src: local(''),
         url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-500.woff2') format('woff2'),
@@ -28,6 +31,7 @@
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
+    font-display: swap;
     font-weight: 600;
     src: local(''),
         url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-600.woff2') format('woff2'),
@@ -37,6 +41,7 @@
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
+    font-display: swap;
     font-weight: 700;
     src: local(''),
         url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-700.woff2') format('woff2'),
