@@ -6,7 +6,7 @@ const index = {
     "fields": [
         {
             "name": "wedo",
-            "label": "Мы делаем",
+            "label": "Разработка",
             "widget" : "list",
             "fields": [
                 {
@@ -35,7 +35,7 @@ const index = {
         },
         {
             "name": "process",
-            "label": "Как делаем",
+            "label": "Процесс разработки",
             "widget" : "list",
             "fields": [
                 {
@@ -47,6 +47,18 @@ const index = {
                     "name": "text",
                     "label": "Текст",
                     "widget": "markdown",
+                }
+            ]
+        },
+        {
+            "name": "benefits",
+            "label": "Приемущества",
+            "widget" : "list",
+            "fields": [
+                {
+                    "name": "text",
+                    "label": "Текст",
+                    "widget": "string",
                 }
             ]
         }
