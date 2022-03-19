@@ -11,20 +11,25 @@
 	>
 		<div class="grid gap-2 2xs:gap-3.5 xl:gap-4.5">
 			{{ input(
-				"email",
-				"entry.183100258",
-				"Ваша почта"
+				type = "email",
+				name = "entry.183100258",
+				title = "Ваша почта",
+				required = true,
+                attr = "@focusin='preSubmit'"
 			) }}
 			{{ input(
-				"tel",
-				"entry.2081991681",
-				"Ваш номер телефона"
+				type = "tel",
+				name = "entry.2081991681",
+				title = "Ваш номер телефона",
+				required = true,
+                attr = "@focusin='preSubmit'"
 			) }}
 			{{ textArea(
-				"message",
-				"entry.714657000",
-				"Ваше сообщение",
-				"p-1 h-28"
+				type = "message",
+				name = "entry.714657000",
+				title = "Ваше сообщение",
+				class = "p-1 h-28",
+                attr = "@focusin='preSubmit'"
 			) }}
 			<input
 				type="hidden" 
@@ -43,7 +48,8 @@
 			/>
 			{% call button(
 				type = "submit",
-				class = "p-3 mx-auto"
+				class = "p-3 mx-auto",
+                attr = "x-ref='button' @mouseover='preSubmit' @focusin='preSubmit'"
 			) %}
 				<span x-text="buttonLabel">Отправить</span>
 			{% endcall %}
