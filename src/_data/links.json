@@ -1,0 +1,33 @@
+{
+    "menuList": [
+        {
+            "link": "#services",
+            "anchor": "Услуги"
+        },
+        {
+            "link": "#",
+            "anchor": "О нас"
+        },
+        {
+            "link": "#form",
+            "anchor": "Контакты"
+        }
+    ],
+    "socNet": [
+        {
+            "linkText": "#",
+            "anchor": "",
+            "icon": "vk-icon"
+        },
+        {
+            "linkText": "#",
+            "anchor": "",
+            "icon": "twitter-icon"
+        },
+        {
+            "linkText": "#",
+            "anchor": "",
+            "icon": "instagram-icon"
+        }
+    ]
+}

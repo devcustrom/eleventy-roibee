@@ -2,22 +2,6 @@
 {% from "components/modal.njk" import modal with context %}
 {% from "partials/modals/form-brief/form-brief.njk" import form with context %}
 {% from "components/icon/icon.njk" import icon with context %}
-
-{% set links = [
-        {
-            "linkText": "#",
-            "icon": "vk-icon"
-        },
-        {
-            "linkText": "#",
-            "icon": "twitter-icon"
-        },
-        {
-            "linkText": "#",
-            "icon": "instagram-icon"
-        }
-    ] 
-%}
 <section x-data="{ brief : false }">
     <div class="w-full mx-auto md:px-5 md:container">
         <div class="grid md:grid-cols-2 w-full min-h-[80%]">
@@ -39,7 +23,7 @@
                 <div class="grid items-center gap-4 mt-5 grid-cols-1a1 md:grid-cols-1 md:grid-rows-1a1 md:justify-items-center md:-mt-20">
                     <span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-r-full md:rounded-tr-none md:rounded-b-full"></span>
                     <div class="grid grid-flow-col mx-auto md:grid-flow-row gap-x-5 gap-y-5 max-w-max">
-                        {% for item in links %}
+                        {% for item in links.socNet %}
                             <button class="relative transition-all duration-300 hover:opacity-75">
                                 {{ icon
                                     (
@@ -47,7 +31,7 @@
                                         name= item.icon
                                     ) 
                                 }}
-                                <a href="{{ item.linkText }}" rel="nofollow" class="absolute inset-0"></a>
+                                <a href="{{ item.linkText }}" rel="nofollow" class="hidden before:absolute before:inset-0">{{ item.anchor }}</a>
                             </button>
                         {% endfor %}
                     </div>
