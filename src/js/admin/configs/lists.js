@@ -1,6 +1,7 @@
 import { index } from './files/index'
 import { tables } from './files/tables'
 import { services } from './files/services'
+import { links } from './files/links'
 
 const lists = {
 	"label": 'Данные',
@@ -8,7 +9,8 @@ const lists = {
 	"files": [
 		index,
 		tables,
-		services
+		services,
+		links
 	]
 }
 

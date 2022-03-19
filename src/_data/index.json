@@ -180,5 +180,27 @@
 			"title": "Начало сотрудничества", 
 			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
 		}
-	] 
+	],
+
+    "benefits": [
+        {
+            "text" : "надежно"
+        },
+
+        {
+            "text" : "выгодно"
+        },
+
+        {
+            "text" : "\"Всё понятно\""
+        },
+
+        {
+            "text" : "комфортно"
+        },
+
+        {
+            "text" : "Правда"
+        }
+    ]
 }

@@ -1,6 +1,11 @@
 export default new class Size {
 	constructor() {
+		this.sm = "(min-width:640px)";
 		this.md = "(min-width:768px)";
+		this.lg = "(min-width:1024px)";
+		this.xl = "(min-width:1280px)";
+		this.xl = "(min-width:1280px)";
+		this.hover = "(hover: hover)"
 	}
 
 	checker(e, f) {
