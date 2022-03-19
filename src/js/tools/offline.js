@@ -1,5 +1,3 @@
-import roundToNearestMinutes from "date-fns/fp/roundToNearestMinutes";
-
 export default new class Offline {
 	constructor() {
 		this.url = '/robots.txt'
