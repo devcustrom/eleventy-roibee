@@ -9,7 +9,7 @@
 		<meta name="description" content="{{ description }}">
 		<meta name="keywords" content="{{ keywords }}">
 		<link rel="icon" type="image/svg+xml" href="{{ envs.site.faviconUrl | url }}">
-		<link rel="stylesheet" href="/dist/css/style.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
 	</head>
 	<body
 		class="font-body"
@@ -27,7 +27,8 @@
 			{{ content | safe }}
 		</main>
 		{% include "partials/footer/footer.njk" %}
-		<script src="/dist/js/app.js"></script>
+		<script defer src="/assets/js/manifest.js"></script>
+		<script defer src="/assets/js/vendor.js"></script>
+		<script defer src="/assets/js/app.js"></script>
 	</body>
-
 </html>
