@@ -4,8 +4,9 @@
 	<div
 		x-cloak
 		x-show="{{ modalName }}"
-		x-transition
-		class="fixed inset-0 z-[100] w-full h-full overflow-x-hidden overflow-y-auto bg-cod-gray"
+		x-transition:enter="opacity-0 invisible"
+		x-transition:leave="opacity-0 invisible"
+		class="fixed inset-0 z-[100] w-screen h-full transition-all overflow-x-hidden overflow-y-auto bg-cod-gray"
 	>
 		{% call button(
 			click =  modalName ~ " = false, bodyLock = false",
