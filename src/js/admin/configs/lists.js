@@ -1,7 +1,7 @@
-import { index } from './files/index'
-import { tables } from './files/tables'
-import { services } from './files/services'
-import { links } from './files/links'
+import { index } from '/src/js/admin/configs/files/index'
+import { tables } from '/src/js/admin/configs/files/tables'
+import { services } from '/src/js/admin/configs/files/services'
+import { links } from '/src/js/admin/configs/files/links'
 
 const lists = {
 	"label": 'Данные',
