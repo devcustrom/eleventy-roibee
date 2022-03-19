@@ -40,8 +40,11 @@
                 >
                 </div>
                 <ul
-                    class="fixed inset-y-0 right-0 invisible w-3/4 h-full max-w-xs px-4 py-20 overflow-y-auto transition-all opacity-0 md:py-0 md:pr-8 bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 md:opacity-100 md:visible"
-                    :class="{ 'opacity-0 invisible' : !openMenu }"
+                    class="fixed inset-y-0 invisible w-3/4 h-full max-w-xs px-4 py-20 overflow-y-auto transition-all opacity-0 left-[100vw] md:py-0 md:pr-8 bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 md:opacity-100 md:visible"
+                    :class="{
+                        'opacity-0 invisible translate-x-0' : !openMenu,
+                        '-translate-x-full' : openMenu
+                    }"
                 >
                     {% for item in links.menuList %}
                         <li class="py-2">

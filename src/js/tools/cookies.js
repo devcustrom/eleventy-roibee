@@ -8,7 +8,7 @@ export default new class Cookies {
 		));
 		return matches ? decodeURIComponent(matches[1]) : undefined;
 	}
-	  
+
 	setCookie(name, value, options = {}) {
 	
 		options = {
@@ -32,8 +32,7 @@ export default new class Cookies {
 		
 		document.cookie = updatedCookie;
 	}
-	
-	
+
 	deleteCookie(name) {
 		this.setCookie(name, "", {
 			'max-age': -1

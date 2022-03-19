@@ -1,4 +1,5 @@
 import Alpine from 'alpinejs'
+import Offline from '/src/js/tools/offline';
 import { load } from 'recaptcha-v3'
 
 export default new class ContactForm {
@@ -21,10 +22,18 @@ export default new class ContactForm {
 				})
 			})
 		},
+		preSubmit() {
+			if(!Offline.check()) {
+				this.buttonLabel = 'Отправить'
+				this.$refs.button.disabled = false
+			} else {
+				this.buttonLabel = 'Нет подключения'
+				this.$refs.button.disabled = true
+			}
+		},
 		submit() {
 			this.buttonLabel = 'Отправка'
 			this.sending = true
-
 			const form = new FormData(this.$refs.form)
 
 			fetch('https://docs.google.com/forms/u/1/d/e/1FAIpQLSfoltKxdAT-qxBHd1ALYFypcfeg9fXnQ-fPZLQ3GQFv1NkBLg/formResponse', {

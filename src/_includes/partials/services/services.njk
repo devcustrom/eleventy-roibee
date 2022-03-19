@@ -1,5 +1,5 @@
 {% from "components/buttons.njk" import button with context %}
-{% import "components/modal.njk" as elModal %}
+{% from "components/modal.njk" import modal %}
 {% from "components/label.njk" import label with context %}
 {% from "components/table.njk" import table %}
 
@@ -77,7 +77,7 @@
 		</div>
 	</div>
 	{% for item in services.services %}
-		{% call elModal.modal(item.name) %}
+		{% call modal(item.name) %}
 			<div class="container p-5 mx-auto">
 				<p class="text-xl font-extrabold text-transparent uppercase sm:text-center sm:text-3xl bg-clip-text bg-gradient-to-r from-malibu to-dodger-blue">{{ item.title }}</p>
 				<div class="bg-gradient-to-r mx-auto max-w-lg from-malibu to-dodger-blue h-0.5 rounded-sm mt-5"></div>

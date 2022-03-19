@@ -37,7 +37,6 @@ export default new class Offline {
 			xhr.open('GET', checkUrl, false)
 			xhr.send('')
 			if(xhr.readyState==4) this.result = xhr.status==200
-		
 			return this.result
 		}
 		catch (e){
