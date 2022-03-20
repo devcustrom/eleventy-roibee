@@ -15,7 +15,7 @@ export default new class  {
         component : Page
       },
     ]
-    this.previewStyle = "/dist/css/style.css"
+    this.previewStyle = "/assets/css/style.css"
     this.handler();
   }
 
