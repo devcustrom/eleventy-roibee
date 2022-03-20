@@ -41,7 +41,8 @@ module.exports = {
         'heliotrope' : '#DC56FF',
         'mine-shaft' : '#2F2F2F',
         'malibu' : '#53CFFF',
-        'dodger-blue' : '#3777FF'
+        'dodger-blue' : '#3777FF',
+        'porcelain':'#ECEDEE'
       },
       gridTemplateRows: {
         'aa1': 'repeat(2, auto) 1fr',
