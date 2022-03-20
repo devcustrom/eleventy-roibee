@@ -16,13 +16,13 @@
 	select:-webkit-autofill,
 	select:-webkit-autofill:hover,
 	select:-webkit-autofill:focus {
-		@apply border border-white text-white shadow-[0_0_px_1000px_transparent] transition-colors delay-[5000s] duration-[0] !bg-transparent;
+		@apply border border-white text-white shadow-[0_0_px_1000px_transparent] transition-colors delay-[5000s] duration-[0s] !bg-transparent;
 	}
 
 	.lozad {
 		@apply transition-all opacity-0;
 	}
-	
+
 	.lozad[data-loaded="true"] {
 		@apply opacity-100;
 	}
@@ -40,16 +40,16 @@
 	::-webkit-scrollbar-button {
 		@apply hidden;
 	}
-	
+
 	::-webkit-scrollbar-track,
 	::-webkit-scrollbar-corner {
 		@apply bg-transparent;
 	}
-	
+
 	::-webkit-scrollbar-thumb {
 		@apply rounded-full bg-seance;
 	}
-	
+
 	::-webkit-scrollbar {
 		@apply w-2 h-2;
 	}
