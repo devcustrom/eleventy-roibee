@@ -1,13 +1,11 @@
 {% from "partials/contact-us/form/form.njk" import contactForm %}
 {% from "components/label.njk" import label %}
 
-<section class="pb-[1vw]">
-	{{ label
-		(
-			theme = 'left',
-			text = 'Связаться с нами'
-		) 
-	}}
+<section>
+	{{ label(
+		theme = 'left',
+		text = 'Связаться с нами'
+	)}}
 	<div
 		class="container relative w-full p-5 mx-auto mt-10 overflow-hidden rounded-3xl"
 	>

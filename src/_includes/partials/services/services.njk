@@ -9,14 +9,13 @@
 		{% for item in services.services %}
 			{{ item.name }} : false,
 		{% endfor %}
-	}" 
+	}"
 	class="pt-20"
-	>
+>
 	{{ label(
 		theme = 'left',
 		text = "Услуги"
-	) 
-	}}
+	) }}
 	<div class="px-5 py-6 swiper swiper-service">
 		<div class="swiper-service-scrollbar relative h-2.5 w-full rounded-full md:hidden">
 			<div class="h-full rounded-full swiper-scrollbar-drag bg-gradient-to-r from-seance-2 to-medium-purple-2"></div>
@@ -107,7 +106,7 @@
 					<div class="mt-6 max-w-screen-xl mx-auto bg-white rounded-full h-0.5"></div>
 				</div> -->
 				<!-- {% for item in tables.priceList %}
-						
+
 				{% endfor %} -->
 				<div class="container mx-auto">
 					{{ table(item) }}
@@ -117,14 +116,14 @@
 				(
 					theme = 'right',
 					text = "Процесс"
-				) 
+				)
 			}}
 			<div class="container p-5 mx-auto mt-10">
-				<ul class="grid gap-5 mx-auto list-decimal list-inside max-w-max lg:grid-cols-2 xl:grid-cols-3">
+				<ul class="grid gap-5 mx-auto list-decimal list-inside grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
 					{% for item in item.process %}
-						<li class="sm:p-6 max-w-[400px] {% if loop.last %} md:col-span-2 xl:col-span-1 xl:mx-0 md:mx-auto {% endif %} text-xl font-bold uppercase sm:text-3xl text-white">
+						<li class="text-xl font-bold text-white uppercase sm:text-3xl last:odd:col-span-2">
 							<span>{{ item.title }}</span>
-							<span class="block text-lg font-normal normal-case sm:pt-6 sm:pl-6">{{ item.text }}</span>
+							<span class="block mt-2 text-lg font-normal normal-case">{{ item.text }}</span>
 						</li>
 					{% endfor %}
 				</ul>

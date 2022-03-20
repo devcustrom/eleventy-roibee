@@ -1,7 +1,7 @@
 {% from "components/buttons.njk" import button %}
 {% from "components/label.njk" import label %}
 
-<section 
+<section
 	x-data="{
 		activeSlide: 1,
 		cname: 'processSlide'
@@ -17,12 +17,10 @@
 		}
 	"
 >
-	{{ label
-		(
-			theme = 'right',
-			text = "Процесс"
-		) 
-	}}
+	{{ label(
+		theme = 'right',
+		text = "Процесс"
+	) }}
 	<div class="container px-5 mx-auto">
 		<div class=" relative w-full h-2.5 mx-auto ring-1 ring-white ring-inset mt-10 rounded-full lg:hidden">
 			<div
@@ -52,7 +50,7 @@
 			{% for item in index.process %}
 			<div
 				x-cloak
-				x-show="activeSlide === {{ loop.index }}"	
+				x-show="activeSlide === {{ loop.index }}"
 				x-transition:enter="hidden"
 				x-transition:leave="opacity-0 invisible"
 				class="grid min-h-[300px] lg:h-full p-4 overflow-hidden transition-all duration-300 grid-rows-1a rounded-3xl bg-mine-shaft"
@@ -73,7 +71,6 @@
 							Назад
 						{% endcall %}
 					{% endif %}
-					
 					{% if not loop.last %}
 						{% call button(
 							click = "activeSlide = " ~ loop.index ~ "+ 1",

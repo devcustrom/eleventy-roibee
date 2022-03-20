@@ -1,72 +1,73 @@
 {% from "components/label.njk" import label %}
 {% from "components/buttons.njk" import button %}
 
-{{ label(
-	theme = 'right',
-	text = "Мы делаем"
-) }}
-<div class="container relative mx-auto mt-14 lg:min-h-[280px]">
-	<div
-		class="z-10 grid w-full mx-auto gap-x-5 justify-items-center sm:grid-cols-2 lg:top-0 lg:left-1/2 lg:-translate-x-1/2 max-w-max lg:absolute lg:grid-cols-3"
-	>
-		{% for item in index.wedo %}
+<section>
+	{{ label(
+		theme = 'right',
+		text = "Мы делаем"
+	) }}
+	<div class="container relative mx-auto mt-14 lg:min-h-[280px]">
 		<div
-			class="sm:odd:last:col-span-2 lg:odd:last:col-auto relative w-1/3 min-w-[320px] max-w-[390px] "
+			class="z-10 grid w-full mx-auto gap-x-5 justify-items-center sm:grid-cols-2 lg:top-0 lg:left-1/2 lg:-translate-x-1/2 max-w-max lg:absolute lg:grid-cols-3"
 		>
-			<div class="rounded-[20px] bg-cod-gray p-5">
-				<div
-					class="relative after:absolute after:h-1 after:w-full after:rounded-full after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet"
-				>
-					<p class="text-lg">{{ item.name }}</p>
-				</div>
-				<div
-					x-data="{ open: false }"
-					class="relative pt-6 font-medium tracking-normal bg-transparent bg-opacity-100 after:absolute after:bottom-6 after:h-1 after:w-full after:translate-y-full after:rounded-sm after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet"
-				>
-					<ul
-						class="relative grid gap-6 overflow-hidden transition-all duration-300 before:absolute before:bottom-0 before:h-10 before:w-full before:bg-gradient-to-t"
-						:class="open ? 'max-h-screen' : 'max-h-[170px] before:from-cod-gray'"
+			{% for item in index.wedo %}
+			<div
+				class="sm:odd:last:col-span-2 lg:odd:last:col-auto relative w-1/3 min-w-[320px] max-w-[390px] "
+			>
+				<div class="rounded-[20px] bg-cod-gray p-5">
+					<div
+						class="relative after:absolute after:h-1 after:w-full after:rounded-full after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet"
 					>
-						{% for subitem in item.text %}
-						<li>
-						{% if subitem.link %}
-							<a
-								href="{{ subitem.link }}"
-								class="transition-all hover:opacity-70 focus-visible:opacity-70"
-							>
-								{{ subitem.name }}
-							</a>
-						{% else %}
-							<span>
-								{{ subitem.name }}
-							</span>
-						{% endif %}
-							
-						</li>
-						{% endfor %}
-					</ul>
-					<div class="relative z-[1] max-w-max mx-auto">
-						{% call button(
-							click = "open = !open",
-							event = "open ? 'rotate-180' : ''",
-							class = "duration-150",
-							iconName = "arrow"
-						) %}
-						{% endcall %}
+						<p class="text-lg">{{ item.name }}</p>
 					</div>
-					<!-- 
-							iconSize = " md:w-10 w-8 h-8 md:h-10"
-							iconClass = "transition-all duration-300 text-white",
-							iconEvent = "open ? 'rotate-180' : ''"<button
-						@click="open = !open"
-						class="relative z-[1] mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white bg-gradient-to-b from-medium-purple-2 to-seance-2 shadow-purp transition-all hover:opacity-70 focus-visible:opacity-70"
+					<div
+						x-data="{ open: false }"
+						class="relative pt-6 font-medium tracking-normal bg-transparent bg-opacity-100 after:absolute after:bottom-6 after:h-1 after:w-full after:translate-y-full after:rounded-sm after:bg-gradient-to-r after:from-blue-ribbon after:to-electric-violet"
 					>
-						<svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M16.96 5.09 15 3.15 8.72 9.44l-6.29-6.3L.5 5.1l8.23 8.23 8.24-8.23Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" transform="rotate(90 8.48 8.48)" d="M0 0h16.46v16.46H0z"/></clipPath></defs></svg>
-					</button> -->
+						<ul
+							class="relative grid gap-6 overflow-hidden transition-all duration-300 before:absolute before:bottom-0 before:h-10 before:w-full before:bg-gradient-to-t"
+							:class="open ? 'max-h-screen' : 'max-h-[170px] before:from-cod-gray'"
+						>
+							{% for subitem in item.text %}
+							<li>
+							{% if subitem.link %}
+								<a
+									href="{{ subitem.link }}"
+									class="transition-all hover:opacity-70 focus-visible:opacity-70"
+								>
+									{{ subitem.name }}
+								</a>
+							{% else %}
+								<span>
+									{{ subitem.name }}
+								</span>
+							{% endif %}
+
+							</li>
+							{% endfor %}
+						</ul>
+						<div class="relative z-[1] max-w-max mx-auto">
+							{% call button(
+								click = "open = !open",
+								event = "open ? 'rotate-180' : ''",
+								class = "duration-150",
+								iconName = "arrow"
+							) %}
+							{% endcall %}
+						</div>
+						<!--
+								iconSize = " md:w-10 w-8 h-8 md:h-10"
+								iconClass = "transition-all duration-300 text-white",
+								iconEvent = "open ? 'rotate-180' : ''"<button
+							@click="open = !open"
+							class="relative z-[1] mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white bg-gradient-to-b from-medium-purple-2 to-seance-2 shadow-purp transition-all hover:opacity-70 focus-visible:opacity-70"
+						>
+							<svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M16.96 5.09 15 3.15 8.72 9.44l-6.29-6.3L.5 5.1l8.23 8.23 8.24-8.23Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" transform="rotate(90 8.48 8.48)" d="M0 0h16.46v16.46H0z"/></clipPath></defs></svg>
+						</button> -->
+					</div>
 				</div>
 			</div>
+			{% endfor %}
 		</div>
-		{% endfor %}
 	</div>
-</div>
-<!-- :class="open ? 'rotate-180' : ''" class="w-5 h-5" -->
+</section>
