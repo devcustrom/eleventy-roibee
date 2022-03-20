@@ -120,11 +120,11 @@
 				) 
 			}}
 			<div class="container p-5 mx-auto mt-10">
-				<ul class="grid gap-5 mx-auto max-w-max lg:grid-cols-2 xl:grid-cols-3">
+				<ul class="grid gap-5 mx-auto list-decimal list-inside max-w-max lg:grid-cols-2 xl:grid-cols-3">
 					{% for item in item.process %}
-						<li class="sm:p-6 max-w-[400px] {% if loop.last %} md:col-span-2 xl:col-span-1 xl:mx-0 md:mx-auto {% endif %} text-white">
-							<p class="text-xl font-bold uppercase sm:text-3xl">{{ loop.index }}. {{ item.title }}</p>
-							<span class="block text-lg sm:pt-6 sm:pl-6">{{ item.text }}</span>
+						<li class="sm:p-6 max-w-[400px] {% if loop.last %} md:col-span-2 xl:col-span-1 xl:mx-0 md:mx-auto {% endif %} text-xl font-bold uppercase sm:text-3xl text-white">
+							<span>{{ item.title }}</span>
+							<span class="block text-lg font-normal normal-case sm:pt-6 sm:pl-6">{{ item.text }}</span>
 						</li>
 					{% endfor %}
 				</ul>
