@@ -4,11 +4,13 @@ import { load } from 'recaptcha-v3'
 
 export default new class ContactForm {
 	constructor() {
+		this.url = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSfoltKxdAT-qxBHd1ALYFypcfeg9fXnQ-fPZLQ3GQFv1NkBLg/formResponse'
 		this.handler();
 	}
 
 	contactForm = () => ({
 		message: '',
+		url: this.url,
 		sent: false,
 		sending: false,
 		buttonLabel: 'Отправить',
@@ -23,7 +25,7 @@ export default new class ContactForm {
 			})
 		},
 		preSubmit() {
-			if(!Offline.check()) {
+			if(Offline.check()) {
 				this.buttonLabel = 'Отправить'
 				this.$refs.button.disabled = false
 			} else {
@@ -36,7 +38,7 @@ export default new class ContactForm {
 			this.sending = true
 			const form = new FormData(this.$refs.form)
 
-			fetch('https://docs.google.com/forms/u/1/d/e/1FAIpQLSfoltKxdAT-qxBHd1ALYFypcfeg9fXnQ-fPZLQ3GQFv1NkBLg/formResponse', {
+			fetch(this.url, {
 				method: 'POST',
 				mode: 'no-cors',
 				body: form

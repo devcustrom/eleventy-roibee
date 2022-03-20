@@ -54,6 +54,10 @@
 		@apply w-2 h-2;
 	}
 
+	::-webkit-resizer {
+		@apply hidden;
+	}
+
 	.body {
 		@apply bg-no-repeat bg-cod-gray bg-[position:45vw_top] bg-[length:55vw] overflow-x-hidden text-white bg-[url(/assets/icons/sota.svg)];
 	}

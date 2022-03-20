@@ -8,7 +8,7 @@
                 {{ attr | safe }}
             {% endif %}
             {% if required %}required{% endif %}
-            class="w-full px-5 text-white transition-all bg-transparent outline-none appearance-none valid:focus:ring-green-500 invalid:focus:ring-red-600 ring-1 rounded-2xl focus:outline-none h-14 focus:ring-electric-violet hover:ring-electric-violet disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+            class="w-full px-5 text-white transition-all bg-transparent rounded-lg outline-none appearance-none valid:focus:ring-green-500 invalid:focus:ring-red-600 ring-1 focus:outline-none h-14 focus:ring-electric-violet hover:ring-electric-violet disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
         >
     </label>
 {% endmacro %}
@@ -21,7 +21,7 @@
             {% if attr %}
                 {{ attr | safe }}
             {% endif %}
-            class="w-full {{ class }} px-5 text-white transition-all bg-transparent outline-none appearance-none ring-1 rounded-2xl focus:outline-none focus:ring-electric-violet hover:ring-electric-violet disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
+            class="w-full {{ class }} px-5 py-2 h-28 text-white transition-all bg-transparent outline-none appearance-none ring-1 rounded-lg focus:outline-none focus:ring-electric-violet hover:ring-electric-violet disabled:text-gray-500 disabled:hover:ring-gray-500 ring-gray-500"
             {% if required %}required{% endif %}
         ></textarea>
     </label>

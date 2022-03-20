@@ -1,6 +1,6 @@
 {% from "components/icon/icon.njk" import icon %}
 
-{% macro button(click, attr, class, size, theme, iconName, iconLeft, link, hideText) %}
+{% macro button(type, click, attr, class, size, theme, iconName, iconLeft, link, hideText) %}
 {% if link %}
 	{% set tag = 'a' %}
 {% else %}
