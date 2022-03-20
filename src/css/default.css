@@ -33,5 +33,5 @@ body {
 	background-position-x: 45vw;
 	background-size: 55vw;
 	background-image: url(/assets/icons/sota.svg);
-	@apply w-full max-w-full overflow-x-hidden text-base font-semibold tracking-normal text-white bg-right-top bg-no-repeat bg-cod-gray;
+	@apply w-full max-w-full overflow-x-hidden text-base tracking-normal text-white bg-right-top bg-no-repeat bg-cod-gray;
 }
