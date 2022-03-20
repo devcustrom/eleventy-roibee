@@ -1,4 +1,4 @@
-{% from "components/buttons.njk" import button with context %}
+{% from "components/buttons.njk" import button %}
 
 {% macro modal(modalName) %}
 	<div
@@ -6,14 +6,17 @@
 		x-show="{{ modalName }}"
 		x-transition:enter="opacity-0 invisible"
 		x-transition:leave="opacity-0 invisible"
-		class="fixed inset-0 z-[100] w-screen h-full transition-all overflow-x-hidden overflow-y-auto bg-cod-gray"
+		class="fixed top-0 left-0 z-[100] w-screen h-full transition-all overflow-x-hidden overflow-y-auto bg-cod-gray"
 	>
-		{% call button(
-			click =  modalName ~ " = false, bodyLock = false",
-			class = "fixed z-10 transition-all duration-300 top-2 right-3",
-			iconName = "close",
-			iconClass = "md:w-10 w-8 h-8 md:h-10 text-white"
-		) %}{% endcall %}
+		<div class="sticky z-10 top-2">
+			{{ button(
+				click =  modalName ~ " = false, bodyLock = false",
+				class = "absolute transition-all duration-300 top-2 right-3",
+				iconName = "close",
+				iconClass = "md:w-10 w-8 h-8 md:h-10 text-white",
+				hideText = "Закрыть"
+			) }}
+		</div>
 		{{ caller() }}
 	</div>
 {% endmacro %}

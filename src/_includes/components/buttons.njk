@@ -52,7 +52,7 @@
 			<span class="sr-only">
 				{{ hideText }}
 			</span>
-		{% else %}
+		{% elif caller() %}
 			<span class="px-2 empty:hidden">
 				{{ caller() }}
 			</span>
