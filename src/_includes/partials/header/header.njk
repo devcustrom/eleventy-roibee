@@ -2,12 +2,15 @@
     x-data="{
         noTop: false,
         h: 80,
-        openMenu: false
+		show: Size.checker(Size.md),
     }"
     x-init="
         window.addEventListener('scroll', function() {
             noTop = (document.body.scrollTop > h || document.documentElement.scrollTop > h);
         })
+		Size.checker(Size.md, function() {
+			show = Size.checker(Size.md)
+		})
     "
     class="header sticky top-0 z-[100] transition-all h-20"
     :class="noTop ? 'bg-cod-gray' : 'bg-transparent'"
@@ -23,27 +26,33 @@
             <nav class="flex justify-end">
                 <button
                     class="header__burger py-0.5 flex flex-col justify-between md:hidden relative h-6 w-6 z-10"
-                    :class="openMenu ? 'before:rotate-45 before:translate-y-px after:-rotate-45 after:-translate-y-px' : ''"
-                    @click="openMenu = !openMenu, bodyLock = !bodyLock"
+                    :class="bodyLock ? 'before:rotate-45 before:translate-y-px after:-rotate-45 after:-translate-y-px' : ''"
+                    @click="bodyLock = !bodyLock, show = !show"
                 >
                     <span
-                        :class="openMenu ? 'opacity-0 rotate-45' : ''"
+                        :class="bodyLock ? 'opacity-0 rotate-45' : ''"
                     ></span>
                     <span
                         class="sr-only"
-                        x-text="!openMenu ? 'Открыть меню' : 'Закрыть меню'"
+                        x-text="!bodyLock ? 'Открыть меню' : 'Закрыть меню'"
                     >Открыть меню</span>
                 </button>
                 <ul
-                    class="fixed inset-y-0 invisible w-3/4 h-full max-w-xs px-4 py-20 overflow-y-auto transition-all opacity-0 left-[100vw] md:py-0 md:pr-8 bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 md:opacity-100 md:visible"
-                    :class="{
-                        'opacity-0 invisible translate-x-0' : !openMenu,
-                        '-translate-x-full' : openMenu
-                    }"
+                    class="fixed inset-y-0 w-3/4 h-full max-w-xs px-4 py-20 overflow-y-auto transition-all duration-300 left-[100vw] md:py-0 md:pr-8 bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 md:translate-x-0"
+					:class="bodyLock ? '-translate-x-full': 'translate-x-0' "
+					x-show="show ? true : bodyLock"
+					x-cloak
+					x-transition:enter
+					x-transition:leave="opacity-0"
+					@click.outside="bodyLock = false"
                 >
                     {% for item in links.menuList %}
                         <li class="py-2">
-                            <a href="{{ item.link }}" class="text-lg text-white hover:opacity-75 focus-visible:opacity-75 active:opacity-50">{{ item.anchor }}</a>
+                            <a
+								@click="bodyLock = !bodyLock"
+								href="{{ item.link }}"
+								class="text-lg text-white hover:opacity-75 focus-visible:opacity-75 active:opacity-50"
+							>{{ item.anchor }}</a>
                         </li>
                     {% endfor %}
                 </ul>
