@@ -1,7 +1,7 @@
 import CMS from 'netlify-cms'
-import Post from "./preview-templates/post.js";
-import Page from "./preview-templates/page.js"
-import { config } from "./config.js"
+import Post from "/src/js/admin/preview-templates/post.js";
+import Page from "/src/js/admin/preview-templates/page.js"
+import { config } from "/src/js/admin/config.js"
 
 export default new class  {
   constructor() {

@@ -1,5 +1,5 @@
-import { tableRow } from './tables'
-import { enable } from '../components/enable.js'
+import { tableRow } from '/src/js/admin/configs/files/tables'
+import { enable } from '/src/js/admin/configs/components/enable.js'
 
 const services = {
     "name": "services",

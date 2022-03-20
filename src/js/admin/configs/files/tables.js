@@ -1,4 +1,4 @@
-import { enable } from '../components/enable.js'
+import { enable } from '/src/js/admin/configs/components/enable.js'
 
 const tableRow = {
     "name": "list",

@@ -6,6 +6,7 @@
 		class="max-w-[500px] mx-auto"
 		x-data="contactForm"
 		x-ref="form"
+		action="#"
 		method="POST"
 		@submit.prevent="submit"
 	>
@@ -28,7 +29,6 @@
 				type = "message",
 				name = "entry.714657000",
 				title = "Ваше сообщение",
-				class = "p-1 h-28",
                 attr = "@focusin='preSubmit'"
 			) }}
 			<input
