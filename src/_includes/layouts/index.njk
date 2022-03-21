@@ -15,13 +15,13 @@
 		class="font-body body"
 		x-data="{
 			bodyLock : false,
-			scrollWidth: 0
+			scrollWidth: window.innerWidth - $refs.body.offsetWidth + 'px'
 		}"
-		:class=" bodyLock ? 'overflow-hidden' : ''"
+		:class="bodyLock ? 'overflow-hidden' : ''"
 		:style="bodyLock ? 'padding-right:' + scrollWidth : ''"
 		x-ref="body"
-		x-init="scrollWidth = window.innerWidth - $refs.body.offsetWidth + 'px'"
 	>
+	<span x-text="scrollWidth"></span>
 		{% include "partials/header/header.njk" %}
 		<main>
 			{{ content | safe }}
