@@ -21,7 +21,6 @@
 		:style="bodyLock ? 'padding-right:' + scrollWidth : ''"
 		x-ref="body"
 	>
-	<span x-text="scrollWidth"></span>
 		{% include "partials/header/header.njk" %}
 		<main>
 			{{ content | safe }}
