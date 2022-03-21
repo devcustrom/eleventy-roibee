@@ -24,15 +24,17 @@
                     <span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-r-full md:rounded-tr-none md:rounded-b-full"></span>
                     <div class="grid grid-flow-col mx-auto md:grid-flow-row gap-x-5 gap-y-5 max-w-max">
                         {% for item in links.socNet %}
-                            <button class="relative transition-all duration-300 hover:opacity-75">
-                                {{ icon
-                                    (
-                                        size= "w-10 h-10",
-                                        name= item.icon
-                                    ) 
-                                }}
-                                <a href="{{ item.linkText }}" rel="nofollow" class="hidden before:absolute before:inset-0">{{ item.anchor }}</a>
-                            </button>
+                            {% if item.enable %}
+                                <a href="{{ item.linkText }}" class="relative transition-all duration-300 hover:opacity-75">
+                                    <span class="sr-only">{{ item.anchor }}</span>
+                                    {{ icon
+                                        (
+                                            size= "w-10 h-10",
+                                            name= item.icon
+                                        ) 
+                                    }}
+                                </a>
+                            {% endif %}
                         {% endfor %}
                     </div>
                     <span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-l-full md:rounded-full"></span>

@@ -10,6 +10,12 @@ const links = {
             "widget" : "list",
             "fields": [
                 {
+                    "label": "активно?",
+                    "name": "enable",
+                    "widget": "boolean",
+                    default: true
+                },
+                {
                     "label": "текст ссылки",
                     "name": "anchor",
                     "widget": "string"
@@ -26,6 +32,12 @@ const links = {
             "label": "Социальные сети",
             "widget" : "list",
             "fields": [
+                {
+                    "label": "активно?",
+                    "name": "enable",
+                    "widget": "boolean",
+                    default: true
+                },
                 {
                     "label": "Текст ссылки",
                     "name": "anchor",

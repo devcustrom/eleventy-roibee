@@ -47,13 +47,15 @@
 					@click.outside="bodyLock = false, show = false"
                 >
                     {% for item in links.menuList %}
-                        <li class="py-2">
-                            <a
-								@click="bodyLock = !bodyLock"
-								href="{{ item.link }}"
-								class="text-lg text-white hover:opacity-75 focus-visible:opacity-75 active:opacity-50"
-							>{{ item.anchor }}</a>
-                        </li>
+                        {% if item.enable %}
+                            <li class="py-2">
+                                <a
+                                    @click="bodyLock = !bodyLock"
+                                    href="{{ item.link }}"
+                                    class="text-lg text-white hover:opacity-75 focus-visible:opacity-75 active:opacity-50"
+                                >{{ item.anchor }}</a>
+                            </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </nav>

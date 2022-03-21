@@ -1,33 +1,40 @@
 {
-  "menuList": [
-    {
-      "link": "#services",
-      "anchor": "Услуги"
-    },
-    {
-      "link": "#",
-      "anchor": "О нас"
-    },
-    {
-      "link": "#form",
-      "anchor": "Связаться с нами"
-    }
-  ],
-  "socNet": [
-    {
-      "linkText": "#",
-      "anchor": "Наш группа ВКонтакте",
-      "icon": "vk-icon"
-    },
-    {
-      "linkText": "#",
-      "anchor": "Наш твиттер",
-      "icon": "twitter-icon"
-    },
-    {
-      "linkText": "https://instagram.com/roibee_ru/",
-      "anchor": "Наш инстаграм",
-      "icon": "instagram-icon"
-    }
-  ]
+    "menuList": [
+        {
+            "link": "#services",
+            "anchor": "Услуги",
+            "enable": true
+        },
+        {
+            "link": "#",
+            "anchor": "О нас",
+            "enable": true
+        },
+        {
+            "link": "#form",
+            "anchor": "Контакты",
+            "enable": true
+        }
+    ],
+
+    "socNet": [
+        {
+            "linkText": "#",
+            "anchor": "",
+            "icon": "vk-icon",
+            "enable": true
+        },
+        {
+            "linkText": "#",
+            "anchor": "",
+            "icon": "twitter-icon",
+            "enable": true
+        },
+        {
+            "linkText": "#",
+            "anchor": "",
+            "icon": "instagram-icon",
+            "enable": true
+        }
+    ]
 }
