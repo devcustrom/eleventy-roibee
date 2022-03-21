@@ -45,7 +45,6 @@ export default new class ContactForm {
 			})
 				.then(() => {
 					this.message = 'Форма отправлена, ожидайте!<br> С вами свяжутся'
-					this.$refs.form.reset()
 				})
 				.catch(() => {
 					this.message = 'Увы, но произошла ошибка попробуйте еще раз!'
@@ -55,6 +54,7 @@ export default new class ContactForm {
 					this.sending = false;
 					this.buttonLabel = 'Отправлено'
 					setTimeout(() => {
+						this.$refs.form.reset()
 						this.buttonLabel = 'Отправить',
 						this.sent = false
 					}, 15000)
