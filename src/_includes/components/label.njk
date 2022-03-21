@@ -2,11 +2,11 @@
 	<div
 		class="
 			{{ class }}
-			relative mt-10 flex h-16 w-3/4 max-w-full sm:max-w-1/2 sm:w-auto items-center from-seance-2 to-medium-purple-2 before:absolute before:top-2 before:right-0 before:z-[-1] before:h-16 before:ring-1 before:ring-white py-5 px-9 font-semibold before:rounded-[inherit]
+			relative mt-10 flex h-16 w-3/4 max-w-full sm:max-w-1/2 sm:w-auto items-center from-seance-2 to-medium-purple-2 before:absolute before:inset-0 before:translate-y-3 before:z-[-1] before:border before:border-white py-5 px-9 font-semibold before:rounded-[inherit]
 			{% if theme=='left' %}
-				mr-auto justify-end rounded-r-[70px] bg-gradient-to-l before:left-0
+				mr-auto justify-end rounded-r-[70px] bg-gradient-to-l before:border-l-0 before:right-3
 			{% elif theme=='right' %}
-				ml-auto justify-start rounded-l-[70px] bg-gradient-to-r before:left-2
+				ml-auto justify-start rounded-l-[70px] bg-gradient-to-r before:border-r-0 before:left-3
 			{% endif %}
 		">
 		<span>{{ text }}</span>
