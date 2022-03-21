@@ -8,7 +8,7 @@
         {
             "link": "#",
             "anchor": "О нас",
-            "enable": true
+            "enable": false
         },
         {
             "link": "#form",
@@ -19,20 +19,20 @@
 
     "socNet": [
         {
-            "linkText": "#",
-            "anchor": "",
+            "link": "#",
+            "anchor": "Наша группа ВК",
             "icon": "vk-icon",
-            "enable": true
+            "enable": false
         },
         {
-            "linkText": "#",
-            "anchor": "",
+            "link": "#",
+            "anchor": "Наш твиттер",
             "icon": "twitter-icon",
-            "enable": true
+            "enable": false
         },
         {
-            "linkText": "#",
-            "anchor": "",
+            "link": "https://instagram.com/roibee_ru/",
+            "anchor": "Наш инстаграм",
             "icon": "instagram-icon",
             "enable": true
         }

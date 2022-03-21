@@ -45,7 +45,7 @@ const links = {
                 },
                 {
                     "label": "ссылка",
-                    "name": "linkText",
+                    "name": "link",
                     "widget": "string",
                 },
                 {
