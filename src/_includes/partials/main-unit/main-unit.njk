@@ -25,7 +25,12 @@
                     <div class="grid grid-flow-col mx-auto md:grid-flow-row gap-x-5 gap-y-5 max-w-max">
                         {% for item in links.socNet %}
                             {% if item.enable %}
-                                <a href="{{ item.link }}" class="relative transition-all duration-300 hover:opacity-75">
+                                <a
+									href="{{ item.link }}"
+									class="relative transition-all duration-300 hover:opacity-75"
+									target="_blank"
+									rel="nofollow, noopener"
+								>
                                     <span class="sr-only">{{ item.anchor }}</span>
                                     {{ icon
                                         (
