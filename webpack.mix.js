@@ -21,7 +21,6 @@ mix.webpackConfig({
 
 mix.extract([
     'swiper',
-    'swiper/modules/pagination',
     'alpinejs',
 ]);
 
