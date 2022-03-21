@@ -44,7 +44,7 @@
 					x-cloak
 					x-transition:enter
 					x-transition:leave="opacity-0"
-					@click.outside="bodyLock = false"
+					@click.outside="bodyLock = false, show = false"
                 >
                     {% for item in links.menuList %}
                         <li class="py-2">
