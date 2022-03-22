@@ -4,7 +4,6 @@ export default new class Size {
 		this.md = "(min-width:768px)";
 		this.lg = "(min-width:1024px)";
 		this.xl = "(min-width:1280px)";
-		this.xl = "(min-width:1280px)";
 		this.hover = "(hover: hover)"
 	}
 
