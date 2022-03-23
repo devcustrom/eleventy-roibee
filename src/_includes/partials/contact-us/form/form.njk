@@ -56,20 +56,33 @@
 		</div>
 		<div
 			x-cloak
+			x-transition:enter="opacity-0 invisible"
+			x-transition:leave="opacity-0 invisible"
 			x-show="sent"
-			class="absolute inset-0 flex items-center bg-white"
+			class="absolute inset-0 mb-5 transition-all duration-300"
 		>
-			<div class="p-5 text-red-600">
-				<div class="mb-5 text-lg lg:text-2xl">
-					<p x-html="message"></p>
+			<div class="flex items-center h-full max-w-lg mx-auto bg-seance rounded-3xl">
+				<div class="w-full mb-5">
+					<div class="p-5 text-lg text-center text-white lg:text-2xl">
+						<!-- <p x-html="message"></p> -->
+						<p>Форма отправлена, ожидайте!<br> С вами свяжутся</p>
+					</div>
+					<!-- <button
+						type="button"
+						@click="sent = false"
+						class="flex items-center justify-center px-6 py-3 mx-auto text-lg text-black transition bg-white rounded-full outline-none focus:outline-none h-13 bg-themes-default active:bg-themes-second "
+					>
+						Закрыть
+					</button> -->
+					{% call button(
+						theme = "white",
+						type = "button",
+						class = "p-3 mx-auto",
+						click = "sent = false, $refs.form.reset()"
+					) %}
+						<span>Закрыть</span>
+					{% endcall %}
 				</div>
-				<button
-					type="button"
-					@click="sent = false"
-					class="flex items-center justify-center px-6 py-4 text-sm text-white transition rounded-full outline-none focus:outline-none h-13 bg-themes-default active:bg-themes-second "
-				>
-					Закрыть
-				</button>
 			</div>
 		</div>
 	</form>
