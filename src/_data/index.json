@@ -1,206 +1,195 @@
 {
-    "wedo":[
+  "wedo": [
+    {
+      "name": "Веб дизайн",
+      "text": [
         {
-            "name": "Веб дизайн",
-            "text":[
-                {
-                    "name" : "Лендинг страницы",
-                    "link" : "#"
-                },
-        
-                {
-                    "name" : "Сайт любой тематики"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Сайт любой тематики"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                }
-            ]
+          "name": "Лендинг страницы",
+          "link": "#"
         },
         {
-            "name": "SEO оптимизация",
-            "text":[
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Сайт любой тематики"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Сайт любой тематики"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                }
-            ]
+          "name": "Сайт любой тематики",
+          "link": "#"
         },
         {
-            "name": "Верстка",
-            "text":[
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Сайт любой тематики"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Сайт любой тематики"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                },
-        
-                {
-                    "name" : "Интернет-магазин"
-                },
-        
-                {
-                    "name" : "Лендинг страницы"
-                }
-            ]
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Сайт любой тематики",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
         }
-    ],
-
-    "process": [ 
-		{ 
-			"title": "Заполнение брифа", 
-			"text": "Lorem ipsum, dolor <br> sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		}, 
-		{ 
-			"title": "Изучение заявки", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		},
-		{ 
-			"title": "Обсуждение деталей", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		}, 
-		{ 
-			"title": "Оформление договора", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		},
-		{ 
-			"title": "Начало сотрудничества", 
-			"text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
-		}
-	],
-
-    "benefits": [
+      ]
+    },
+    {
+      "name": "SEO оптимизация",
+      "text": [
         {
-            "text" : "надежно"
+          "name": "Лендинг страницы",
+          "link": "#"
         },
-
         {
-            "text" : "выгодно"
+          "name": "Сайт любой тематики",
+          "link": "#"
         },
-
         {
-            "text" : "\"Всё понятно\""
+          "name": "Интернет-магазин",
+          "link": "#"
         },
-
         {
-            "text" : "комфортно"
+          "name": "Лендинг страницы",
+          "link": "#"
         },
-
         {
-            "text" : "Правда"
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Сайт любой тематики",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
         }
-    ]
+      ]
+    },
+    {
+      "name": "Верстка",
+      "text": [
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Сайт любой тематики",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Сайт любой тематики",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        },
+        {
+          "name": "Интернет-магазин",
+          "link": "#"
+        },
+        {
+          "name": "Лендинг страницы",
+          "link": "#"
+        }
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": "Заполнение брифа",
+      "text": "Lorem ipsum, dolor <br> sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+    },
+    {
+      "title": "Изучение заявки",
+      "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+    },
+    {
+      "title": "Обсуждение деталей",
+      "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+    },
+    {
+      "title": "Оформление договора",
+      "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+    },
+    {
+      "title": "Начало сотрудничества",
+      "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+    }
+  ],
+  "benefits": [
+    {
+      "text": "надежно"
+    },
+    {
+      "text": "выгодно"
+    },
+    {
+      "text": "понятно"
+    },
+    {
+      "text": "комфортно"
+    }
+  ]
 }
