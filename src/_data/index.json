@@ -159,23 +159,23 @@
   "process": [
     {
       "title": "Заполнение брифа",
-      "text": "Lorem ipsum, dolor <br> sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+      "text": "Заполненный бриф поможет нам понять, чем занимается ваша компания, какие цели и задачи вы планируете достичь, а также оценить примерную стоимость и сроки разработки. А контактные данные помогут нам держать с вами связь и обмениваться данными."
     },
     {
       "title": "Изучение заявки",
-      "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+      "text": "Изучаем вашу заявку, разбираемся в тематике, отмечаем сильные стороны проекта, готовим дополнительные вопросы и коммерческое предложение."
     },
     {
       "title": "Обсуждение деталей",
-      "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+      "text": "Обсуждаем детали и готовим техническое задание (ТЗ)."
     },
     {
       "title": "Оформление договора",
-      "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+      "text": "Оформление договора и внесение предоплаты."
     },
     {
       "title": "Начало сотрудничества",
-      "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore recusandae reprehenderit id provident blanditiis aperiam iusto itaque quaerat nesciunt aut voluptatibus qui, ipsum consequatur numquam adipisci quisquam ducimus sapiente!"
+      "text": "Создаем дизайн-проект, вёрстка, разрабатываем функции сайта, размещаем сайт и делаем первоначальное наполнение и другое."
     }
   ],
   "benefits": [
