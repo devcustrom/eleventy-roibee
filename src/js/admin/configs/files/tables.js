@@ -1,4 +1,4 @@
-import { enable } from '/src/js/admin/configs/components/enable.js'
+import { enable } from '../../../admin/configs/components/enable.js'
 
 const tableRow = {
     "name": "list",
@@ -30,7 +30,7 @@ const tableRow = {
         {
             "label": "в месяц",
             "name": "month",
-            "widget": "boolean", 
+            "widget": "boolean",
             "default": false,
             "required": false
         },
@@ -56,7 +56,7 @@ const table = {
         {
             "label": "Услуга активна?",
             "name": "enable",
-            "widget": "boolean", 
+            "widget": "boolean",
             "default": true,
         },
         tableRow

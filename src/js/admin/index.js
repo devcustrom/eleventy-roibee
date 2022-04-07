@@ -1,17 +1,17 @@
 import CMS from 'netlify-cms'
-import Post from "/src/js/admin/preview-templates/post.js";
-import Page from "/src/js/admin/preview-templates/page.js"
-import { config } from "/src/js/admin/config.js"
+import Post from "../admin/preview-templates/post.js";
+import Page from "../admin/preview-templates/page.js"
+import { config } from "../admin/config.js"
 
 export default new class  {
   constructor() {
     this.previewTemplate = [
       {
-        name : "blog", 
+        name : "blog",
         component : Post
       },
       {
-        name : "pages", 
+        name : "pages",
         component : Page
       },
     ]

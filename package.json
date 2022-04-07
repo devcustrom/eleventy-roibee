@@ -39,7 +39,9 @@
 		"uglify-js": "^3.15.1"
 	},
 	"dependencies": {
+		"@babel/plugin-syntax-dynamic-import": "^7.8.3",
 		"date-fns": "^2.28.0",
+		"dom-focus-lock": "^1.0.4",
 		"dotenv-webpack": "^7.1.0",
 		"htm": "^3.1.0",
 		"laravel-mix-bundle-analyzer": "^1.0.5",

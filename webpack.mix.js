@@ -4,9 +4,12 @@ const Dotenv = require('dotenv-webpack');
 
 require('laravel-mix-bundle-analyzer');
 
-// mix.alias({
-//     '@': path.join(__dirname, '/src')
-// });
+mix.alias({
+    '@': path.join(__dirname, '/src')
+});
+mix.babelConfig({
+	plugins: ['@babel/plugin-syntax-dynamic-import'],
+});
 
 mix.webpackConfig({
     resolve: {
@@ -18,28 +21,25 @@ mix.webpackConfig({
         new Dotenv()
     ]
 });
-
+mix.setPublicPath('_site/');
+// mix.setPublicPath('/_site/assets');
 mix.extract([
     'swiper',
     'alpinejs',
 ]);
 
 const arJsPage = [
-    './src/js/app.js',
-    './src/js/admin/index.js'
+    'src/js/app.js',
+    'src/js/admin/index.js'
 ];
 
 const arCssPage = [
-    './src/css/style.css',
+    'src/css/style.css',
 ];
 
-arJsPage.forEach(sJsPage => {
-    mix.js(sJsPage, '_site/assets/js');
-});
+arJsPage.forEach(sJsPage => mix.js(sJsPage, 'assets/js'));
 
-arCssPage.forEach(sCssPage => {
-    mix.postCss(sCssPage, '_site/assets/css')
-});
+arCssPage.forEach(sCssPage => mix.postCss(sCssPage, 'assets/css'));
 
 mix.disableNotifications();
 

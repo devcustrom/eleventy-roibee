@@ -1,6 +1,6 @@
-import { blog } from '/src/js/admin/preview-templates/post.js'
-import { pages } from '/src/js/admin/preview-templates/page.js'
-import { lists } from '/src/js/admin/configs/lists.js'
+import { blog } from '../admin/preview-templates/post.js'
+import { pages } from '../admin/preview-templates/page.js'
+import { lists } from '../admin/configs/lists.js'
 
 const config = {
 	"backend": {

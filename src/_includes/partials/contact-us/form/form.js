@@ -1,5 +1,5 @@
 import Alpine from 'alpinejs'
-import Offline from '/src/js/tools/offline';
+import Offline from '../../../../js/tools/offline';
 import { load } from 'recaptcha-v3'
 
 export default new class ContactForm {
