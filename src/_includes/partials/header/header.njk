@@ -1,53 +1,53 @@
 <header
-    x-data="header"
-    x-init="init"
-    class="header grid-in-header sticky top-0 z-[100] transition-all h-20"
-    :class="noTop ? 'bg-cod-gray' : 'bg-transparent'"
-    id="header"
+	x-data="header"
+	x-init="init"
+	class="header grid-in-header sticky top-0 z-[100] transition-all h-20"
+	:class="noTop ? 'bg-cod-gray' : 'bg-transparent'"
+	id="header"
 >
-    <div class="container h-full px-5 mx-auto">
-        <div class="flex items-center justify-between h-full">
-            <div class="relative">
-                <a href="/">
-                    <img class="max-h-[70px] lozad" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/assets/icons/9.svg" alt="Logo">
-                </a>
-            </div>
-            <nav class="flex justify-end">
-                <button
-                    class="header__burger py-0.5 flex flex-col justify-between md:hidden relative h-6 w-6 z-10"
-                    :class="bodyLock ? 'before:rotate-45 before:translate-y-px after:-rotate-45 after:-translate-y-px' : ''"
-                    @click="show ? '' : toggle"
-                >
-                    <span
-                        :class="bodyLock ? 'opacity-0 rotate-45' : ''"
-                    ></span>
-                    <span
-                        class="sr-only"
-                        x-text="!bodyLock ? 'Открыть меню' : 'Закрыть меню'"
-                    >Открыть меню</span>
-                </button>
-                <ul
-                    class="fixed inset-y-0 w-3/4 h-full max-w-xs px-4 py-20 overflow-y-auto transition-all duration-300 left-[100vw] md:py-0 md:pr-8 bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 md:translate-x-0"
+	<div class="container h-full px-5 mx-auto">
+		<div class="flex items-center justify-between h-full">
+			<div class="relative">
+				<a href="/">
+					<img class="max-h-[70px] lozad" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/assets/icons/9.svg" alt="Logo">
+				</a>
+			</div>
+			<nav class="flex justify-end">
+				<button
+					class="header__burger py-0.5 flex flex-col justify-between md:hidden relative h-6 w-6 z-10"
+					:class="bodyLock ? 'before:rotate-45 before:translate-y-px after:-rotate-45 after:-translate-y-px' : ''"
+					@click="show ? '' : toggle"
+				>
+					<span
+						:class="bodyLock ? 'opacity-0 rotate-45' : ''"
+					></span>
+					<span
+						class="sr-only"
+						x-text="!bodyLock ? 'Открыть меню' : 'Закрыть меню'"
+					>Открыть меню</span>
+				</button>
+				<ul
+					class="fixed inset-y-0 w-3/4 h-full max-w-xs px-4 py-20 overflow-y-auto transition-all duration-300 left-[100vw] md:py-0 md:pr-8 bg-cod-gray md:bg-transparent md:static md:flex md:max-w-none md:w-auto md:space-x-4 md:translate-x-0"
 					:class="bodyLock ? '-translate-x-full': 'translate-x-0' "
 					x-show="show || desktop"
 					x-cloak
 					x-transition:enter
 					x-transition:leave="opacity-0"
 					@click.outside="toggle"
-                >
-                    {% for item in links.menuList %}
-                        {% if item.enable %}
-                            <li class="py-2">
-                                <a
-                                    @click="toggle"
-                                    href="{{ item.link }}"
-                                    class="text-lg text-white hover:opacity-75 focus-visible:opacity-75 active:opacity-50"
-                                >{{ item.anchor }}</a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </nav>
-        </div>
-    </div>
+				>
+					{% for item in links.menuList %}
+						{% if item.enable %}
+							<li class="py-2">
+								<a
+									@click="toggle"
+									href="{{ item.link }}"
+									class="text-lg text-white hover:opacity-75 focus-visible:opacity-75 active:opacity-50"
+								>{{ item.anchor }}</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</div>
 </header>
