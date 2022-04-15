@@ -3,7 +3,7 @@
 {% macro table(item) %}
     {% if item.enable %}
         <div class="py-5 first:pt-10 last:pb-10">
-            <h2 class="ml-3 text-xs underline sm:ml-5 lg:ml-7 xl:ml-10 sm:text-lg lg:text-2xl">{{ item.title }}</h2>
+            <h2 class="ml-3 text-lg underline sm:ml-5 lg:ml-7 xl:ml-10 lg:text-2xl">{{ item.title }}</h2>
             <table class="w-full mx-auto text-white">
                 <tbody>
                     {% for subitem in item.list %}

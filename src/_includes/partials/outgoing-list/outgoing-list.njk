@@ -49,21 +49,12 @@
 						<div class="relative z-[1] max-w-max mx-auto">
 							{% call button(
 								click = "open = !open",
-								event = "open ? 'rotate-180' : ''",
+								attr = "open ? 'rotate-180' : ''",
 								class = "duration-150",
 								iconName = "arrow"
 							) %}
 							{% endcall %}
 						</div>
-						<!--
-								iconSize = " md:w-10 w-8 h-8 md:h-10"
-								iconClass = "transition-all duration-300 text-white",
-								iconEvent = "open ? 'rotate-180' : ''"<button
-							@click="open = !open"
-							class="relative z-[1] mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white bg-gradient-to-b from-medium-purple-2 to-seance-2 shadow-purp transition-all hover:opacity-70 focus-visible:opacity-70"
-						>
-							<svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M16.96 5.09 15 3.15 8.72 9.44l-6.29-6.3L.5 5.1l8.23 8.23 8.24-8.23Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" transform="rotate(90 8.48 8.48)" d="M0 0h16.46v16.46H0z"/></clipPath></defs></svg>
-						</button> -->
 					</div>
 				</div>
 			</div>
