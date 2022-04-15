@@ -16,40 +16,40 @@
 				name = "entry.183100258",
 				title = "Ваша почта",
 				required = true,
-                attr = "@focusin='preSubmit'"
+				attr = "@focusin='preSubmit'"
 			) }}
 			{{ input(
 				type = "tel",
 				name = "entry.2081991681",
 				title = "Ваш номер телефона",
 				required = true,
-                attr = "@focusin='preSubmit'"
+				attr = "@focusin='preSubmit'"
 			) }}
 			{{ textArea(
 				type = "message",
 				name = "entry.714657000",
 				title = "Ваше сообщение",
-                attr = "@focusin='preSubmit'"
+				attr = "@focusin='preSubmit'"
 			) }}
 			<input
-				type="hidden" 
-				name="entry.698711001" 
+				type="hidden"
+				name="entry.698711001"
 				x-model="page"
 			/>
 			<input
-				type="hidden" 
+				type="hidden"
 				name="entry.27823824"
 				x-model="refferer"
 			/>
 			<input
-				type="hidden" 
-				name="entry.1032011634" 
+				type="hidden"
+				name="entry.1032011634"
 				x-model="notRobot"
 			/>
 			{% call button(
 				type = "submit",
 				class = "p-3 mx-auto",
-                attr = "x-ref='button' @mouseover='preSubmit' @focusin='preSubmit'"
+				attr = "x-ref='button' @mouseover='preSubmit' @focusin='preSubmit'"
 			) %}
 				<span x-text="buttonLabel">Отправить</span>
 			{% endcall %}

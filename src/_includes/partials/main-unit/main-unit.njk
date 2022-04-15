@@ -3,64 +3,64 @@
 {% from "partials/modals/form-brief/form-brief.njk" import form %}
 {% from "components/icon/icon.njk" import icon %}
 <section x-data="{ brief : false }">
-    <div class="w-full mx-auto md:px-5 md:container">
-        <div class="grid md:grid-cols-2 w-full min-h-[80%]">
-            <div class="md:flex md:flex-col md:max-h-[80vh] md:h-[80vh] ml-0 py-10 justify-evenly">
-                <div class="text-center md:text-left">
-                    <p class="text-3xl font-bold uppercase text-shadow-base">Студия веб-дизайна</p>
-                    <p class="text-2xl font-medium">Минимализм и удобство!</p>
-                </div>
-                {% call button(
-                    click = "bodyLock = true; brief = true",
-                    class = "p-3 mx-auto mt-5 md:mt-0 md:mx-0"
-                ) %}
-                    Заполнить бриф
-                {% endcall %}
-            </div>
-            <div class="relative grid md:grid-cols-1a">
-                <div class="max-h-[525px] h-[300px] w-full bg-center my-auto bg-no-repeat md:h-full bg-contain lozad" data-background-image="/assets/images/imac.png">
-                </div>
-                <div class="grid items-center gap-4 mt-5 grid-cols-1a1 md:grid-cols-1 md:grid-rows-1a1 md:justify-items-center md:-mt-20">
-                    <span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-r-full md:rounded-tr-none md:rounded-b-full"></span>
-                    <div class="grid grid-flow-col mx-auto md:grid-flow-row gap-x-5 gap-y-5 max-w-max">
-                        {% for item in links.socNet %}
-                            {% if item.enable %}
-                                <a
+	<div class="w-full mx-auto md:px-5 md:container">
+		<div class="grid md:grid-cols-2 w-full min-h-[80%]">
+			<div class="md:flex md:flex-col md:max-h-[80vh] md:h-[80vh] ml-0 py-10 justify-evenly">
+				<div class="text-center md:text-left">
+					<p class="text-3xl font-bold uppercase text-shadow-base">Студия веб-дизайна</p>
+					<p class="text-2xl font-medium">Минимализм и удобство!</p>
+				</div>
+				{% call button(
+					click = "bodyLock = true; brief = true",
+					class = "p-3 mx-auto mt-5 md:mt-0 md:mx-0"
+				) %}
+					Заполнить бриф
+				{% endcall %}
+			</div>
+			<div class="relative grid md:grid-cols-1a">
+				<div class="max-h-[525px] h-[300px] w-full bg-center my-auto bg-no-repeat md:h-full bg-contain lozad" data-background-image="/assets/images/imac.png">
+				</div>
+				<div class="grid items-center gap-4 mt-5 grid-cols-1a1 md:grid-cols-1 md:grid-rows-1a1 md:justify-items-center md:-mt-20">
+					<span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-r-full md:rounded-tr-none md:rounded-b-full"></span>
+					<div class="grid grid-flow-col mx-auto md:grid-flow-row gap-x-5 gap-y-5 max-w-max">
+						{% for item in links.socNet %}
+							{% if item.enable %}
+								<a
 									href="{{ item.link }}"
 									class="relative transition-all duration-300 hover:opacity-75"
 									target="_blank"
 									rel="nofollow, noopener"
 								>
-                                    <span class="sr-only">{{ item.anchor }}</span>
-                                    {{ icon
-                                        (
-                                            size= "w-10 h-10",
-                                            name= item.icon
-                                        )
-                                    }}
-                                </a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-l-full md:rounded-full"></span>
-                </div>
-            </div>
-            <div class="mx-auto mt-5 justify-items-center md:mt-0 md:col-span-2 max-w-max">
-                <span>Подробнее</span>
-                {% call button
-                    (
-                        class = "mx-auto",
-                        link = "#podr",
-                        size = "small",
-                        iconName = "arrow"
-                    )
-                %}
-                {% endcall %}
-            </div>
-        </div>
-    </div>
-    {% call modal("brief") %}
-        {{ form() }}
-    {% endcall %}
-    <div id="podr"></div>
+									<span class="sr-only">{{ item.anchor }}</span>
+									{{ icon
+										(
+											size= "w-10 h-10",
+											name= item.icon
+										)
+									}}
+								</a>
+							{% endif %}
+						{% endfor %}
+					</div>
+					<span class="h-1.5 md:w-1.5 bg-white md:h-full rounded-l-full md:rounded-full"></span>
+				</div>
+			</div>
+			<div class="mx-auto mt-5 justify-items-center md:mt-0 md:col-span-2 max-w-max">
+				<span>Подробнее</span>
+				{% call button
+					(
+						class = "mx-auto",
+						link = "#podr",
+						size = "small",
+						iconName = "arrow"
+					)
+				%}
+				{% endcall %}
+			</div>
+		</div>
+	</div>
+	{% call modal("brief") %}
+		{{ form() }}
+	{% endcall %}
+	<div id="podr"></div>
 </section>

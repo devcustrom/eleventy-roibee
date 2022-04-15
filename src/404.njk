@@ -1,0 +1,21 @@
+---
+title: Страница не найдена
+layout: layouts/index.njk
+permalink: /404.html
+---
+{% from "components/buttons.njk" import button %}
+<section class="h-full">
+	<div class="container flex items-center justify-center h-full px-5 py-4 mx-auto">
+		<div class="grid gap-5 justify-items-center">
+			<span class="text-3xl font-medium">Ошибка 404</span>
+			<span class="text-3xl font-medium"> Страница не найдена</span>
+			{% call button(
+				type = "submit",
+				class = "p-3 mx-auto",
+				link = "/"
+			) %}
+				Вернуться на главную
+			{% endcall %}
+		</div>
+	</div>
+</section>

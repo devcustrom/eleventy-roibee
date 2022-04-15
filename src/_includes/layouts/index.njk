@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="/assets/css/style.css">
 	</head>
 	<body
-		class="grid min-h-screen font-body body grid-areas-layout grid-cols-full grid-rows-layout"
+		class="grid min-h-screen font-body body grid-cols-full grid-areas-layout grid-rows-a1a"
 		x-data="{
 			bodyLock : false,
 			scrollWidth: window.innerWidth - $refs.body.offsetWidth + 'px'
@@ -21,8 +21,11 @@
 		:style="bodyLock ? 'padding-right:' + scrollWidth : ''"
 		x-ref="body"
 	>
+		<div id="focusmenu" class="!absolute sr-only focus:not-sr-only" tabindex="0">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis vel laborum, aperiam laboriosam ea magni sint nam atque, quisquam dolore itaque possimus animi pariatur voluptatem, voluptate hic sunt provident necessitatibus!
+		</div>
 		{% include "partials/header/header.njk" %}
-		<main>
+		<main class="grid-in-main">
 			{{ content | safe }}
 		</main>
 		{% include "partials/footer/footer.njk" %}

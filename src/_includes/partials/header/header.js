@@ -8,7 +8,7 @@ export default new class Header {
 
 	header = () => ({
 		noTop: false,
-        h: 80,
+		h: 80,
 		show: false,
 		desktop: Size.checker(Size.md),
 		init() {
