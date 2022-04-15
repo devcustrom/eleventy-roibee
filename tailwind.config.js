@@ -42,7 +42,13 @@ module.exports = {
         'mine-shaft' : '#2F2F2F',
         'malibu' : '#53CFFF',
         'dodger-blue' : '#3777FF',
-        'porcelain':'#ECEDEE'
+        'porcelain':'#ECEDEE',
+        'heliotrope':'#AC5FFF',
+      },
+      gridTemplateAreas: {
+        'layout': [
+          'header', 'main', 'footer',
+        ],
       },
       gridTemplateRows: {
         'aa1': 'repeat(2, auto) 1fr',
@@ -51,6 +57,8 @@ module.exports = {
         '1a1': '1fr auto 1fr',
         'a1a': 'auto 1fr auto',
         '1aa': '1fr repeat(2, auto)',
+        full: '100%',
+        'layout': 'auto 1fr auto',
       },
       gridTemplateColumns: {
         'aa1': 'repeat(2, auto) 1fr',
@@ -59,6 +67,7 @@ module.exports = {
         '1a1': '1fr auto 1fr',
         'a1a': 'auto 1fr auto',
         '1aa': '1fr repeat(2, auto)',
+        full: '100%',
       },
       textShadow: {
         'base' : '0px 0px 4px rgba(255, 255, 255, 0.25)'
