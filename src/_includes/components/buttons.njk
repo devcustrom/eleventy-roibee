@@ -21,7 +21,7 @@
 			@click="{{ click }}"
 		{% endif %}
 		{% if attr %}
-			:class="{{ attr }}"
+			{{ attr|safe }}
 		{% endif %}
 		class="
 			{{ class }}

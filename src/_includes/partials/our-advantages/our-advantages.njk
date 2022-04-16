@@ -3,9 +3,10 @@
         <div class="text-2xl font-bold leading-snug tracking-normal text-center text-white">
             <p>В чём наши преимущества?</p>
         </div>
-        <div class="grid grid-cols-2 mx-auto mt-5 sm:grid-cols-3 gap-y-5 lg:grid-cols-5">
+        <!-- grid grid-cols-[repeat(auto-fit,minmax(145px,1fr))] -->
+        <div class="flex flex-wrap-reverse mx-auto mt-5 justify-evenly eve gap-y-5">
             {% for item in index.benefits %}
-                <div class="flex {% if loop.last %} col-span-2 sm:col-start-3 sm:col-auto lg:col-auto sm:mr-0 {% endif %}  flex-col items-center text-center min-w-[145px]">
+                <div class="flex flex-col items-center text-center min-w-[145px]">
                     <img class="w-28 h-28" src="/assets/icons/iconadvan.svg">
                     <div class="text-base pt-[10px] w-max">
                         <p>

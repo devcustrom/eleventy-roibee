@@ -2,6 +2,10 @@
 layout: layouts/index.njk
 ---
 
-<div class="prose">
-	{{ content | safe }}
-</div>
+<section>
+	<div class="container p-5 mx-auto">
+		<div class="mx-auto prose text-white prose-h1:text-center md:prose-h1:text-left prose-h1:text-white prose-a:text-white/75 prose-li:marker:text-white">
+			{{ content | safe }}
+		</div>
+	</div>
+</section>

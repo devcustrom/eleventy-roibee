@@ -49,7 +49,7 @@
 						<div class="relative z-[1] max-w-max mx-auto">
 							{% call button(
 								click = "open = !open",
-								attr = "open ? 'rotate-180' : ''",
+								attr = ":class=\"open ? 'rotate-180' : ''\"",
 								class = "duration-150",
 								iconName = "arrow"
 							) %}
