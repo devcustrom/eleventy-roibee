@@ -7,17 +7,17 @@
 		list: [
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Контактное лицо"
 			},
 			{
 				"type" : "tel",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Телефон"
 			},
 			{
 				"type" : "email",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "E-mail"
 			}
 		]
@@ -27,22 +27,22 @@
 		list: [
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Назание компании"
 			},
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Ссылка на сайт или соцсеть для продвижения"
 			},
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Чем занимается компания"
 			},
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Целевая аудитория (Возраст, материальное положение, пол, род занятий и профессий)"
 			}
 		]
@@ -52,27 +52,27 @@
 		list: [
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Укажите список ваших конкурентов"
 			},
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Принцы работы и ценности вашей компании"
 			},
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Ваши уникальные преимущества перед конкурентами"
 			},
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Какие проблемы решает ваш товар или услуга"
 			},
 			{
 				"type" : "text",
-				"name" : "entry.182812218",
+				"name" : "",
 				"title" : "Основные цели компании"
 			}
 		]
@@ -116,17 +116,17 @@
 		list: [
 			{
 				type: "text",
-				name: "entry.182812218",
+				name: "",
 				title: "Есть ли у Вас ответственные за техническую часть сайта?"
 			},
 			{
 				type: "text",
-				name: "entry.182812218",
+				name: "",
 				title: "На какие изменения на сайте Вы готовы пойти?"
 			},
 			{
 				type: "text",
-				name: "entry.182812218",
+				name: "",
 				title: "Сколько вы готовы выделять средств на услуги в месяц"
 			}
 		]
@@ -160,9 +160,9 @@
 						<legend class="mb-5 text-2xl text-center">{{ item.name }}</legend>
 						{% for subitem in item.list %}
 							{{ input(
-								subitem.type, 
-								subitem.name, 
-								subitem.title
+								type = subitem.type, 
+								name = subitem.name, 
+								title = subitem.title
 							) }}
 						{% endfor %}
 					</fieldset>
