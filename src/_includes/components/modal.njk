@@ -8,15 +8,13 @@
 		x-transition:leave="opacity-0 invisible"
 		class="fixed top-0 left-0 z-[100] w-screen h-full transition-all overflow-x-hidden overflow-y-auto bg-cod-gray"
 	>
-		<div class="z-10 top-2">
-			{{ button(
-				click =  modalName ~ " = false, bodyLock = false",
-				class = "absolute transition-all duration-300 top-2 right-3",
-				iconName = "close",
-				iconClass = "md:w-10 w-8 h-8 md:h-10 text-white",
-				hideText = "Закрыть"
-			) }}
-		</div>
+		{{ button(
+			click =  modalName ~ " = false, bodyLock = false",
+			class = "absolute transition-all duration-300 top-2 right-3",
+			iconName = "close",
+			iconClass = "md:w-10 w-8 h-8 md:h-10 text-white",
+			hideText = "Закрыть"
+		) }}
 		{{ caller() }}
 	</div>
 {% endmacro %}
