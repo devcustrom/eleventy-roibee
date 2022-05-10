@@ -64,16 +64,8 @@
 			<div class="flex items-center h-full max-w-lg mx-auto bg-seance rounded-3xl">
 				<div class="w-full mb-5">
 					<div class="p-5 text-lg text-center text-white lg:text-2xl">
-						<!-- <p x-html="message"></p> -->
-						<p>Форма отправлена, ожидайте!<br> С вами свяжутся</p>
+						<p x-html="message"></p>
 					</div>
-					<!-- <button
-						type="button"
-						@click="sent = false"
-						class="flex items-center justify-center px-6 py-3 mx-auto text-lg text-black transition bg-white rounded-full outline-none focus:outline-none h-13 bg-themes-default active:bg-themes-second "
-					>
-						Закрыть
-					</button> -->
 					{% call button(
 						theme = "white",
 						type = "button",
