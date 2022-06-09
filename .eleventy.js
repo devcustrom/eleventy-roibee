@@ -1,7 +1,6 @@
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const filters = require('./utils/filters.js');
-const passthroughs = require('./utils/passthroughs.js');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginArrayFilters = require("@jamshop/eleventy-plugin-array-filters");
 const UglifyJS = require("uglify-js");
@@ -15,9 +14,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(pluginArrayFilters);
     // Copy our static assets to the output folder
-    passthroughs.forEach(passthroughPath => {
-        eleventyConfig.addPassthroughCopy(passthroughPath);
-    });
 
     // Filters
     Object.keys(filters).forEach((filterName) => {
