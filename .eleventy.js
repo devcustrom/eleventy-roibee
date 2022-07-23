@@ -8,6 +8,15 @@ const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const site = require('./src/_data/site.json');
 const localizedCollections = ['post'];
+// .eleventy.js or eleventy.config.js
+const slinkity = require('slinkity')
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(slinkity.plugin, slinkity.defineConfig({
+    // optional: use slinkity.defineConfig
+    // for some handy autocomplete in your editor
+  }))
+}
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget("./src/assets/");
