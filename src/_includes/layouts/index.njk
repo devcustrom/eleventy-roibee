@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="dns-prefetch" href="https://identity.netlify.com">
-		<link rel="canonical" href="{{ site.rootUrl }}{{ page.url }}">
+		<link rel="canonical" href="{{ site.rootUrl|default('https://roibee.ru') }}{{ page.url }}">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ envs.site.name }}</title>
 		<meta name="description" content="{{ description }}">
