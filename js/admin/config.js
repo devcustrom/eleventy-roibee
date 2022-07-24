@@ -10,7 +10,7 @@ const config = {
 	},
 	load_config_file: false,
 	locale: "ru",
-	"media_folder": "src/assets/images",
+	"media_folder": "public/assets/images",
 	"collections": [
 		blog,
 		pages,
