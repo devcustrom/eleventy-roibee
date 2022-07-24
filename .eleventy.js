@@ -8,17 +8,15 @@ const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const site = require('./src/_data/site.json');
 const localizedCollections = ['post'];
-// .eleventy.js or eleventy.config.js
 const slinkity = require('slinkity')
+const vue = require('@slinkity/renderer-vue')
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(slinkity.plugin, slinkity.defineConfig({
-    // optional: use slinkity.defineConfig
-    // for some handy autocomplete in your editor
-  }))
-}
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(slinkity.plugin, slinkity.defineConfig({
+		renderers: [vue],
+	}))
+	eleventyConfig.addPassthroughCopy('public')
 
-module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget("./src/assets/");
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(pluginArrayFilters);
@@ -86,17 +84,17 @@ module.exports = function(eleventyConfig) {
   });
 
   // Minify HTML output
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if (outputPath.indexOf(".html") > -1) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true
-      });
-      return minified;
-    }
-    return content;
-  });
+//   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+//     if (outputPath.indexOf(".html") > -1) {
+//       let minified = htmlmin.minify(content, {
+//         useShortDoctype: true,
+//         removeComments: true,
+//         collapseWhitespace: true
+//       });
+//       return minified;
+//     }
+//     return content;
+//   });
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("./src/assets");

@@ -1,5 +1,5 @@
 import Alpine from 'alpinejs'
-import Size from '../../../js/tools/size';
+import Size from '/@root/js/tools/size';
 
 export default new class Header {
 	constructor() {

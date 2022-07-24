@@ -1,5 +1,5 @@
 import { Swiper, Scrollbar } from "swiper"
-import Size from "../../../js/tools/size"
+import Size from "/@root/js/tools/size"
 
 export default new class Services {
 	constructor() {

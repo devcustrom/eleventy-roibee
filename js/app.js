@@ -1,10 +1,10 @@
 import Alpine from 'alpinejs'
 import lozad from 'lozad'
 import Cookies from './tools/cookies'
-import ContactForm from '../_includes/partials/contact-us/form/form'
-import Services from '../_includes/partials/services/services';
+import ContactForm from '/@root/src/_includes/partials/contact-us/form/form'
+import Services from '/@root/src/_includes/partials/services/services';
 import './metriks'
-import Header from '../_includes/partials/header/header'
+import Header from '/@root/src/_includes/partials/header/header'
 
 window.Alpine = Alpine
 
