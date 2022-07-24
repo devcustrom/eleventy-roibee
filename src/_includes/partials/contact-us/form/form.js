@@ -1,6 +1,5 @@
 import Alpine from 'alpinejs'
 import Offline from '/@root/js/tools/offline';
-import { load } from 'recaptcha-v3'
 
 export default new class ContactForm {
 	constructor() {
@@ -18,11 +17,6 @@ export default new class ContactForm {
 		refferer: document.referrer,
 		notRobot: '',
 		init() {
-			load('6Ld25MIeAAAAAHOE3uPGklXk25HzZbyX39NP1h9W').then((recaptcha) => {
-				recaptcha.execute().then((token) => {
-					this.notRobot = token
-				})
-			})
 		},
 		preSubmit() {
 			if(Offline.check()) {
