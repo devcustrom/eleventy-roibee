@@ -9,6 +9,7 @@ const config = {
 		branch: "master"
 	},
 	load_config_file: false,
+	locale: "ru",
 	"media_folder": "src/assets/images",
 	"collections": [
 		blog,
