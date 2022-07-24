@@ -1,7 +1,6 @@
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const filters = require('./utils/filters.js');
-const passthroughs = require('./utils/passthroughs.js');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginArrayFilters = require("@jamshop/eleventy-plugin-array-filters");
 const UglifyJS = require("uglify-js");
@@ -9,15 +8,19 @@ const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const site = require('./src/_data/site.json');
 const localizedCollections = ['post'];
+const slinkity = require('slinkity')
+const vue = require('@slinkity/renderer-vue')
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(slinkity.plugin, slinkity.defineConfig({
+		renderers: [vue],
+	}))
+	eleventyConfig.addPassthroughCopy('public')
+
     eleventyConfig.addWatchTarget("./src/assets/");
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(pluginArrayFilters);
     // Copy our static assets to the output folder
-    passthroughs.forEach(passthroughPath => {
-        eleventyConfig.addPassthroughCopy(passthroughPath);
-    });
 
     // Filters
     Object.keys(filters).forEach((filterName) => {
@@ -81,17 +84,17 @@ module.exports = function(eleventyConfig) {
   });
 
   // Minify HTML output
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if (outputPath.indexOf(".html") > -1) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true
-      });
-      return minified;
-    }
-    return content;
-  });
+//   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+//     if (outputPath.indexOf(".html") > -1) {
+//       let minified = htmlmin.minify(content, {
+//         useShortDoctype: true,
+//         removeComments: true,
+//         collapseWhitespace: true
+//       });
+//       return minified;
+//     }
+//     return content;
+//   });
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("./src/assets");

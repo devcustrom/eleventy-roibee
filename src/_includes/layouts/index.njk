@@ -9,7 +9,7 @@
 		<meta name="description" content="{{ description }}">
 		<meta name="keywords" content="{{ keywords }}">
 		<link rel="icon" type="image/svg+xml" href="{{ envs.site.faviconUrl | url }}">
-		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="/@root/css/style.css"> {{ __slinkity.head | safe }}
 	</head>
 	<body
 		class="grid min-h-screen font-body body grid-cols-full grid-areas-layout grid-rows-a1a"
@@ -29,8 +29,6 @@
 			{{ content | safe }}
 		</main>
 		{% include "partials/footer/footer.njk" %}
-		<script defer src="/assets/js/manifest.js"></script>
-		<script defer src="/assets/js/vendor.js"></script>
-		<script defer src="/assets/js/app.js"></script>
+		<script type="module" src="/@root/js/app.js"></script>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: ['./src/**/*.{htm,md,njk}'],
+  content: ['./src/**/*.{md,njk,vue}'],
   theme: {
     screens: {
       sm: '640px',
@@ -18,7 +18,7 @@ module.exports = {
       },
       borderRadius: {
         '1.5xl' : '10px',
-        '4xl' : '32px', 
+        '4xl' : '32px',
       },
       backgroundSize: {
         '1/2': '50%',
@@ -47,8 +47,8 @@ module.exports = {
       },
       gridTemplateAreas: {
         'layout': [
-          'header', 
-          'main', 
+          'header',
+          'main',
           'footer',
         ],
       },
