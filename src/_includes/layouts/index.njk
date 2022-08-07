@@ -12,7 +12,17 @@
 		<link rel="stylesheet" href="/@root/css/style.css"> {{ __slinkity.head | safe }}
 	</head>
 	<body
-		class="grid min-h-screen font-body body grid-cols-full grid-areas-layout grid-rows-a1a"
+		{% if newDesign %}
+			class=""
+			x-data="{
+			bodyLock : false,
+			scrollWidth: window.innerWidth - $refs.body.offsetWidth + 'px'
+		}"
+		:class="bodyLock ? 'overflow-hidden' : ''"
+		:style="bodyLock ? 'padding-right:' + scrollWidth : ''"
+		x-ref="body"
+		{% else %}
+			class="grid min-h-screen font-body body grid-cols-full grid-areas-layout grid-rows-a1a"
 		x-data="{
 			bodyLock : false,
 			scrollWidth: window.innerWidth - $refs.body.offsetWidth + 'px'
@@ -20,13 +30,15 @@
 		:class="bodyLock ? 'overflow-hidden' : ''"
 		:style="bodyLock ? 'padding-right:' + scrollWidth : ''"
 		x-ref="body"
+		{% endif %}
+
 	>
 		<div id="focusmenu" class="!absolute sr-only focus:not-sr-only" tabindex="0">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis vel laborum, aperiam laboriosam ea magni sint nam atque, quisquam dolore itaque possimus animi pariatur voluptatem, voluptate hic sunt provident necessitatibus!
 		</div>
 		{% if newDesign %}
 			{% include "partials/header-new/header.njk" %}
-		{% else %}	
+		{% else %}
 			{% include "partials/header/header.njk" %}
 		{% endif %}
 		<main class="grid-in-main">
@@ -34,7 +46,7 @@
 		</main>
 		{% if newDesign %}
 			{% include "partials/footer-new/footer.njk" %}
-		{% else %}		
+		{% else %}
 			{% include "partials/footer/footer.njk" %}
 		{% endif %}
 		<script type="module" src="/@root/js/app.js"></script>
