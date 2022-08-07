@@ -28,6 +28,8 @@ module.exports = {
       },
       colors: {
         inherit: 'inherit',
+        'gallery' : '#F0F0F0',
+        'boulder':'#7D7D7D',
         'cod-gray': '#181818',
         'medium-purple': '#6B68E0',
         'medium-purple-2': '#6C6AE4',

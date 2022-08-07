@@ -24,11 +24,19 @@
 		<div id="focusmenu" class="!absolute sr-only focus:not-sr-only" tabindex="0">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis vel laborum, aperiam laboriosam ea magni sint nam atque, quisquam dolore itaque possimus animi pariatur voluptatem, voluptate hic sunt provident necessitatibus!
 		</div>
-		{% include "partials/header/header.njk" %}
+		{% if newDesign %}
+			{% include "partials/header-new/header.njk" %}
+		{% else %}	
+			{% include "partials/header/header.njk" %}
+		{% endif %}
 		<main class="grid-in-main">
 			{{ content | safe }}
 		</main>
-		{% include "partials/footer/footer.njk" %}
+		{% if newDesign %}
+			{% include "partials/footer-new/footer.njk" %}
+		{% else %}		
+			{% include "partials/footer/footer.njk" %}
+		{% endif %}
 		<script type="module" src="/@root/js/app.js"></script>
 	</body>
 </html>
