@@ -1,7 +1,8 @@
+{% from "components/icon/icon.njk" import icon %}
 <footer class="bg-gallery">
-    <div class="container w-full px-5 mx-auto py-14">
-        <div class="grid grid-cols-a1 gap-x-10">
-            <svg width="223" height="54" viewBox="0 0 223 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="container grid w-full grid-cols-[minmax(0,1fr),minmax(0,1.4fr)] px-5 py-8 mx-auto sm:grid-cols-a1 gap-x-9 sm:gap-x-10">
+        <div class="col-span-2 sm:col-span-1">
+            <svg class="h-8 sm:h-12" viewBox="0 0 223 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M48.7018 13.9915C49.5227 12.5705 49.0355 10.7534 47.6137 9.93293L31.9763 0.90929C30.5545 0.0888442 28.7365 0.575732 27.9156 1.99679C27.0948 3.41784 27.5819 5.23493 29.0037 6.05538L44.6411 15.079C46.0629 15.8995 47.8809 15.4126 48.7018 13.9915Z" fill="url(#paint0_linear_571_237)"/>
                 <path d="M22.2536 51.7559C23.0745 53.1769 24.8925 53.6638 26.3143 52.8434L41.9517 43.8198C43.3735 42.9993 43.8606 41.1822 43.0398 39.7612C42.2189 38.3401 40.4009 37.8532 38.9791 38.6737L23.3417 47.6973C21.9199 48.5177 21.4327 50.3348 22.2536 51.7559Z" fill="url(#paint1_linear_571_237)"/>
                 <path d="M0.733707 13.9915C-0.0871603 12.5705 0.399979 10.7534 1.82176 9.93295L17.4592 0.909315C18.881 0.0888689 20.699 0.575757 21.5199 1.99681C22.3407 3.41786 21.8536 5.23496 20.4318 6.05541L4.79439 15.079C3.3726 15.8995 1.55458 15.4126 0.733707 13.9915Z" fill="url(#paint2_linear_571_237)"/>
@@ -48,16 +49,54 @@
                 </linearGradient>
                 </defs>
             </svg>
-            <div class="grid w-full grid-cols-3">
-                <ul class="text-boulder ">
-                    <li>Главная</li>
-                    <li>Главная</li>
-                    <li class="grid-flow-row-dense">Главная</li>
-                    <li>Главная</li>
-                    <li>Главная</li>
-                    <li>Главная</li>
-                </ul>
-            </div>
+            <img src="" alt="">
         </div>
+        <nav class="flex flex-col col-start-1 text-sm text-boulder sm:mb-14 sm:col-auto">
+            <span class="block pt-10 pb-5 text-base font-bold text-tundora sm:hidden">РАЗДЕЛЫ</span>
+            <ul class="grid gap-4 leading-5 sm:grid-rows-2 sm:grid-flow-col sm:max-w-max text-boulder">
+                <li>
+                    <a href="#" class="focus:border-2 focus:rounded-xl focus:p-1 focus:divide-x-4 focus:divide-y-4 focus:border-electric-violet-3">Главная</a>
+                </li>
+                <li>
+                    <a href="#" class="focus:border-2 focus:rounded-xl focus:p-1 focus:divide-x-4 focus:divide-y-4 focus:border-electric-violet-3">Команда</a>
+                </li>
+                <li>
+                    <a href="#" class="focus:border-2 focus:rounded-xl focus:p-1 focus:divide-x-4 focus:divide-y-4 focus:border-electric-violet-3">Проекты</a>
+                </li>
+                <li>
+                    <a href="#" class="focus:border-2 focus:rounded-xl focus:p-1 focus:divide-x-4 focus:divide-y-4 focus:border-electric-violet-3">Отзывы</a>
+                </li>
+                <li>
+                    <a href="#" class="focus:border-2 focus:rounded-xl focus:p-1 focus:divide-x-4 focus:divide-y-4 focus:border-electric-violet-3">Блог</a>
+                </li>
+                <li>
+                    <a href="#" class="focus:border-2 focus:rounded-xl focus:p-1 focus:divide-x-4 focus:divide-y-4 focus:border-electric-violet-3">Этапы работы</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mt-10 sm:mt-auto sm:pt-3 sm:border-t-4 border-mercury sm:col-span-2">
+            <ul class="grid gap-6 text-xs font-bold sm:mt-7 grid-cols-full sm:grid-cols-none sm:grid-rows-2 sm:grid-flow-col sm:justify-between sm:auto-cols-auto">
+                <li>
+                    <a class="flex space-x-2" href="mailto:roibee@ya.ru">
+                        {{ icon(
+                            name="mail-icon"
+                        ) }}
+                        <span class="text-sm">roibee@ya.ru</span>
+                    </a>
+                </li>
+                <li class="font-bold sm:row-start-1 ">
+                    Политика конфиденциальности
+                </li>
+                <li class="text-mercury-2">
+                    Copyright MoDeFaco 2022-3000
+                </li>
+                <li class="text-mercury-2">
+                    г.Екатеринбург, дом 5,кв12
+                </li>
+                <li class="text-mercury-2">
+                    ООО "Roibee Digital"
+                </li>
+            </ul>
+        </div> 
     </div>
 </footer>
