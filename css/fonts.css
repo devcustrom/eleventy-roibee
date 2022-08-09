@@ -1,49 +1,160 @@
+
 @font-face {
-	font-family: 'Montserrat';
-	font-style: normal;
+	font-family: 'Mont';
+    font-style: normal;
 	font-display: swap;
-	font-weight: 300;
-	src: local(''),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-300.woff2') format('woff2'),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-300.woff') format('woff');
+	font-weight: 900;
+	src:local(''),
+		url('/assets/fonts/Mont-Black.woff') format('woff'),
+		url('/assets/fonts/Mont-Black.woff2') format('woff2'),
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	font-style: normal;
+	font-family: 'Mont';
+    font-style: italic;
 	font-display: swap;
-	font-weight: 400;
-	src: local(''),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-regular.woff2') format('woff2'),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-regular.woff') format('woff');
+	font-weight: 100;
+	src:local(''),
+		url('/assets/fonts/Mont-ThinItalic.woff') format('woff'),
+		url('/assets/fonts/Mont-ThinItalic.woff2') format('woff2'),
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	font-style: normal;
+	font-family: 'Mont';
+    font-style: normal;
 	font-display: swap;
-	font-weight: 500;
-	src: local(''),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-500.woff2') format('woff2'),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-500.woff') format('woff');
+	font-weight: 200;
+	src:local(''),
+		url('/assets/fonts/Mont-ExtraLight.woff') format('woff'),
+		url('/assets/fonts/Mont-ExtraLight.woff2') format('woff2'),
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	font-style: normal;
+	font-family: 'Mont';
+    font-style: normal;
 	font-display: swap;
-	font-weight: 600;
-	src: local(''),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-600.woff2') format('woff2'),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-600.woff') format('woff');
+	font-weight: bold;
+	src:local(''),
+		url('/assets/fonts/Mont-Bold.woff') format('woff'),
+		url('/assets/fonts/Mont-Bold.woff2') format('woff2'),
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	font-style: normal;
+	font-family: 'Mont';
+    font-style: italic;
 	font-display: swap;
-	font-weight: 700;
-	src: local(''),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-700.woff2') format('woff2'),
-		url('/assets/fonts/montserrat-v15-latin_cyrillic-ext-700.woff') format('woff');
+	font-weight: 800;
+	src:local(''),
+		url('/public/assets/fonts/Mont-HeavyItalic.woff') format('woff'),
+		url('/public/assets/fonts/Mont-HeavyItalic.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: italic;
+	font-display: swap;
+	font-weight: 900;
+	src:local(''),
+		url('/public/assets/fonts/Mont-BlackItalic.woff') format('woff'),
+		url('/public/assets/fonts/Mont-BlackItalic.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: italic;
+	font-display: swap;
+	font-weight: 200;
+	src:local(''),
+		url('/assets/fonts/Mont-ExtraLightItalic.woff') format('woff'),
+		url('/assets/fonts/Mont-ExtraLightItalic.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: normal;
+	font-display: swap;
+    font-weight: 800;
+	src:local(''),
+		url('/assets/fonts/Mont-Heavy.woff') format('woff'),
+		url('/assets/fonts/Mont-Heavy.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: normal;
+	font-display: swap;
+    font-weight: 600;
+	src:local(''),
+		url('/assets/fonts/Semi-Bold.woff') format('woff'),
+		url('/assets/fonts/Semi-Bold.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: italic;
+	font-display: swap;
+    font-weight: normal;
+	src:local(''),
+		url('/assets/fonts/RegularItalic.woff') format('woff'),
+		url('/assets/fonts/RegularItalic.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: italic;
+	font-display: swap;
+    font-weight: bold;
+	src:local(''),
+		url('/assets/fonts/BoldItalic.woff') format('woff'),
+		url('/assets/fonts/BoldItalic.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: italic;
+	font-display: swap;
+    font-weight: 600;
+	src:local(''),
+		url('/assets/fonts/SemiBoldItalic.woff') format('woff'),
+		url('/assets/fonts/SemiBoldItalic.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: italic;
+	font-display: swap;
+    font-weight: 300;
+	src:local(''),
+		url('/assets/fonts/LightItalic.woff') format('woff'),
+		url('/assets/fonts/LightItalic.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: normal;
+	font-display: swap;
+    font-weight: 100;
+	src:local(''),
+		url('/assets/fonts/Thin.woff') format('woff'),
+		url('/assets/fonts/Thin.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: normal;
+	font-display: swap;
+    font-weight: normal;
+	src:local(''),
+		url('/assets/fonts/Regular.woff') format('woff'),
+		url('/assets/fonts/Regular.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Mont';
+    font-style: normal;
+	font-display: swap;
+    font-weight: 300;
+	src:local(''),
+		url('/assets/fonts/Light.woff') format('woff'),
+		url('/assets/fonts/Light.woff2') format('woff2'),
 }

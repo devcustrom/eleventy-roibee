@@ -11,7 +11,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        body: ['Montserrat', ...defaultTheme.fontFamily.sans],
+		body: ['Mont', ...defaultTheme.fontFamily.sans],
       },
       letterSpacing: {
         normal:'0.145em',
