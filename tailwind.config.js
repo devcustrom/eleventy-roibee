@@ -29,6 +29,10 @@ module.exports = {
       colors: {
         inherit: 'inherit',
         'gallery' : '#F0F0F0',
+        'electric-violet-3' : '#881AFF',
+        'mercury' : '#e6e6e6',
+        'mercury-2' : '#606060',
+        'tundora' : '#484848',
         'boulder':'#7D7D7D',
         'cod-gray': '#181818',
         'medium-purple': '#6B68E0',
@@ -71,6 +75,7 @@ module.exports = {
         'a1a': 'auto 1fr auto',
         '1aa': '1fr repeat(2, auto)',
         'full': '100%',
+        // 'footer': '200px minmax(900px, 1fr) 100px',
       },
       textShadow: {
         'base' : '0px 0px 4px rgba(255, 255, 255, 0.25)'
