@@ -1,33 +1,6 @@
-{% set navigation = [
-		{
-			title: "Контакты",
-			url: "#"
-		},
-		{
-			title: "Проекты",
-			url: "#"
-		},
-		{
-			title: "Отзывы",
-			url: "#"
-		},
-		{
-			title: "Блог",
-			url: "#"
-		}
-	]
-%}
 
-<header
-	x-data="{
-		menuBurger: false
-	}"
-	x-init="$watch('noTop', value => openMenuNoTop ? openMenuNoTop = !value : '')"
-	@scroll.window="noTop = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)"
-	class="bg-dove-gray/10"
-	:class="noTop ? 'pointer-events-none' : 'pointer-events-auto'"
-	>
-	<div class="container flex items-center justify-between w-full px-5 py-8 mx-auto md:grid gap-x-14 grid-cols-a1">
+<header class="bg-dove-gray/10">
+	<div class="container grid items-center w-full px-5 py-8 mx-auto grid-cols-a1">
 		<a href="/">
 			<svg width="140" height="34" viewBox="0 0 140 34" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g clip-path="url(#clip0_234_70)">
@@ -131,12 +104,12 @@
 				</button>
 				<ul class="grid gap-10 h-max">
 				{% for item in navigation %}
-					<li>
-						<a class="hover:underline focus:outline-none rounded-[10px] p-1 focus:ring-2 focus:ring-electric-violet-2 " href="{{ item.url }}">{{ item.title }}</a>
-					</li>
-				{% endfor %}
-			</ul>
-		</div>
+		<ul class="grid grid-flow-col max-w-max gap-x-14 text-silver">
+			{% for item in header.headerList %}
+				<li>
+					<a class="hover:underline focus:outline-none rounded-[10px] p-1 focus:ring-2 focus:ring-electric-violet-2 " href="{{ item.url }}">{{ item.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
 	</nav>
-	</div>
 </header>
