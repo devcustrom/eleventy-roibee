@@ -6,7 +6,7 @@ const config = {
 	"backend": {
 		name: "github",
 		repo: "devcustrom/eleventy-roibee",
-		branch: "master"
+		branch: process.env.APP_BRANCH
 	},
 	load_config_file: false,
 	locale: "ru",
