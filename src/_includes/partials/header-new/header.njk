@@ -1,7 +1,16 @@
 
-<header class="bg-dove-gray/10">
-	<div class="container grid items-center w-full px-5 py-8 mx-auto grid-cols-a1">
-		<a href="/">
+<header
+	x-data="{
+		menuBurger: false,
+		noTop: false
+	}"
+	x-init="$watch('noTop', value => openMenuNoTop ? openMenuNoTop = !value : '')"
+	@scroll.window="noTop = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)"
+	class="bg-dove-gray/10"
+	:class="noTop ? 'pointer-events-none' : 'pointer-events-auto'"
+	>
+	<div class="container relative flex items-center justify-between w-full px-5 py-8 mx-auto md:grid gap-x-14 grid-cols-a1">
+		<a class="outline-none focus:outline-none" href="/">
 			<svg width="140" height="34" viewBox="0 0 140 34" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g clip-path="url(#clip0_234_70)">
 				<path d="M97.6864 11.9827H94.3555C93.9183 11.9827 93.4811 12.1701 93.1688 12.4823L89.3381 16.313V8.6517C89.3381 7.73568 88.5887 6.9862 87.6726 6.9862C86.7566 6.9862 86.0072 7.73568 86.0072 8.6517V20.331C86.0072 21.018 86.4235 21.6218 87.0273 21.8716C87.2355 21.9757 87.4645 21.9965 87.6726 21.9965C88.1098 21.9965 88.547 21.8299 88.8593 21.5177L95.0425 15.3345H97.6864C98.6025 15.3345 99.3519 16.084 99.3519 17C99.3519 17.916 98.6025 18.6655 97.6864 18.6655H94.3555C93.4394 18.6655 92.69 19.415 92.69 20.331C92.69 21.2678 93.4394 21.9965 94.3555 21.9965H97.6864C100.455 21.9965 102.704 19.7689 102.704 17C102.704 14.2311 100.455 11.9827 97.6864 11.9827ZM116.675 11.9827H109.18C108.722 11.9827 108.305 12.1701 107.993 12.4823L104.641 15.8133C103.996 16.4795 103.996 17.5205 104.641 18.1867L107.993 21.5177C108.305 21.8508 108.743 21.9965 109.18 21.9965C109.596 21.9965 110.033 21.8508 110.346 21.5177C111.012 20.8723 111.012 19.8105 110.346 19.1651L108.201 17L109.867 15.3345H116.675C117.133 15.3345 117.507 15.7092 117.507 16.1673C117.507 16.6253 117.133 17 116.675 17H114.176C113.26 17 112.511 17.7495 112.511 18.6655C112.511 19.5815 113.26 20.331 114.176 20.331H116.675C118.985 20.331 120.859 18.4573 120.859 16.1673C120.859 13.8564 118.985 11.9827 116.675 11.9827ZM134.83 11.9827H127.335C126.877 11.9827 126.461 12.1701 126.149 12.4823L122.797 15.8133C122.151 16.4795 122.151 17.5205 122.797 18.1867L126.149 21.5177C126.461 21.8508 126.898 21.9965 127.335 21.9965C127.752 21.9965 128.189 21.8508 128.501 21.5177C129.167 20.8723 129.167 19.8105 128.501 19.1651L126.357 17L128.022 15.3345H134.83C135.288 15.3345 135.663 15.7092 135.663 16.1673C135.663 16.6253 135.288 17 134.83 17H132.332C131.416 17 130.666 17.7495 130.666 18.6655C130.666 19.5815 131.416 20.331 132.332 20.331H134.83C137.141 20.331 139.015 18.4573 139.015 16.1673C139.015 13.8564 137.141 11.9827 134.83 11.9827Z" fill="url(#paint0_linear_234_70)"/>
@@ -55,16 +64,15 @@
 				</defs>
 			</svg>
 		</a>
-		<nav class="">
+		<nav	>
 			<ul class="grid-flow-col font-semibold md:grid max-w-max gap-x-12 text-silver">
-				{% for item in navigation %}
+				{% for item in header.headerList %}
 					<li class="hidden md:block">
-						<a class="hover:underline focus:outline-none rounded-[10px] p-1 focus:ring-2 focus:ring-electric-violet-2 " href="{{ item.url }}">{{ item.title }}</a>
+						<a class="transition-all duration-300 hover:underline focus:outline-none rounded-[10px] p-1 ring-transparent ring-2 focus-visible:ring-electric-violet-2 " href="{{ item.url }}">{{ item.title }}</a>
 					</li>
-
 				{% endfor %}
 				<li class="flex items-end justify-end">
-					<div >
+					<div>
 						<button @click.prevent="menuBurger = !menuBurger, $store.bodyLock = true" class="flex items-center justify-center transition-colors duration-300 rounded-sm w-7 h-7 md:hidden hover:bg-electric-violet-2 focus-visible:bg-electric-violet-2 focus:outline-none ">
 							<svg class="text-white w-7 h-7">
 								<use xlink:href="/assets/icons/all-icon.svg#burger"></use>
@@ -79,37 +87,37 @@
 		x-show="menuBurger"
 		x-transition.opacity
 		class="transition-all fixed inset-0 z-[99] bg-black/50"
-	></div>
-	<nav
-		x-cloak
-		x-show="menuBurger"
-		x-transition:enter-start="-translate-x-full"
-		x-transition:enter-end="translate-x-0"
-		x-transition:leave-start="-translate-x-full"
-		x-transition:leave-end="translate-x-0"
-		@click.outside="menuBurger = false, $store.bodyLock = false"
-		class="left-0 fixed transition-all pointer-events-auto backdrop-blur-[103px] overflow-y-auto overflow-x-hidden duration-300 bg-gallery/10 z-[100] max-w-full w-max sm:max-w-[300px] inset-y-0">
-		<div
-			x-data="{ openItem: null }"
-			:class="openItem === null ? 'translate-x-0' : '-translate-x-full'"
-			class="relative grid h-full max-h-screen gap-10 px-5 py-2.5 transition-all grid-rows-a1a"
-		>
-				<button
-					@click.prevent="menuBurger = !menuBurger, $store.bodyLock = false"
-					class="flex items-center justify-center w-10 h-10 ml-auto transition-colors duration-300 rounded-sm hover:bg-gray-200 focus-visible:bg-gray-200 focus:outline-none"
-				>
-					<svg class="text-white w-7 h-7 hover:text-black">
-						<use xlink:href="/assets/icons/all-icon.svg#close"></use>
-					</svg>
-				</button>
-				<ul class="grid gap-10 h-max">
-				{% for item in navigation %}
-		<ul class="grid grid-flow-col max-w-max gap-x-14 text-silver">
-			{% for item in header.headerList %}
-				<li>
-					<a class="hover:underline focus:outline-none rounded-[10px] p-1 focus:ring-2 focus:ring-electric-violet-2 " href="{{ item.url }}">{{ item.title }}</a>
-				</li>
-			{% endfor %}
-		</ul>
-	</nav>
+		></div>
+		<nav
+			x-cloak
+			x-show="menuBurger"
+			x-transition:enter-start="-translate-x-full"
+			x-transition:enter-end="translate-x-0"
+			x-transition:leave-start="-translate-x-full"
+			x-transition:leave-end="translate-x-0"
+			@click.outside="menuBurger = false, $store.bodyLock = false"
+			class="left-0 fixed transition-all pointer-events-auto backdrop-blur-[103px] overflow-y-auto overflow-x-hidden duration-300 bg-gallery/10 z-[100] max-w-full w-max sm:max-w-[300px] inset-y-0">
+			<div
+				x-data="{ openItem: null }"
+				:class="openItem === null ? 'translate-x-0' : '-translate-x-full'"
+				class="relative grid h-full max-h-screen gap-10 px-5 py-2.5 transition-all grid-rows-a1a"
+			>
+					<button
+						@click.prevent="menuBurger = !menuBurger, $store.bodyLock = false"
+						class="flex items-center justify-center w-10 h-10 ml-auto transition-colors duration-300 rounded-sm hover:bg-gray-200 focus-visible:bg-gray-200 focus:outline-none"
+					>
+						<svg class="text-white w-7 h-7 hover:text-black">
+							<use xlink:href="/assets/icons/all-icon.svg#close"></use>
+						</svg>
+					</button>
+					<ul class="grid gap-10 h-max text-silver">
+						{% for item in header.headerList %}
+							<li>
+								<a class="hover:underline focus:outline-none rounded-[10px] p-1 ring-transparent ring-2 focus-visible:ring-electric-violet-2 " href="{{ item.url }}">{{ item.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+			</div>
+		</nav>
+	</div>
 </header>
