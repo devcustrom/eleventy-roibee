@@ -18,8 +18,16 @@
 	]
 %}
 
-<header class="bg-dove-gray/10">
-	<div class="container grid items-center w-full px-5 py-8 mx-auto grid-cols-a1">
+<header
+	x-data="{
+		menuBurger: false
+	}"
+	x-init="$watch('noTop', value => openMenuNoTop ? openMenuNoTop = !value : '')"
+	@scroll.window="noTop = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)"
+	class="bg-dove-gray/10"
+	:class="noTop ? 'pointer-events-none' : 'pointer-events-auto'"
+	>
+	<div class="container flex items-center justify-between w-full px-5 py-8 mx-auto md:grid gap-x-14 grid-cols-a1">
 		<a href="/">
 			<svg width="140" height="34" viewBox="0 0 140 34" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g clip-path="url(#clip0_234_70)">
@@ -74,14 +82,61 @@
 				</defs>
 			</svg>
 		</a>
-		<nav>
-			<ul class="grid grid-flow-col max-w-max gap-x-14 text-silver">
+		<nav class="">
+			<ul class="grid-flow-col font-semibold md:grid max-w-max gap-x-12 text-silver">
+				{% for item in navigation %}
+					<li class="hidden md:block">
+						<a class="hover:underline focus:outline-none rounded-[10px] p-1 focus:ring-2 focus:ring-electric-violet-2 " href="{{ item.url }}">{{ item.title }}</a>
+					</li>
+
+				{% endfor %}
+				<li class="flex items-end justify-end">
+					<div >
+						<button @click.prevent="menuBurger = !menuBurger, $store.bodyLock = true" class="flex items-center justify-center transition-colors duration-300 rounded-sm w-7 h-7 md:hidden hover:bg-electric-violet-2 focus-visible:bg-electric-violet-2 focus:outline-none ">
+							<svg class="text-white w-7 h-7">
+								<use xlink:href="/assets/icons/all-icon.svg#burger"></use>
+							</svg>
+						</button>
+					</div>
+				</li>
+			</ul>
+		</nav>
+		<div
+		x-cloak
+		x-show="menuBurger"
+		x-transition.opacity
+		class="transition-all fixed inset-0 z-[99] bg-black/50"
+	></div>
+	<nav
+		x-cloak
+		x-show="menuBurger"
+		x-transition:enter-start="-translate-x-full"
+		x-transition:enter-end="translate-x-0"
+		x-transition:leave-start="-translate-x-full"
+		x-transition:leave-end="translate-x-0"
+		@click.outside="menuBurger = false, $store.bodyLock = false"
+		class="left-0 fixed transition-all pointer-events-auto backdrop-blur-[103px] overflow-y-auto overflow-x-hidden duration-300 bg-gallery/10 z-[100] max-w-full w-max sm:max-w-[300px] inset-y-0">
+		<div
+			x-data="{ openItem: null }"
+			:class="openItem === null ? 'translate-x-0' : '-translate-x-full'"
+			class="relative grid h-full max-h-screen gap-10 px-5 py-2.5 transition-all grid-rows-a1a"
+		>
+				<button
+					@click.prevent="menuBurger = !menuBurger, $store.bodyLock = false"
+					class="flex items-center justify-center w-10 h-10 ml-auto transition-colors duration-300 rounded-sm hover:bg-gray-200 focus-visible:bg-gray-200 focus:outline-none"
+				>
+					<svg class="text-white w-7 h-7 hover:text-black">
+						<use xlink:href="/assets/icons/all-icon.svg#close"></use>
+					</svg>
+				</button>
+				<ul class="grid gap-10 h-max">
 				{% for item in navigation %}
 					<li>
-						<a href="{{ item.url }}">{{ item.title }}</a>
+						<a class="hover:underline focus:outline-none rounded-[10px] p-1 focus:ring-2 focus:ring-electric-violet-2 " href="{{ item.url }}">{{ item.title }}</a>
 					</li>
 				{% endfor %}
 			</ul>
-		</nav>
+		</div>
+	</nav>
 	</div>
 </header>
