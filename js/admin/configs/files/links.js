@@ -1,7 +1,7 @@
 const links = {
 	"name": "links",
 	"label": "Ссылки",
-	"file": "src/_data/links.json",
+	"file": "src/_data/info/links.json",
 	"editor" : {
 		"preview": false,
 	},
