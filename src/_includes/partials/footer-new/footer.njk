@@ -58,9 +58,13 @@
 				</linearGradient>
 				</defs>
 			</svg>
-			<img src="" alt="">
+			{# <a class="h-8 sm:h-12" href="roibee-icon">
+				{{icon(
+					name="roibee-icon"
+				)}}
+			</a> #}
 		</div>
-		<nav class="flex flex-col col-start-1 text-boulder sm:mb-14 sm:col-auto">
+		<nav class="flex flex-col col-start-1 text-boulder sm:text-base sm:mb-14 sm:col-auto">
 			<span class="block pt-10 pb-5 font-bold text-tundora sm:hidden">РАЗДЕЛЫ</span>
 			<ul class="grid gap-4 text-sm font-extrabold leading-5 sm:text-base sm:grid-rows-2 sm:grid-flow-col sm:max-w-max text-boulder">
 				{% for item in navigation %}
@@ -71,7 +75,7 @@
 			</ul>
 		</nav>
 		<div class="mt-10 sm:mt-auto sm:pt-3 sm:border-t-4 border-mercury sm:col-span-2">
-			<ul class="grid gap-6 text-xs font-bold sm:mt-7 grid-cols-full sm:grid-cols-none sm:grid-rows-2 sm:grid-flow-col sm:justify-between sm:auto-cols-auto text-mercury-2">
+			<ul class="grid gap-6 text-xs font-bold sm:text-sm sm:mt-7 grid-cols-full sm:grid-cols-none sm:grid-rows-2 sm:grid-flow-col sm:justify-between sm:auto-cols-auto text-mercury-2">
 				<li>
 					<a class="flex space-x-2 text-black focus-visible:text-" href="mailto:roibee@ya.ru">
 						{{ icon(
