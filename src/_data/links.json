@@ -1,40 +1,83 @@
 {
-    "menuList": [
-        {
-            "link": "#services",
-            "anchor": "Услуги",
-            "enable": true
-        },
-        {
-            "link": "#",
-            "anchor": "О нас",
-            "enable": false
-        },
-        {
-            "link": "#form",
-            "anchor": "Контакты",
-            "enable": true
-        }
-    ],
-
-    "socNet": [
-        {
-            "link": "#",
-            "anchor": "Наша группа ВК",
-            "icon": "vk-icon",
-            "enable": false
-        },
-        {
-            "link": "#",
-            "anchor": "Наш твиттер",
-            "icon": "twitter-icon",
-            "enable": false
-        },
-        {
-            "link": "https://instagram.com/roibee_ru/",
-            "anchor": "Наш инстаграм",
-            "icon": "instagram-icon",
-            "enable": true
-        }
-    ]
+  "menuList": [
+    {
+      "link": "#services",
+      "anchor": "Услуги",
+      "enable": true
+    },
+    {
+      "link": "#",
+      "anchor": "О нас",
+      "enable": false
+    },
+    {
+      "link": "#form",
+      "anchor": "Контакты",
+      "enable": true
+    }
+  ],
+  "socNet": [
+    {
+      "link": "#",
+      "anchor": "Наша группа ВК",
+      "icon": "vk-icon",
+      "enable": false
+    },
+    {
+      "link": "#",
+      "anchor": "Наш твиттер",
+      "icon": "twitter-icon",
+      "enable": false
+    },
+    {
+      "link": "https://instagram.com/roibee_ru/",
+      "anchor": "Наш инстаграм",
+      "icon": "instagram-icon",
+      "enable": true
+    }
+  ],
+  "headerList": [
+    {
+      "title": "Контакты",
+      "url": "#"
+    },
+    {
+      "title": "Проекты",
+      "url": "#"
+    },
+    {
+      "title": "Отзывы",
+      "url": "#"
+    },
+    {
+      "title": "Блог",
+      "url": "#"
+    }
+  ],
+  "footerList": [
+    {
+      "title": "Главная",
+      "url": "#"
+    },
+    {
+      "title": "Проекты",
+      "url": "#"
+    },
+    {
+      "title": "Блог",
+      "url": "#"
+    },
+    {
+      "title": "Команда",
+      "url": "#"
+    },
+    {
+      "title": "Отзывы",
+      "url": "#"
+    },
+    {
+      "title": "Этапы работы",
+      "url": "#"
+    }
+  ]
 }
