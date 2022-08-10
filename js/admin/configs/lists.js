@@ -10,7 +10,8 @@ const lists = {
 		index,
 		tables,
 		services,
-		links
+		links,
+
 	]
 }
 

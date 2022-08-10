@@ -2,59 +2,45 @@ const links = {
 	"name": "links",
 	"label": "Ссылки",
 	"file": "src/_data/links.json",
+	"editor" : {
+		"preview": false,
+	},
 	"widget" : "list",
 	"fields": [
 		{
-			"name": "menuList",
-			"label": "Верхнее меню",
-			"widget" : "list",
+			"label": "Ссылки верхнего меню",
+			"name": "headerList",
+			"widget": "list",
 			"fields": [
 				{
-					"label": "активно?",
-					"name": "enable",
-					"widget": "boolean",
-					default: true
-				},
-				{
-					"label": "текст ссылки",
-					"name": "anchor",
+					"label": "Текст ссылки",
+					"name": "title",
 					"widget": "string"
 				},
 				{
-					"label": "ссылка",
-					"name": "link",
-					"widget": "string",
+					"label": "Ссылка",
+					"name": "url",
+					"widget": "string"
 				}
 			]
 		},
 		{
-			"name": "socNet",
-			"label": "Социальные сети",
-			"widget" : "list",
+			"label": "Ссылки нижнего меню",
+			"name": "footerList",
+			"widget": "list",
 			"fields": [
 				{
-					"label": "активно?",
-					"name": "enable",
-					"widget": "boolean",
-					default: true
-				},
-				{
 					"label": "Текст ссылки",
-					"name": "anchor",
+					"name": "title",
 					"widget": "string"
 				},
 				{
-					"label": "ссылка",
-					"name": "link",
-					"widget": "string",
-				},
-				{
-					"label": "Имя иконки",
-					"name": "icon",
-					"widget": "string",
+					"label": "Ссылка",
+					"name": "url",
+					"widget": "string"
 				}
 			]
-		}
+		},
 	]
 }
 
