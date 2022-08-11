@@ -41,6 +41,7 @@ module.exports = {
         'seance-2': '#7A1294',
         'blue-ribbon' : '#4838FF',
         'electric-violet' : '#B510EF',
+		'dove-gray':'#656565',
         'electric-violet-2' : '#704BFF',
         'bright-sun' :'#FFCA42',
         'silver' : '#CCCCCC',
