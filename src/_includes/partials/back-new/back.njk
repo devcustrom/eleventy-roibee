@@ -1,16 +1,20 @@
 {% from "components/buttons.njk" import button %}
 <section>
 	<div class="container px-5 mx-auto ">
-		<div class=" items-center justify-center flex font-extrabold text-white h-[calc(100vh-100px)] min-h-[560px] max-h-[1280px]">
-			<div class="grid gap-4 sm:justify-items-center ">
-				<p class=" sm:text-[70px] text-[32px]  leading-[32px] sm:leading-[70px]">Выпрями <span class="text-heliotrope-2 sm:text-white">спину!</span></p>
-				<p class=" sm:text-2xl  text-base leading-[24px]">С нами ваш бизнес будет работать как  <span class="text-heliotrope-2 "> пчёлы! </span></p>
-				{% call button(
-				class = "absolute p-3 mx-auto mt-10 md:static bottom-4 ",
-				link = "#"
-				) %}
-					Оставить заявку
-				{% endcall %}
+		<div class="justify-center flex font-extrabold text-white h-[calc(100vh-100px)] min-h-[560px] max-h-[1280px]">
+			<div class="grid items-end h-full gap-4 my-auto sm:h-max grid-row-1a justify-items-center ">
+				<div>
+					<p class=" sm:text-[70px] text-[32px]  leading-[32px] sm:leading-[70px]">Выпрями <span class="text-heliotrope-2 sm:text-white">спину!</span></p>
+					<p class=" sm:text-2xl  text-base leading-[24px]">С нами ваш бизнес будет работать как  <span class="text-heliotrope-2 "> пчёлы! </span></p>
+				</div>
+				<div class="">
+					{% call button(
+						class = "mt-10 mb-4",
+						link = "#"
+						) %}
+							Оставить заявку
+					{% endcall %}
+				</div>
 			</div>
 		</div>
 	</div>
