@@ -1,0 +1,44 @@
+{% set data =
+	[
+		{
+			"description" : "Мы объясняем вам каждый свой шаг работы, чтобы не возникало недопониманий"
+		},
+		{
+			"description" : "Мы стремимся к максимальной отдаче результата нашей работы"
+		},
+		{
+			"description" : "Мы специалисты своего дела и для нас это не работа, а образ жизни"
+		},
+		{
+			"description" : "Мы не работаем как конвейер, для нас важно работать с клиентами, которые хотят расти"
+		}
+	]
+%}
+{% from "components/icon/icon.njk" import icon %}
+
+<section>
+	<div class="bg-white">
+		<div class="container px-5 mx-auto ">
+			<div class="flex items-center justify-between pt-14">
+				<img class="" src="/assets/icons/big-logo.svg" alt="Logo">
+				<img class="hidden lg:block" src="/assets/icons/prosto.svg" alt="prosto">
+			</div>
+			<div>
+				<ul class="grid  lg:grid-flow-col max-w-max  gap-x-[172px]  py-14 ">
+				{% for item in data %}
+					<li>
+						{{ icon(
+							name="ok",
+							size="h-[60px] w-[60px]",
+							class="mb-5"
+						) }}
+						<p class="font-semibold">
+							{{item.description}}
+						</p>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
