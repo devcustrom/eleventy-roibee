@@ -1,8 +1,18 @@
+{% from "components/buttons.njk" import button %}
 <section>
-	<div class="grid items-center justify-center my-auto">
-		<div class="font-extrabold text-white">
-			<p class="text-7xl leading-[70px] ">Выпрями спину!</p>
-			<p class="text-2xl leading-[24px]">С нами ваш бизнес будет работать как <span class="text-heliotrope-2">пчёлы!</span></p>
+	<div class="container px-5 mx-auto ">
+		<div class=" items-center justify-center flex font-extrabold text-white h-[calc(100vh-100px)] min-h-[560px] max-h-[1280px]">
+			<div class="grid gap-4 justify-items-center">
+				<p class=" text-[70px] leading-[70px]">Выпрями спину!</p>
+				<p class=" text-2xl leading-[24px]">С нами ваш бизнес будет работать как  <span class="text-heliotrope-2 "> пчёлы! </span></p>
+				{% call button(
+				type = "submit",
+				class = "p-3 mx-auto mt-10",
+				link = "#"
+				) %}
+					Вернуться на главную
+				{% endcall %}
+			</div>
 		</div>
 	</div>
 </section>
