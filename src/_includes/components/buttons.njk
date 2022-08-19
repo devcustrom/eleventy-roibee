@@ -25,20 +25,15 @@
 		{% endif %}
 		class="
 			{{ class }}
-			flex text-lg font-semibold rounded-full outline-none items-center justify-center max-w-max transition-all duration-300 ease-linear active:opacity-60
-			{% if size=='small' %}
-				p-2
-			{% elif size=='big' %}
-				p-4
+			flex text-lg font-extrabold  outline-none items-center justify-center max-w-max transition-all duration-300 ease-linear py-4 px-6 rounded-[10px]
+			{% if theme=='style-1' %}
+				bg-white group active:text-cod-gray-2 active:bg-silver-4 ring-0 focus:ring-4 focus-visible:ring-electric-violet-7 disabled:bg-white/50 focus:outline-none
+			{% elif theme=='style-2' %}
+				bg-mine-shaft-3 hover:bg-emperor active:bg-black active:text-white/50 ring-0 focus-visible:ring-4 focus-visible:ring-white disabled:bg-white/50 focus:outline-none disabled:text-cod-gray-2
+				{% elif theme=='style-3' %}
+				bg-transparent text-cod-gray-2 hover:text-electric-violet-7 active:text-purple ring-0 focus-visible:ring-1 focus-visible:ring-black disabled:text-white/50
 			{% else %}
-				p-3
-			{% endif %}
-			{% if theme=='white' %}
-				bg-gradient-to-b active:shadow-black lg:hover:shadow-black lg:focus-visible:shadow-black from-white to-silver shadow-white text-black
-			{% elif theme=='black' %}
-				ring-2 ring-white lg:hover:shadow-puk lg:focus-visible:shadow-puk
-			{% else %}
-				text-white bg-gradient-to-t lg:hover:opacity-70 lg:focus-visible:opacity-70 from-seance-2 to-medium-purple-2 shadow-medium-purple shadow-purp lg:hover:shadow-fiol
+				bg-electric-violet-6 text-white hover:bg-electric-violet-7 active:bg-purple ring-0 focus-visible:ring-4 focus-visible:ring-tolopea focus:bg-electric-violet-6 disabled:bg-electric-violet-7 focus:outline-none
 			{% endif %}
 		"
 	>
@@ -48,15 +43,12 @@
 				size = iconSize
 			) }}
 		{% endif %}
-		{% if hideText %}
-			<span class="sr-only">
-				{{ hideText }}
-			</span>
-		{% elif caller() %}
-			<span class="px-2 empty:hidden">
-				{{ caller() }}
-			</span>
-		{% endif %}
+		<span class="
+			{{ 'sr-only' if hideText else 'px-2 empty:hidden' }}
+			{{ 'text-electric-violet-6 transition-all duration-300 disabled:text-cod-gray-2 focus:outline-none focus:text-electric-violet-7  group-hover:text-black' if theme=='style-1' }}
+		">
+			{{ hideText if hideText else caller() }}
+		</span>
 		{% if iconLeft!=true and iconName %}
 			{{ icon(
 				name = iconName,
