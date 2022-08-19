@@ -45,6 +45,7 @@ module.exports = {
         'electric-violet-2' : '#704BFF',
         'bright-sun' :'#FFCA42',
         'silver' : '#CCCCCC',
+		'silver-2' : '#BCBCBC',
         'heliotrope' : '#DC56FF',
         'mine-shaft' : '#2F2F2F',
         'malibu' : '#53CFFF',
