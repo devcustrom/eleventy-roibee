@@ -5,7 +5,7 @@
 	font-weight: 100;
 	src:local(''),
 		url('/assets/fonts/thin.woff') format('woff'),
-		url('/assets/fonts/thin.woff2') format('woff2'),
+		url('/assets/fonts/thin.woff2') format('woff2');
 }
 
 @font-face {
@@ -15,7 +15,7 @@
 	font-weight: 200;
 	src:local(''),
 		url('/assets/fonts/extralight.woff') format('woff'),
-		url('/assets/fonts/extralight.woff2') format('woff2'),
+		url('/assets/fonts/extralight.woff2') format('woff2');
 }
 
 @font-face {
@@ -25,7 +25,7 @@
 	font-weight: 300;
 	src:local(''),
 	url('/assets/fonts/light.woff') format('woff'),
-	url('/assets/fonts/light.woff2') format('woff2'),
+	url('/assets/fonts/light.woff2') format('woff2');
 }
 
 @font-face {
@@ -35,7 +35,7 @@
 	font-weight: 400;
 	src:local(''),
 		url('/assets/fonts/regular.woff') format('woff'),
-		url('/assets/fonts/regular.woff2') format('woff2'),
+		url('/assets/fonts/regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -45,7 +45,7 @@
 	font-weight: 700;
 	src:local(''),
 		url('/assets/fonts/semibold.woff') format('woff'),
-		url('/assets/fonts/semibold.woff2') format('woff2'),
+		url('/assets/fonts/semibold.woff2') format('woff2');
 }
 
 @font-face {
@@ -55,7 +55,7 @@
 	font-weight: 800;
 	src:local(''),
 		url('/assets/fonts/bold.woff') format('woff'),
-		url('/assets/fonts/bold.woff2') format('woff2'),
+		url('/assets/fonts/bold.woff2') format('woff2');
 }
 
 @font-face {
@@ -65,7 +65,7 @@
 	font-weight: 900;
 	src:local(''),
 		url('/assets/fonts/black.woff') format('woff'),
-		url('/assets/fonts/black.woff2') format('woff2'),
+		url('/assets/fonts/black.woff2') format('woff2');
 }
 
 @font-face {
@@ -75,7 +75,7 @@
 	font-weight: 950;
 	src:local(''),
 		url('/assets/fonts/heavy.woff') format('woff'),
-		url('/assets/fonts/heavy.woff2') format('woff2'),
+		url('/assets/fonts/heavy.woff2') format('woff2');
 }
 
 @font-face {
@@ -85,7 +85,7 @@
 	font-weight: 100;
 	src:local(''),
 		url('/assets/fonts/thinitalic.woff') format('woff'),
-		url('/assets/fonts/thinitalic.woff2') format('woff2'),
+		url('/assets/fonts/thinitalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -95,7 +95,7 @@
 	font-weight: 200;
 	src:local(''),
 		url('/assets/fonts/extralightitalic.woff') format('woff'),
-		url('/assets/fonts/extralightitalic.woff2') format('woff2'),
+		url('/assets/fonts/extralightitalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -105,7 +105,7 @@
 	font-weight: 300;
 	src:local(''),
 		url('/assets/fonts/lightitalic.woff') format('woff'),
-		url('/assets/fonts/lightitalic.woff2') format('woff2'),
+		url('/assets/fonts/lightitalic.woff2') format('woff2');
 }
 @font-face {
 	font-family: 'Mont';
@@ -114,7 +114,7 @@
 	font-weight: 400;
 	src:local(''),
 		url('/assets/fonts/regularitalic.woff') format('woff'),
-		url('/assets/fonts/regularitalic.woff2') format('woff2'),
+		url('/assets/fonts/regularitalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -124,7 +124,7 @@
 	font-weight: 700;
 	src:local(''),
 		url('/assets/fonts/semibolditalic.woff') format('woff'),
-		url('/assets/fonts/semibolditalic.woff2') format('woff2'),
+		url('/assets/fonts/semibolditalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -134,7 +134,7 @@
 	font-weight: 800;
 	src:local(''),
 		url('/assets/fonts/bolditalic.woff') format('woff'),
-		url('/assets/fonts/bolditalic.woff2') format('woff2'),
+		url('/assets/fonts/bolditalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -144,7 +144,7 @@
 	font-weight: 900;
 	src:local(''),
 		url('/public/assets/fonts/blackitalic.woff') format('woff'),
-		url('/public/assets/fonts/blackitalic.woff2') format('woff2'),
+		url('/public/assets/fonts/blackitalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -154,5 +154,5 @@
 	font-weight: 950;
 	src:local(''),
 		url('/public/assets/fonts/heavyitalic.woff') format('woff'),
-		url('/public/assets/fonts/heavyitalic.woff2') format('woff2'),
+		url('/public/assets/fonts/heavyitalic.woff2') format('woff2');
 }
