@@ -52,6 +52,7 @@ module.exports = {
         'dodger-blue' : '#3777FF',
         'porcelain':'#ECEDEE',
         'heliotrope':'#AC5FFF',
+		'heliotrope-2':'#AD44FF',
       },
       gridTemplateAreas: {
         'layout': [
