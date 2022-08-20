@@ -1,0 +1,59 @@
+{% from "components/buttons.njk" import button %}
+
+{% set blocks =
+	[
+		{
+			"title" : "Веб-разработка",
+			"description" : "Полное создание дизайн-макета на основе выданных данных бизнесом и тд, чтобы заполнить это пространство"
+		},
+		{
+			"title" : "Продакшн",
+			"description" : "Полное создание дизайн-макета на основе выданных данных бизнесом и тд, чтобы заполнить это пространство"
+		},
+		{
+			"title" : "Дизайн",
+			"description" : "Мы специалисты своего дела и для нас это не работа, а образ жизни"
+		}
+	]
+%}
+
+<section>
+	<div class="bg-white">
+		<div class="container px-3 mx-auto lg:px-5">
+			<div>
+				<p class="font-semibold text-transparent md:text-[32px] text-lg leading-[32px] bg-clip-text bg-gradient-to-r from-tundora to-mine-shaft">Чем мы</p>
+				<p class="md:text-[45px] text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-heliotrope-2 to-electric-violet-4 leading-[46px]">занимаемся?</p>
+			</div>
+			<div class>
+				<ul class="pb-10 grid-cols-[repeat(3,minmax(289px,1fr))] xl:grid gap-x-14 pt-14">
+					{% for item in blocks %}
+						<li class="grid w-full my-6 h-full px-6 pt-6 min-w-[288px] first:text-white first:bg-gradient-to-l first:from-heliotrope-2 first:to-electric-violet-4 bg-magnolia">
+							<span class=" text-[32px] leading-[32px] font-extrabold pb-7">{{ item.title }}</span>
+							<span class="font-semibold ">{{ item.description }}</span>
+							{% if loop.first %}
+								<div class="flex items-end justify-end">
+									<img src="/assets/images/cursor.png" alt="cursor">
+								</div>
+							{% else  %}
+								<div class="flex items-end justify-end">
+									<img class="" src="/assets/images/chair.png" alt="chair">
+								</div>
+							{% endif %}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="grid items-center pb-10 grid-cols-1a">
+				<div>
+					<img class="hidden xl:block" src="/assets/icons/what-we-do.svg" alt="what-we-do">
+				</div>
+				{% call button(
+					class = "hidden mt-10 mb-4 xl:block",
+					link = "#"
+					) %}
+						Заказать услугу
+				{% endcall %}
+			</div>
+		</div>
+	</div>
+</section>
