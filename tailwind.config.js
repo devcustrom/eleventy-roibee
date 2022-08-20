@@ -68,8 +68,7 @@ module.exports = {
 		'purple':'#4C00A6',
 		'tolopea':'#1E0043',
 		'emperor':'#4F4F4F',
-
-
+		'magnolia':'#F8F0FF',
       },
       gridTemplateAreas: {
         'layout': [
