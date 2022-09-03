@@ -1,3 +1,4 @@
 @import "./global.css";
 @import "/@root/src/_includes/partials/header/header.css";
 @import "/@root/src/_includes/partials/services/services.css";
+@import "/@root/src/_includes/partials/works/works.css";

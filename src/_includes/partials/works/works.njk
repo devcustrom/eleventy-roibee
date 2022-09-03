@@ -1,0 +1,58 @@
+{% from "components/swiper.njk" import swiper %}
+{% from "components/buttons.njk" import button %}
+{% set works =
+	[
+		{
+			"title" : "Дизайн сайта"
+		},
+		{
+			"title" : "Дизайн сайта"
+		},
+		{
+			"title" : "Дизайн сайта"
+		},
+		{
+			"title" : "Дизайн сайта"
+		},
+		{
+			"title" : "Дизайн сайта"
+		}
+	]
+%}
+
+<section>
+	<div class="container px-3 mx-auto sm:px-5 py-14">
+		<div >
+			<p class="text-[32px] text-white leading-[32px]">Посмотрите наши</p>
+			<p class="text-[45px] leading-[46px] text-transparent bg-clip-text bg-gradient-to-l from-heliotrope-2 to-electric-violet-4 font-extrabold">Недавние работы</p>
+		</div>
+		{% call swiper(
+			class="w-full py-5 mx-auto swiper-team max-w-max ",
+			wrapperClass=" mx-auto  md:max-w-max",
+			pagination = "swiper-pagination"
+		) %}
+			{% for item in works %}
+				<div class="w-[388px] swiper-slide grid h-[271px] bg-center bg-no-repeat " style="background-image: url('/assets/images/notepad.jpg');">
+					<div class="relative block w-full h-full bg-gradient-to-b from-black/0 to-black/100">
+						<div class="absolute bottom-4 left-5">
+							<span class="mb-1 text-2xl font-extrabold text-white">{{item.title}}</span>
+							<img class="w-[91px] h-[22px]" src="/assets/icons/new-logo.svg" alt="Logo">
+						</div>
+					</div>
+				</div>
+				{# <div class="swiper-pagination"></div> #}
+				{# <div class="swiper-pagination-works"> как оно должно работать ? так как и в свайпере сделай дефолтные стили не мои потом под себя ебанешь так я под себя ебанул просто посмотреть как это будет выгляд
+					<span class="swiper-pagination-works-bullet"></span>
+				</div> #}
+			{% endfor %}
+		{% endcall %}
+		<div class="flex justify-center sm:justify-end">
+			{% call button(
+				class = "mt-10 mb-4",
+				link = "#"
+				) %}
+					Посмотреть все работы
+			{% endcall %}
+		</div>
+	</div>
+</section>

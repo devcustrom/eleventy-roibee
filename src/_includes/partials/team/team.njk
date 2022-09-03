@@ -1,0 +1,46 @@
+{% from "components/swiper.njk" import swiper %}
+{% set team =
+	[
+		{
+			"title" : "Алексей Хачатурян",
+			"description" : "Веб-разработчик"
+		},
+		{
+			"title" : "Алексей Хачатурян",
+			"description" : "Веб-разработчик"
+		},
+		{
+			"title" : "Алексей Хачатурян",
+			"description" : "Веб-разработчик"
+		},
+		{
+			"title" : "Алексей Хачатурян",
+			"description" : "Веб-разработчик"
+		},
+		{
+			"title" : "Алексей Хачатурян",
+			"description" : "Веб-разработчик"
+		}
+	]
+%}
+
+<section>
+
+	<div class="bg-white">
+		<div class="container px-5 mx-auto">
+		<p class="text-[32px] leading-[32px] font-semibold">наш <span class="text-[45px] text-transparent bg-clip-text bg-gradient-to-l from-heliotrope-2 to-electric-violet-4 leading-[46px] font-extrabold">Рой пчел!</span></p>
+		{% call swiper(
+			class="w-full py-5 mx-auto swiper-team max-w-max ",
+			wrapperClass=" md:gap-6 mx-auto  md:max-w-max"
+		) %}
+		{% for item in team %}
+			<div class="flex flex-col mx-auto space-y-1 swiper-slide h-max max-w-max">
+				<img src="/assets/images/Leha.jpg" alt="Leha">
+				<span class="font-extrabold sm:text-xl">{{ item.title }}</span>
+				<span class="text-xl font-semibold">{{ item.description }}</span>
+			</div>
+		{% endfor %}
+		{% endcall %}
+	</div>
+	</div>
+</section>

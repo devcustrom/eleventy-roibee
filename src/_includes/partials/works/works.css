@@ -1,0 +1,15 @@
+.swiper-pagination-works {
+	@apply flex justify-center;
+}
+
+.swiper-pagination-works-bullet {
+	@apply w-3.5 h-0.5 rounded-sm bg-red-500 md:w-1 md:h-1;
+}
+
+.swiper-pagination-works-bullet-active {
+	@apply bg-green-800 md:w-2 md:h-2 ;
+}
+
+.swiper-pagination-works {
+	@apply grid items-center grid-flow-col -translate-x-1/2 gap-x-1 max-w-max;
+}

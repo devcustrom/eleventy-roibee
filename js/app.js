@@ -3,6 +3,8 @@ import lozad from 'lozad'
 import Cookies from './tools/cookies'
 import ContactForm from '/@root/src/_includes/partials/contact-us/form/form'
 import Services from '/@root/src/_includes/partials/services/services';
+import SwiperTeam from '/@root/src/_includes/partials/team/team';
+import SwiperWorks from '/@root/src/_includes/partials/works/works';
 import './metriks'
 import Header from '/@root/src/_includes/partials/header/header'
 

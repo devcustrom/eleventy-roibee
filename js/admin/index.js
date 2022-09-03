@@ -1,6 +1,7 @@
 import CMS from 'netlify-cms'
 import Post from "../admin/preview-templates/post.js";
 import Page from "../admin/preview-templates/page.js"
+import SwiperTeam from "src/_includes/partials/team/team"
 import { config } from "../admin/config.js"
 
 export default new class  {
