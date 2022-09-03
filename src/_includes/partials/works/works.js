@@ -13,7 +13,7 @@ export default new class SwiperWorks {
 			slidesPerView: 'auto',
 			spaceBetween: 10,
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.swiper-pagination-works',
 				clickable: true,
 				type: 'bullets',
 			}

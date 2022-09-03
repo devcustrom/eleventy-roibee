@@ -3,7 +3,6 @@
 {% macro swiper(
 	class,
 	wrapperClass,
-	items,
 	pagination,
 	buttonPrev,
 	buttonNext,
@@ -16,11 +15,9 @@
 			{{ caller() }}
 		</{{ tag|default('div') }}>
 		{% if pagination %}
-			{% if items.length > 1 %}
-				<div
-					class="{{ pagination }}"
-				></div>
-			{% endif %}
+			<div
+				class="{{ pagination }}"
+			></div>
 		{% endif %}
 		{% if buttonPrev and buttonNext %}
 			{% for item in [

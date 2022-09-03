@@ -27,9 +27,9 @@
 			<p class="text-[45px] leading-[46px] text-transparent bg-clip-text bg-gradient-to-l from-heliotrope-2 to-electric-violet-4 font-extrabold">Недавние работы</p>
 		</div>
 		{% call swiper(
-			class="w-full py-5 mx-auto swiper-team max-w-max ",
+			class="w-full py-5 mx-auto swiper-works max-w-max ",
 			wrapperClass=" mx-auto  md:max-w-max",
-			pagination = "swiper-pagination"
+			pagination = "swiper-pagination-works"
 		) %}
 			{% for item in works %}
 				<div class="w-[388px] swiper-slide grid h-[271px] bg-center bg-no-repeat " style="background-image: url('/assets/images/notepad.jpg');">
@@ -40,10 +40,6 @@
 						</div>
 					</div>
 				</div>
-				{# <div class="swiper-pagination"></div> #}
-				{# <div class="swiper-pagination-works"> как оно должно работать ? так как и в свайпере сделай дефолтные стили не мои потом под себя ебанешь так я под себя ебанул просто посмотреть как это будет выгляд
-					<span class="swiper-pagination-works-bullet"></span>
-				</div> #}
 			{% endfor %}
 		{% endcall %}
 		<div class="flex justify-center sm:justify-end">

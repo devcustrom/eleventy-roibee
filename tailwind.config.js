@@ -69,6 +69,7 @@ module.exports = {
 		'tolopea':'#1E0043',
 		'emperor':'#4F4F4F',
 		'magnolia':'#F8F0FF',
+		'wild-sand':'#F4F4F4'
       },
       gridTemplateAreas: {
         'layout': [

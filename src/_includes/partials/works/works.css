@@ -1,15 +1,11 @@
 .swiper-pagination-works {
-	@apply flex justify-center;
+	@apply flex items-center justify-center mt-5 md:hidden;
 }
 
-.swiper-pagination-works-bullet {
-	@apply w-3.5 h-0.5 rounded-sm bg-red-500 md:w-1 md:h-1;
+.swiper-pagination-bullet{
+	@apply w-[8px] transition-colors duration-300 before:transition-colors before:duration-300 after:transition-colors after:duration-300 h-[5px] rounded-[0] after:absolute after:border-l-[4px] after:-bottom-0.5 after:border-t-[2px] after:border-t-wild-sand opacity-100 after:border-transparent after:border-r-[4px] before:absolute before:border-l-[4px] before:-top-0.5 before:border-b-[2px] before:border-b-wild-sand before:border-transparent before:border-r-[4px] bg-wild-sand relative;
 }
 
-.swiper-pagination-works-bullet-active {
-	@apply bg-green-800 md:w-2 md:h-2 ;
-}
-
-.swiper-pagination-works {
-	@apply grid items-center grid-flow-col -translate-x-1/2 gap-x-1 max-w-max;
+.swiper-pagination-bullet-active {
+	@apply w-[12px] transition-colors duration-300 before:transition-colors before:duration-300 after:transition-colors after:duration-300 h-[6px] rounded-[0] after:absolute after:border-l-[6px] after:-bottom-1 after:border-t-[4px] after:border-t-heliotrope-2 after:border-transparent after:border-r-[6px] before:absolute before:border-l-[6px] before:-top-1 before:border-b-[4px] before:border-b-heliotrope-2 before:border-transparent before:border-r-[6px] bg-heliotrope-2 relative
 }
