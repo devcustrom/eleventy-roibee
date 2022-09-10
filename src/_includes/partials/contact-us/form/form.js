@@ -15,7 +15,7 @@ export default new class ContactForm {
 		buttonLabel: 'Отправить',
 		page: document.location.href,
 		refferer: document.referrer,
-		notRobot: '',
+		notRobot: 'test',
 		init() {
 		},
 		preSubmit() {
