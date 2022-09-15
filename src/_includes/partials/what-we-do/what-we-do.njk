@@ -21,14 +21,14 @@
 	<div class="bg-white">
 		<div class="container px-3 mx-auto lg:px-5">
 			<div>
-				<p class="font-semibold text-transparent md:text-[32px] text-lg leading-[32px] bg-clip-text bg-gradient-to-r from-tundora to-mine-shaft">Чем мы</p>
-				<p class="md:text-[45px] text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-heliotrope-2 to-electric-violet-4 leading-[46px]">занимаемся?</p>
+				<p class="text-lg font-semibold text-transparent md:text-sm-d bg-clip-text bg-gradient-to-r from-tundora to-mine-shaft">Чем мы</p>
+				<p class="text-2xl font-extrabold text-transparent md:text-md-d bg-clip-text bg-gradient-to-r from-heliotrope-2 to-electric-violet-4">занимаемся?</p>
 			</div>
 			<div class>
 				<ul class="pb-10 grid-cols-[repeat(3,minmax(289px,1fr))] xl:grid gap-x-14 pt-14">
 					{% for item in blocks %}
 						<li class="grid w-full my-6 h-full px-6 pt-6 min-w-[288px] first:text-white first:bg-gradient-to-l first:from-heliotrope-2 first:to-electric-violet-4 bg-magnolia">
-							<span class=" text-[32px] leading-[32px] font-extrabold pb-7">{{ item.title }}</span>
+							<span class="font-extrabold  text-sm-d pb-7">{{ item.title }}</span>
 							<span class="font-semibold ">{{ item.description }}</span>
 							{% if loop.first %}
 								<div class="flex items-end justify-end">

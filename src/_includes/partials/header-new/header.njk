@@ -6,14 +6,14 @@
 	}"
 	x-init="$watch('noTop', value => openMenuNoTop ? openMenuNoTop = !value : '')"
 	@scroll.window="noTop = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)"
-	class="bg-dove-gray/10"
-	:class="noTop ? 'pointer-events-none' : 'pointer-events-auto'"
+	class="sticky top-0 transition-all"
+	:class="noTop ? 'bg-cod-gray' : ''"
 	>
 	<div class="container relative flex items-center justify-between h-[100px] w-full px-5 py-8 mx-auto md:grid gap-x-14 grid-cols-a1">
 		<a class="outline-none focus:outline-none" href="/">
 			<img class="" src="/assets/icons/new-logo.svg" alt="Logo">
 		</a>
-		<nav	>
+		<nav>
 			<ul class="grid-flow-col font-semibold md:grid max-w-max gap-x-12 text-silver">
 				{% for item in header.headerList %}
 					<li class="hidden md:block">
@@ -39,7 +39,8 @@
 			x-transition:leave-start="translate-x-0"
 			x-transition:leave-end="translate-x-full"
 			@click.outside="menuBurger = false, $store.bodyLock = false"
-			class="right-0 fixed transition-all pointer-events-auto backdrop-blur-[46px] overflow-y-auto overflow-x-hidden duration-300 bg-black/10 z-[100] max-w-full w-max inset-y-0">
+			class="right-0 fixed transition-all pointer-events-auto backdrop-blur-[46px] overflow-y-auto overflow-x-hidden duration-300 bg-black/10 z-[100] max-w-full w-max inset-y-0"
+		>
 			<div
 				x-data="{ openItem: null }"
 				:class="openItem === null ? 'translate-x-0' : '-translate-x-full'"
