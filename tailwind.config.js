@@ -13,6 +13,18 @@ module.exports = {
       fontFamily: {
 		body: ['Mont', ...defaultTheme.fontFamily.sans],
       },
+	  fontSize: {
+		'xl-d': ['70px', '70px'],
+		'lg-d': ['52px', '52px'],
+		'md-d': ['45px', '46px'],
+		'sm-d': ['32px', '32px'],
+		'xs-d': ['24px', '26px'],
+		'md-m': ['20px', '22px'],
+		'sm-m': ['18px', '22px'],
+		'xs-m': ['14px', '22px'],
+		'footer-top': ['16px', '20.45px'],
+		'footer-bot': ['14px', '17.89px'],
+	  },
       letterSpacing: {
         normal:'0.145em',
       },
