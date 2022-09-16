@@ -5,6 +5,7 @@ import ContactForm from '/@root/src/_includes/partials/contact-us/form/form'
 import Services from '/@root/src/_includes/partials/services/services';
 import SwiperTeam from '/@root/src/_includes/partials/team/team';
 import SwiperWorks from '/@root/src/_includes/partials/works/works';
+import SwiperReviews from '/@root/src/_includes/partials/reviews/reviews';
 import './metriks'
 import Header from '/@root/src/_includes/partials/header/header'
 

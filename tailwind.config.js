@@ -57,6 +57,7 @@ module.exports = {
         'mine-shaft' : '#2F2F2F',
 		'mine-shaft-2' : '#393939',
 		'mine-shaft-3' : '#333333',
+		'mine-shaft-4' : '#242424',
         'malibu' : '#53CFFF',
         'dodger-blue' : '#3777FF',
         'porcelain':'#ECEDEE',

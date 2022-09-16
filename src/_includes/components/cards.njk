@@ -1,0 +1,12 @@
+{% macro revieCard( img, name, description, link ) %}
+	<div class="group relative z-[1] grid min-w-[350px] max-w-[350px] justify-items-center gap-y-4 bg-wild-sand px-8 py-20 pb-5 transition-all duration-500 before:absolute before:inset-0 before:z-[2] before:bg-gradient-to-b before:from-heliotrope-2 before:to-electric-violet-4 before:opacity-0 before:transition-all before:duration-500 hover:bg-opacity-0 hover:before:opacity-100">
+		<div style="background-image: url('{{ img }}')" class="img-block absolute -top-16 left-1/2 z-[3] h-[120px] w-[110px] -translate-x-1/2 overflow-hidden bg-top bg-no-repeat"></div>
+		<span class="z-[3] text-[18px] font-bold leading-6 text-mine-shaft-4 transition-all duration-500 group-hover:text-white">{{ name }}</span>
+		<span class="z-[3] block h-[3px] w-[100px] bg-mine-shaft-4 transition-all duration-500 group-hover:bg-white"></span>
+		<span class="z-[3] font-semibold text-mine-shaft-4 transition-all duration-500 group-hover:text-white">{{ description }}</span>
+		<button class="z-[3] font-bold rounded-[10px] bg-electric-violet-6 px-6 py-2 text-white transition-all duration-500 group-hover:bg-white group-hover:text-electric-violet-6">
+			<span>Почитать подробнее</span>
+		</button>
+		<a class="z-[3] before:absolute before:inset-0" href="{{ link }}"></a>
+  </div>
+{% endmacro %}
